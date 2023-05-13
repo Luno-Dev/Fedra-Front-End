@@ -1,17 +1,21 @@
-import Footer from '@/components/footer'
-import Navs from '@/components/navs'
-import { Html, Head, Main, NextScript } from 'next/document'
+import Footer from "@/components/common/Footer";
+import Navs from "@/components/common/Navs";
+import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head />
       <body>
-        <Navs/>
-        <Main />
-        <NextScript />
-        <Footer/>
+        <div className="pantalla">
+          <div className="bajarFooter">
+          <Navs />
+          <Main/>
+          <NextScript />
+          </div>
+          <Footer/>
+        </div>
       </body>
     </Html>
-  )
+  );
 }
