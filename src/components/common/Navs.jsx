@@ -1,26 +1,40 @@
-import Link from 'next/link';
-import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import React from "react";
+import Link from "next/link";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 const Navs = () => {
   return (
-    <>
-     <Navbar bg="dark" expand="lg" variant='dark'>
-      <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Link className='nav-link' href="/">Home</Link>
-            <Link className='nav-link' href="#link">Contacto</Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-    </>
-  )
-}
+      <Navbar variant="dark" expand="lg" className="bg-darkblue">
+        <Container>
+          <Navbar.Brand className="text-cyan" href="/">
+            FEDRA
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
+              <Link end className="nav-link" href="/">
+                Inicio
+              </Link>
+              <Link end className="nav-link" href="/sobreNosotros">
+                Sobre nosotros
+              </Link>
+              <Link end className="nav-link" href="/quienesSomos">
+                Quiénes somos
+              </Link>
+              <Link end className="nav-link" href="/temasDeTrabajo">
+                Temas de trabajo
+              </Link>
+              <Link end className="nav-link" href="/noticias">
+                Noticias
+              </Link>
+              <Link end className="nav-link" href="/contacto">
+                Contacto
+              </Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+  );
+};
 
-export default Navs
+export default Navs;

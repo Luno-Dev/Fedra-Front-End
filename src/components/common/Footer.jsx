@@ -4,7 +4,7 @@ import { Col, Container, Nav, Row } from 'react-bootstrap'
 
 const Footer = () => {
   return (
-    <section className='footer py-4 text-light'>
+    <section className='bg-darkblue py-4 text-light'>
       <Container>
         <Row>
           <Col md={4} className='d-flex flex-column align-items-center justify-content-center m-footer'>

@@ -2,8 +2,12 @@
     color: rgb(200, 200, 200);
 }
 
-.footer{
+.bg-darkblue{
     background-color: #081B29;
+}
+
+.text-cyan{
+    color: #00ABF0;
 }
 
 .pantalla{
