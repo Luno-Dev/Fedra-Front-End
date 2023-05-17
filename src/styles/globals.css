@@ -21,10 +21,26 @@
     flex-grow: 1;
 }
 
+.imgBanner{
+    object-fit: cover;
+    height: 500px;
+}
+
 /* media queries */
 
-@media all and (max-width:768px){
+@media all and (max-width:767px){
     .m-footer{
         margin: 25px 0px;
+    }
+    .imgBanner{
+        object-fit: cover;
+        height: 200px;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 991px){
+    .imgBanner{
+        object-fit: cover;
+        height: 300px;
     }
 }
