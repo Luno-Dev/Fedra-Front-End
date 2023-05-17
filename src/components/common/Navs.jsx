@@ -15,8 +15,8 @@ const Navs = () => {
               <Link end className="nav-link" href="/">
                 Inicio
               </Link>
-              <Link end className="nav-link" href="/sobreNosotros">
-                Sobre nosotros
+              <Link end className="nav-link" href="/constitucion">
+                Constitución
               </Link>
               <Link end className="nav-link" href="/quienesSomos">
                 Quiénes somos

@@ -4,7 +4,9 @@ import { Col, Container, Nav, Row } from 'react-bootstrap'
 
 const Footer = () => {
   return (
-    <footer className='bg-darkblue py-4 text-light'>
+    <>
+    <footer>
+      <div className='bg-darkblue py-4 text-light'>
       <Container>
         <Row>
           <Col md={4} className='d-flex flex-column align-items-center justify-content-center m-footer'>
@@ -30,9 +32,13 @@ const Footer = () => {
             <i className="bi bi-envelope-at"> fedra@gmail.com</i>
           </Col>
         </Row>
-        <p>Desarrollado por Luno - 2023 ©</p>
       </Container>
+      </div>
+      <div className='d-flex justify-content-center'>
+        <h6>© Desarrollado por Luno - 2023</h6>
+      </div>
     </footer>
+    </>
   )
 }
 
