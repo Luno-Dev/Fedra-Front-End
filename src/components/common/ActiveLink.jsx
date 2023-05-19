@@ -6,7 +6,8 @@ const ActiveLink = ({children, href}) => {
     const router = useRouter()
 
     const style = {
-        color: router.asPath === href? "#00ABF0" : ""
+        color: router.asPath === href? "#00ABF0" : "",
+        "font-weight": router.asPath === href? "600" : ""
     }
 
     const handleClick = (e) => {
