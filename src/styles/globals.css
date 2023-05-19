@@ -17,9 +17,6 @@
     min-height: 100vh;
 }
 
-.bajarFooter{
-    flex-grow: 1;
-}
 
 .imgBanner{
     object-fit: cover;

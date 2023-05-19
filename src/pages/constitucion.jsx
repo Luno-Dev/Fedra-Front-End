@@ -1,9 +1,11 @@
+import Navs from "@/components/common/Navs";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
-const constitucion = () => {
+const Constitucion = () => {
   return (
     <>
+    <Navs></Navs>
       <Container className="my-5">
         <section className="my-5 d-flex flex-column align-items-center">
           <h1 className="text-cyan">CONSTITUCIÓN</h1>
@@ -125,4 +127,4 @@ const constitucion = () => {
   );
 };
 
-export default constitucion;
+export default Constitucion;

@@ -1,39 +1,40 @@
 import React from "react";
-import Link from "next/link";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import ActiveLink from "./ActiveLink";
+
 
 const Navs = () => {
   return (
-      <Navbar variant="dark" expand="lg" className="bg-darkblue">
-        <Container>
-          <Navbar.Brand className="text-cyan" href="/">
-            FEDRA
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Link end className="nav-link" href="/">
-                Inicio
-              </Link>
-              <Link end className="nav-link" href="/constitucion">
-                Constitución
-              </Link>
-              <Link end className="nav-link" href="/quienesSomos">
-                Quiénes somos
-              </Link>
-              <Link end className="nav-link" href="/temasDeTrabajo">
-                Temas de trabajo
-              </Link>
-              <Link end className="nav-link" href="/noticias">
-                Noticias
-              </Link>
-              <Link end className="nav-link" href="/contacto">
-                Contacto
-              </Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+    <Navbar variant="dark" expand="lg" className="rounded-bottom bg-darkblue">
+      <Container>
+        <Navbar.Brand className="text-cyan" href="/">
+          FEDRA
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <ActiveLink className="ms-auto nav-link" href="/">
+              Inicio
+            </ActiveLink>
+            <ActiveLink className="ms-auto nav-link" href="/constitucion">
+              Constitución
+            </ActiveLink>
+            <ActiveLink className="ms-auto nav-link" href="/quienesSomos">
+              Quiénes somos
+            </ActiveLink>
+            <ActiveLink className="ms-auto nav-link" href="/temasDeTrabajo">
+              Temas de trabajo
+            </ActiveLink>
+            <ActiveLink className="ms-auto nav-link" href="/noticias">
+              Noticias
+            </ActiveLink>
+            <ActiveLink className="ms-auto nav-link" href="/contacto">
+              Contacto
+            </ActiveLink>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
