@@ -8,11 +8,8 @@ export default function Document() {
       <Head />
       <body>
         <div className="pantalla">
-          <div className="bajarFooter">
-          <Navs />
           <Main/>
           <NextScript />
-          </div>
           <Footer/>
         </div>
       </body>
