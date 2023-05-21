@@ -1,7 +1,6 @@
-.container-img{
-    border-radius: 54%;
-}
-.section-1{
-    height: 100vh;
-}
+@media all and (max-width: 768px) {
+    .section-1{
+        background-color: black;
+    }
+ }
 

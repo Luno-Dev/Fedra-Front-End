@@ -15,12 +15,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <header className="header vh-100 p-4 d-xl-flex d-sm-block">
-          {/* Carousel */}
-        </header>
-        <section className="section-1 vh-100 mt-5 mb-5 d-xl-flex d-sm-block p-3">
-          <div className="row w-50 justify-content-center align-items-center">
-            <div className="col-xl-6 col-sm-12 col-md-12">
+        <section className="section-1 vh-100 mt-5 mb-5 d-xl-flex d-md-block d-sm-block p-3">
+          <div className="w-100 row justify-content-center align-items-center">
+            <div className="col-xl-6 col-md-12 col-sm-12 text-center">
               <h1>CONSTITUCIÓN</h1>
               <br></br>
               <p>
@@ -31,9 +28,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="container-img bg-light row w-50 p-3">
-            <div className="col-sm-12"></div>
-          </div>
+          <div className="container-fluid row text-center"></div>
         </section>
       </main>
     </>
