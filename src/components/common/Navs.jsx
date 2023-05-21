@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import ActiveLink from "./ActiveLink";
 
-
 const Navs = () => {
   return (
     <Navbar variant="dark" expand="lg" className="rounded-bottom bg-darkblue">
@@ -13,7 +12,7 @@ const Navs = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <ActiveLink className="ms-auto nav-link" href="/">
+            <ActiveLink className="ms-auto nav-link" href="/inicio">
               Inicio
             </ActiveLink>
             <ActiveLink className="ms-auto nav-link" href="/constitucion">
