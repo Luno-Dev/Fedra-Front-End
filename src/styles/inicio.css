@@ -1,0 +1,10 @@
+.imgInicio{
+    height: 500px;
+    width: 100%;
+}
+
+@media all and (max-width:767px){
+    .section{
+        display: block;
+    }
+}
