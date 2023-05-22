@@ -1,16 +1,16 @@
-*{
+* {
     color: rgb(200, 200, 200);
 }
 
-.bg-darkblue{
+.bg-darkblue {
     background-color: #081B29;
 }
 
-.text-cyan{
+.text-cyan {
     color: #00ABF0;
 }
 
-.pantalla{
+.pantalla {
     background-color: #292929;
     display: flex;
     flex-direction: column;
@@ -18,33 +18,32 @@
 }
 
 
-.imgBanner{
+.imgBanner {
     object-fit: cover;
     height: 500px;
 }
 
-.pos-sticky{
+.pos-sticky {
     position: sticky;
     top: 20px;
 }
-h1{
-    width: 50px;
-    color: red;
-}
+
+
 /* media queries */
 
-@media all and (max-width:767px){
-    .m-footer{
+@media all and (max-width:767px) {
+    .m-footer {
         margin: 25px 0px;
     }
-    .imgBanner{
+
+    .imgBanner {
         object-fit: cover;
         height: 200px;
     }
 }
 
-@media all and (min-width: 768px) and (max-width: 991px){
-    .imgBanner{
+@media all and (min-width: 768px) and (max-width: 991px) {
+    .imgBanner {
         object-fit: cover;
         height: 300px;
     }
