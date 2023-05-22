@@ -15,7 +15,7 @@ const Constitucion = () => {
             className="imgBanner w-100 rounded my-3"
             />
           <h2>Objetivos</h2>
-          <p className="text-center">
+          <p className="text-capitalize">
             FEDRA surgió debido a la necesidad de vincular a los propietarios de
             discotecas de todo el país con el objetivo fundamental de unir,
             jerarquizar y defender la vida nocturna. Durante la “Electroshow
