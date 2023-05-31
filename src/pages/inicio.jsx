@@ -1,6 +1,6 @@
 import Navs from "@/components/common/Navs";
 import React from "react";
-import { Col, Container, Row, Card } from "react-bootstrap";
+import { Col, Container, Row, Carousel } from "react-bootstrap";
 import Noticias from "../components/common/Noticias"
 
 const Inicio = () => {
@@ -11,27 +11,45 @@ const Inicio = () => {
         <article className="article-1">
           <Row className="d-xl-flex d-md-block d-sm-block justify-content-center align-items-center">
             <Col className="p-3 col-xl-6 col-12">
-              <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img className="imgCarousel" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" class="d-block w-100" alt="..." />
-                  </div>
-                  <div class="carousel-item">
-                    <img className="imgCarousel" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" class="d-block w-100" alt="..." />
-                  </div>
-                  <div class="carousel-item">
-                    <img className="imgCarousel" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" class="d-block w-100" alt="..." />
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
+              <Carousel>
+                <Carousel.Item>
+                  <img
+                    className="imgCarousel d-block w-100"
+                    src="https://i.ibb.co/gFVtkvQ/ina-face.jpg"
+                    alt="First slide"
+                  />
+                  <Carousel.Caption className="Carousel-Caption">
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="imgCarousel d-block w-100"
+                    src="https://i.ibb.co/tZ9Ljbh/Casa-Rosada-1.jpg"
+                    alt="Second slide"
+                  />
+
+                  <Carousel.Caption className="Carousel-Caption">
+                    <h3>Second slide label</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="imgCarousel d-block w-100"
+                    src="https://i.ibb.co/x2GgM41/FEDRA-asamblea-CABA-2021.jpg"
+                    alt="Third slide"
+                  />
+
+                  <Carousel.Caption className="Carousel-Caption">
+                    <h3>Third slide label</h3>
+                    <p>
+                      Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                    </p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
             </Col>
             {/* NOTICIAS */}
             <Col className="p-0 col-xl-6 col-12">

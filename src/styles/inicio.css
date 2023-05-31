@@ -2,6 +2,7 @@
     height: 550px;
     width: 100%;
     border-radius: 10%;
+    object-fit: cover;
 }
 
 .card {
@@ -61,6 +62,10 @@
         padding: 10px;
         height: 300px;
         object-fit: cover;
+    }
+
+    .Carousel-Caption {
+        display: none;
     }
 
 }
