@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "@/styles/Globals.css";
+import "@/styles/globals.css";
 import "@/styles/inicio.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 {
