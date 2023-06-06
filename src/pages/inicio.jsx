@@ -19,7 +19,7 @@ const Inicio = () => {
                     alt="First slide"
                   />
                   <Carousel.Caption className="Carousel-Caption">
-                    <h3>First slide label</h3>
+                    <h3 className="text-cyan">First slide label</h3>
                     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                   </Carousel.Caption>
                 </Carousel.Item>
@@ -31,7 +31,7 @@ const Inicio = () => {
                   />
 
                   <Carousel.Caption className="Carousel-Caption">
-                    <h3>Second slide label</h3>
+                    <h3 className="text-cyan">Second slide label</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                   </Carousel.Caption>
                 </Carousel.Item>
@@ -43,7 +43,7 @@ const Inicio = () => {
                   />
 
                   <Carousel.Caption className="Carousel-Caption">
-                    <h3>Third slide label</h3>
+                    <h3 className="text-cyan">Third slide label</h3>
                     <p>
                       Praesent commodo cursus magna, vel scelerisque nisl consectetur.
                     </p>
@@ -52,65 +52,66 @@ const Inicio = () => {
               </Carousel>
             </Col>
             {/* NOTICIAS */}
-            <Col className="p-0 col-xl-6 col-12">
-              <div className="row m-2 text-center">
+            <Col className="noticias col-xl-6 col-md-12 col-12">
+              <div className="row m-3 text-center">
                 <h1 className="text-cyan">ULTIMAS NOTICIAS</h1>
               </div>
 
-
-              <div className="card m-3">
-                <div className="row">
-                  <div className="col-xl-4 col-md-12 col-sm-12">
-                    <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt="" srcset="" />
-                  </div>
-                  <div className="col-xl-8">
-                    <div className="card-body">
-                      <h5 className="card-title">Hola</h5>
-                      <p className="card-text">hola, como estas</p>
-                      <p className="card-text">
-                        <small className="card-body-secundary">hora 5</small>
-                      </p>
+              <Col className="noticias-Card">
+                <div className="card">
+                  <div className="row">
+                    <div className="col-xl-4 col-sm-12">
+                      <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt="" srcset="" />
                     </div>
-                  </div>
-
-                </div>
-              </div>
-              {/* ------- */}
-              <div className="card m-3 ">
-                <div className="row ">
-                  <div className="col-xl-4 col-md-12 col-sm-12">
-                    <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt="" srcset="" />
-                  </div>
-                  <div className="col-xl-8">
-                    <div className="card-body">
-                      <h5 className="card-title">Hola</h5>
-                      <p className="card-text">hola, como estas</p>
-                      <p className="card-text">
-                        <small className="card-body-secundary">hora 5</small>
-                      </p>
+                    <div className="col-xl-8">
+                      <div className="card-body">
+                        <h5 className="card-title">Hola</h5>
+                        <p className="card-text">hola, como estas</p>
+                        <p className="card-text">
+                          <small className="card-body-secundary">hora 5</small>
+                        </p>
+                      </div>
                     </div>
-                  </div>
 
-                </div>
-              </div>
-              {/* -------- */}
-              <div className="card m-3">
-                <div className="row">
-                  <div className="col-xl-4 col-md-12 col-sm-12">
-                    <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt="" srcset="" />
                   </div>
-                  <div className="col-xl-8">
-                    <div className="card-body">
-                      <h5 className="card-title">Hola</h5>
-                      <p className="card-text">hola, como estas</p>
-                      <p className="card-text">
-                        <small className="card-body-secundary">hora 5</small>
-                      </p>
+                </div>
+                {/* ------- */}
+                <div className="card">
+                  <div className="row ">
+                    <div className="col-xl-4 col-md-12 col-sm-12">
+                      <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt="" srcset="" />
                     </div>
-                  </div>
+                    <div className="col-xl-8">
+                      <div className="card-body">
+                        <h5 className="card-title">Hola</h5>
+                        <p className="card-text">hola, como estas</p>
+                        <p className="card-text">
+                          <small className="card-body-secundary">hora 5</small>
+                        </p>
+                      </div>
+                    </div>
 
+                  </div>
                 </div>
-              </div>
+                {/* -------- */}
+                <div className="card">
+                  <div className="row">
+                    <div className="col-xl-4 col-md-12 col-sm-12">
+                      <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt="" srcset="" />
+                    </div>
+                    <div className="col-xl-8">
+                      <div className="card-body">
+                        <h5 className="card-title">Hola</h5>
+                        <p className="card-text">hola, como estas</p>
+                        <p className="card-text">
+                          <small className="card-body-secundary">hora 5</small>
+                        </p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </Col>
 
             </Col>
 
@@ -172,6 +173,26 @@ const Inicio = () => {
 
           </Row>
         </section >
+        <article className="agregados">
+          <Row className="d-xl-flex d-md-block d-sm-block justify-content-center align-items-center mt-5">
+            <Col className="p-5 col-xl-6 col-12">
+              <h1 className="text-cyan">REGISTRÁ TU PERSONAL</h1>
+              <br />
+              <p>
+                Celebramos dos convenios colectivos de trabajo con SUTEP y SUTCAPRA, homologados por el Ministerio de Trabajo de la Nación, donde podés registrar a todo tu personal con importantes beneficions de aportes y obra social.
+              </p>
+            </Col>
+            <Col className="p-5 col-xl-6 col-12 capacita">
+              <h1 className="text-cyan">CAPACITÁ TU PERSONAL</h1>
+              <br />
+              <p>
+                Suscribimos un convenio con la Universidad Tecnologica Nacional y la asociación de Bartenders de Argentina, creando una carrera universitaria para capacitar a nuestro personal en diferentes funciones. <br />
+                <br />
+              </p>
+            </Col>
+
+          </Row>
+        </article>
       </Container >
     </>
   );
