@@ -1,0 +1,142 @@
+.imgCarousel {
+    height: 550px;
+    width: 100%;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+.Carousel-Caption {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 5%;
+    padding: 10px;
+}
+
+.card {
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5%;
+    margin-top: 5px;
+}
+
+.imgCard {
+    width: 100%;
+    height: 150px;
+    border-top-left-radius: 5%;
+    border-bottom-right-radius: 10%;
+}
+
+.imgInicio {
+    height: 600px;
+    width: 100%;
+    border-top-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+}
+
+.imgInicio2 {
+    height: 600px;
+    width: 100%;
+    border-top-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+}
+
+.agregados {
+    margin-top: 150px;
+    padding: 40px;
+}
+
+.capacita {
+    border-left: 1px solid white;
+}
+
+@media all and (max-width:499px) {
+
+    .card {
+        height: 400px;
+        margin-top: 10px;
+    }
+
+    .imgCard {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+    }
+
+    .article-1 {
+        margin-top: -15px;
+    }
+
+    .imgCarousel {
+        object-fit: cover;
+        height: 400px;
+    }
+
+    .imgInicio {
+        padding: 20px;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .imgInicio2 {
+        padding: 20px;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .Carousel-Caption {
+        display: none;
+    }
+
+    .agregados {
+        margin-top: 1px;
+        padding: 0px;
+    }
+
+    .capacita {
+        border-left: none;
+    }
+}
+
+@media all and (min-width: 500px) and (max-width: 1200px) {
+    .container {
+        text-align: center;
+    }
+
+    .noticias {
+        margin-top: 5pc;
+    }
+
+    .noticias-Card {
+        display: flex;
+    }
+
+    .card {
+        height: 400px;
+        margin: 3px;
+    }
+
+    .imgCard {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .imgCarousel {
+        object-fit: cover;
+        height: 500px;
+    }
+
+    .imgInicio2 {
+        margin-top: 7px;
+    }
+
+    .agregados {
+        margin-top: 5px;
+        padding: 40px;
+    }
+
+    .capacita {
+        border-left: none;
+        border-top: 1px solid white;
+    }
+
+}

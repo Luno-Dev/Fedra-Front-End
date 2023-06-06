@@ -5,7 +5,7 @@ import { Col, Container, Row } from "react-bootstrap";
 const Constitucion = () => {
   return (
     <>
-    <Navs></Navs>
+      <Navs></Navs>
       <Container className="my-5">
         <section className="my-5 d-flex flex-column align-items-center">
           <h1 className="text-cyan">CONSTITUCIÓN</h1>
@@ -13,7 +13,7 @@ const Constitucion = () => {
             src="https://images.pexels.com/photos/3182781/pexels-photo-3182781.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="imagen de prueba"
             className="imgBanner w-100 rounded my-3"
-            />
+          />
           <h2>Objetivos</h2>
           <p className="text-capitalize">
             FEDRA surgió debido a la necesidad de vincular a los propietarios de
@@ -33,7 +33,7 @@ const Constitucion = () => {
           </p>
         </section>
         <section>
-        <h2 className="text-cyan">Funciones</h2>
+          <h2 className="text-cyan">Funciones</h2>
           <hr />
           <Row className="p-2">
             <Col sm="12" md="5" lg="4">

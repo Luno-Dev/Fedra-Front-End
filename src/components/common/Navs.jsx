@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import ActiveLink from "./ActiveLink";
 
-
 const Navs = () => {
   return (
     <Navbar variant="dark" expand="lg" className="rounded-bottom bg-darkblue">
