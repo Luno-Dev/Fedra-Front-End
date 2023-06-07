@@ -174,20 +174,19 @@ const Inicio = () => {
           </Row>
         </section >
         <article className="agregados">
-          <Row className="d-xl-flex d-md-block d-sm-block justify-content-center align-items-center mt-5">
-            <Col className="p-5 col-xl-6 col-12">
+          <Row className="d-xl-flex d-md-block d-sm-block mt-3 text-center">
+            <Col className="p-5 col-xl-6 col-12 capacita1">
               <h1 className="text-cyan">REGISTRÁ TU PERSONAL</h1>
               <br />
               <p>
                 Celebramos dos convenios colectivos de trabajo con SUTEP y SUTCAPRA, homologados por el Ministerio de Trabajo de la Nación, donde podés registrar a todo tu personal con importantes beneficions de aportes y obra social.
               </p>
             </Col>
-            <Col className="p-5 col-xl-6 col-12 capacita">
+            <Col className="p-5 col-xl-6 col-12 capacita2">
               <h1 className="text-cyan">CAPACITÁ TU PERSONAL</h1>
               <br />
               <p>
-                Suscribimos un convenio con la Universidad Tecnologica Nacional y la asociación de Bartenders de Argentina, creando una carrera universitaria para capacitar a nuestro personal en diferentes funciones. <br />
-                <br />
+                Suscribimos un convenio con la Universidad Tecnologica Nacional y la asociación de Bartenders de Argentina, creando una carrera universitaria para capacitar a nuestro personal en diferentes funciones.
               </p>
             </Col>
 
