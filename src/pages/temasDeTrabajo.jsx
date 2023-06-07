@@ -8,7 +8,7 @@ const TemasDeTrabajo = () => {
       <Navs></Navs>
       <Container className="my-5">
         <section className="mb-5">
-            <h1 className="text-cyan text-center mb-4">Convenios colectivos de trabajo</h1>
+            <h1 className="text-cyan text-center mb-4">CONVENIOS COLECTIVOS DE TRABAJO</h1>
             <p className="text-center">
               Tenemos dos CCT homologados ante el Ministerio de Trabajo, Empleo
               y Seguridad Social de la Nación; uno con el Sindicato Único de
@@ -32,11 +32,11 @@ const TemasDeTrabajo = () => {
           </article>
         </section>
         <section className="mb-5">
-          <h2 className="text-cyan text-center mb-4">Impuestos y aranceles</h2>
+          <h2 className="text-cyan text-center mb-4">IMPUESTOS Y ARANCELES</h2>
           <p className="text-center">Es el rubro más cargado impositivamente, con tasas diferenciales en todos los ámbitos: AFIP 21%, SADAIC 16 %, AADI-CAPIF 8 %, otras entidades autorales 6 % e instituciones contra el alcoholismo 4 %, entre otras. Rentas Provinciales 15 % y Rentas Municipales 8 % son valores promedio en el país.</p>
         </section>
         <section className="mb-5">
-          <h2 className="text-cyan text-center mb-4">Normativas</h2>
+          <h2 className="text-cyan text-center mb-4">NORMATIVAS</h2>
           <p className="text-center">Se pone a disposición un espacio abierto con las leyes, decretos y ordenanzas para nuestra actividad. Solicitarlas al mail:</p>
         </section>
       </Container>
