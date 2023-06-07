@@ -97,10 +97,6 @@
 }
 
 @media all and (min-width: 500px) and (max-width: 1200px) {
-    .container {
-        text-align: center;
-    }
-
     .noticias {
         margin-top: 5pc;
     }
