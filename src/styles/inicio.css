@@ -61,7 +61,6 @@
 }
 
 @media all and (max-width:499px) {
-
     .card {
         height: 400px;
         margin-top: 10px;
