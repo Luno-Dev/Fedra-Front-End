@@ -16,27 +16,27 @@ const quienesSomos = () => {
                     <Row className="">
                         <Col>
                             <CardGroup className="justify-content-center aling-items-center m-3">
-                                <Card className="m-2 text-center">
+                                <Card className="m-2 text-center h-25">
                                     <Card.Body>
-                                        <Card.Title>La asamblea</Card.Title>
+                                        <Card.Title>Asamblea</Card.Title>
                                         <hr />
                                         <Card.Text>
                                             Es la autoridad máxima de la Federación que representa a la totalidad de las entidades afiliadas.
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
-                                <Card className="m-2 text-center">
+                                <Card className="m-2 text-center h-25">
                                     <Card.Body>
-                                        <Card.Title>Comision Directiva</Card.Title>
+                                        <Card.Title>Comisión Directiva</Card.Title>
                                         <hr />
                                         <Card.Text>
                                             Es el órgano ejecutivo que dirige a la Federación y está integrado por 15 directivos representantes de las provincias asociadas.
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
-                                <Card className="m-2 text-center">
+                                <Card className="m-2 text-center h-25">
                                     <Card.Body>
-                                        <Card.Title>La mesa chica</Card.Title>
+                                        <Card.Title>Mesa Chica</Card.Title>
                                         <hr />
                                         <Card.Text>
                                             Ejecuta las políticas de la Comisión Directiva y está integrada por cinco directivos.
@@ -54,7 +54,7 @@ const quienesSomos = () => {
                             </div>
                             <div className="d-flex ">
                                 <i class="bi bi-download me-2 text-center"></i>
-                                <p className="text-center p-0">Estatus y Certificado de Normal Funcionamiento.</p>
+                                <p className="text-center p-0">Estatutos y Certificado de Normal Funcionamiento.</p>
                             </div>
                         </Col>
                     </Row>
@@ -79,9 +79,9 @@ const quienesSomos = () => {
                             <Table striped bordered hover variant="dark">
                                 <thead>
                                     <tr>
-                                        <th>Cargo</th>
-                                        <th>Nombre</th>
-                                        <th>Provincia</th>
+                                        <th className="text-cyan">Cargo</th>
+                                        <th className="text-cyan">Nombre</th>
+                                        <th className="text-cyan">Provincia</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -191,9 +191,9 @@ const quienesSomos = () => {
                             <Table striped bordered hover variant="dark">
                                 <thead>
                                     <tr>
-                                        <th>Cargo</th>
-                                        <th>Nombre</th>
-                                        <th>Provincia</th>
+                                        <th className="text-cyan">Cargo</th>
+                                        <th className="text-cyan">Nombre</th>
+                                        <th className="text-cyan">Provincia</th>
                                     </tr>
                                 </thead>
                                 <tbody>
