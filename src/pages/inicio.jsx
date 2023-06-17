@@ -61,7 +61,7 @@ const Inicio = () => {
                 <div className="card">
                   <div className="row">
                     <div className="col-xl-4 col-sm-12">
-                      <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt="" srcset="" />
+                      <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt=""  />
                     </div>
                     <div className="col-xl-8">
                       <div className="card-body">
@@ -79,7 +79,7 @@ const Inicio = () => {
                 <div className="card">
                   <div className="row ">
                     <div className="col-xl-4 col-md-12 col-sm-12">
-                      <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt="" srcset="" />
+                      <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt=""/>
                     </div>
                     <div className="col-xl-8">
                       <div className="card-body">
@@ -97,7 +97,7 @@ const Inicio = () => {
                 <div className="card">
                   <div className="row">
                     <div className="col-xl-4 col-md-12 col-sm-12">
-                      <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt="" srcset="" />
+                      <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt=""/>
                     </div>
                     <div className="col-xl-8">
                       <div className="card-body">
