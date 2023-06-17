@@ -44,12 +44,23 @@
     padding: 40px;
 }
 
-.capacita {
+.capacita1 {
+    border-right: 1px solid white;
+}
+
+.capacita1:hover {
+    border: 1px solid white;
+}
+
+.capacita2 {
     border-left: 1px solid white;
 }
 
-@media all and (max-width:499px) {
+.capacita2:hover {
+    border: 1px solid white
+}
 
+@media all and (max-width:499px) {
     .card {
         height: 400px;
         margin-top: 10px;
@@ -91,16 +102,16 @@
         padding: 0px;
     }
 
-    .capacita {
+    .capacita1 {
+        border-right: none;
+    }
+
+    .capacita2 {
         border-left: none;
     }
 }
 
 @media all and (min-width: 500px) and (max-width: 1200px) {
-    .container {
-        text-align: center;
-    }
-
     .noticias {
         margin-top: 5pc;
     }
@@ -134,7 +145,12 @@
         padding: 40px;
     }
 
-    .capacita {
+    .capacita1 {
+        border-right: none;
+        border-bottom: 1px solid white;
+    }
+
+    .capacita2 {
         border-left: none;
         border-top: 1px solid white;
     }
