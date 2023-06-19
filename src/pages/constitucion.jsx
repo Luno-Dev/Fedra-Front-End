@@ -5,7 +5,7 @@ import { Col, Container, Row } from "react-bootstrap";
 const Constitucion = () => {
   return (
     <>
-      <Navs></Navs>
+      <Navs/>
       <Container className="my-5">
         <section className="my-5 d-flex flex-column align-items-center">
           <h1 className="text-cyan">CONSTITUCIÓN</h1>

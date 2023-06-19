@@ -6,7 +6,7 @@ import Noticias from "../components/common/Noticias"
 const Inicio = () => {
   return (
     <>
-      <Navs></Navs>
+     <Navs/>
       <Container className="my-5">
         <article className="article-1">
           <Row className="d-xl-flex d-md-block d-sm-block justify-content-center align-items-center">
