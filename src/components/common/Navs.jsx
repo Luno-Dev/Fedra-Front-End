@@ -40,7 +40,9 @@ const logOut = ()=>{
             <ActiveLink className="ms-auto nav-link" href="/contacto">
               Contacto
             </ActiveLink>
-
+            <ActiveLink className="ms-auto nav-link" href="/registro">
+              Registro Personal
+            </ActiveLink>
             {
 
               <ActiveLink className="ms-auto nav-link" href="/administracion">
