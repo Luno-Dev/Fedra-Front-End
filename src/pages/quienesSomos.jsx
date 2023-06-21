@@ -1,11 +1,17 @@
 import Navs from "@/components/common/Navs";
 import React from "react";
 import { Col, Container, Row, Card, CardGroup, Table, thead, tr, th } from "react-bootstrap";
+import { Helmet } from "react-helmet";
 
 const quienesSomos = () => {
     return (
         <>
             <Navs></Navs>
+            <Helmet>
+        <meta charSet="utf-8" />
+        {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
+        <title>Quienes Somos</title>
+      </Helmet>
             <Container>
                 <article>
                     <Row className="mt-5">

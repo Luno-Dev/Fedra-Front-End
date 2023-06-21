@@ -1,11 +1,18 @@
 import Navs from "@/components/common/Navs";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { Helmet } from "react-helmet";
 
 const Constitucion = () => {
   return (
     <>
-      <Navs/>
+
+      <Helmet>
+        <meta charSet="utf-8" />
+        {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
+        <title>Constitucion</title>
+      </Helmet>
+      <Navs />
       <Container className="my-5">
         <section className="my-5 d-flex flex-column align-items-center">
           <h1 className="text-cyan">CONSTITUCIÓN</h1>

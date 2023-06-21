@@ -67,14 +67,12 @@ const Navs = () => {
                   </a> </>
                 :
                 <ActiveLink title="ingresar" className="ms-auto nav-link" href="/logins">
-                  <i class="bi bi-box-arrow-in-right"></i>
+                  <i className="bi bi-box-arrow-in-right"></i>
                 </ActiveLink>
 
               }
             </>
-
-
-          </Nav>
+            </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>

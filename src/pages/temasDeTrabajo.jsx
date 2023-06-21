@@ -1,11 +1,17 @@
 import Navs from "@/components/common/Navs";
 import React from "react";
 import { Button, Container } from "react-bootstrap";
+import { Helmet } from "react-helmet";
 
 const TemasDeTrabajo = () => {
   return (
     <>
       <Navs></Navs>
+      <Helmet>
+        <meta charSet="utf-8" />
+        {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
+        <title>Temas de Trabajo</title>
+      </Helmet>
       <Container className="my-5">
         <section className="mb-5">
             <h1 className="text-cyan text-center mb-4">CONVENIOS COLECTIVOS DE TRABAJO</h1>

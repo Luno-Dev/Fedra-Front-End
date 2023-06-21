@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { login } from "../helpers/fetchAuth";
 import swal from 'sweetalert';
 import { Helmet } from 'react-helmet';
+import { useRouter } from 'next/router';
 
 
 const logins = () => {
@@ -13,6 +14,7 @@ const logins = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState([]);
+
 
 
   const handleSubmit = async (e) => {
@@ -25,7 +27,8 @@ const logins = () => {
 
       swal(`Bienvenido ${datos.usuario.nombre}`, "Haz Clik para continuar!", "success").then((active)=>{
         if(active){
-          location.reload();
+         
+         location.reload();
         }
       });
 
