@@ -23,8 +23,12 @@ const logins = () => {
     if (datos?.token) {
       localStorage.setItem("token", JSON.stringify(datos.token));
 
-console.log(datos);
-      swal(`Bienvenido ${datos.usuario.nombre}`, "Haz Clik para continuar!", "success");
+      swal(`Bienvenido ${datos.usuario.nombre}`, "Haz Clik para continuar!", "success").then((active)=>{
+        if(active){
+          location.reload();
+        }
+      });
+
     } else {
       if (datos?.errors) {
         setMessage(datos.errors);

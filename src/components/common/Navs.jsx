@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import ActiveLink from "./ActiveLink";
 import swal from "sweetalert";
@@ -6,11 +6,23 @@ import swal from "sweetalert";
 const Navs = () => {
 
 
-const logOut = ()=>{
-  localStorage.removeItem("token");
-  swal(`Gracias por Visitarnos Vuelva Pronto!`, "success");
-  
-}
+  const [token, setToken] = useState('');
+
+  useEffect(() => {
+
+    setToken(localStorage.getItem('token'));
+
+  }, [])
+
+
+  const logOut = () => {
+    localStorage.removeItem("token");
+    swal(`Gracias por Visitarnos Vuelva Pronto!`, { icon: "success"}).then((active)=>{
+      if(active){
+        location.reload();
+      }
+    });
+  }
 
 
   return (
@@ -43,19 +55,25 @@ const logOut = ()=>{
             <ActiveLink className="ms-auto nav-link" href="/registro">
               Registro Personal
             </ActiveLink>
-            {
 
-              <ActiveLink className="ms-auto nav-link" href="/administracion">
-                Administracion
-              </ActiveLink>
-            }
+            <>
+              {token ?
+                <>
+                  <ActiveLink className="ms-auto nav-link" href="/administracion">
+                    Administracion
+                  </ActiveLink>
+                  <a title="cerrar session" className="ms-auto nav-link " onClick={logOut}>
+                    <i className="bi bi-box-arrow-left"></i>
+                  </a> </>
+                :
+                <ActiveLink title="ingresar" className="ms-auto nav-link" href="/logins">
+                  <i class="bi bi-box-arrow-in-right"></i>
+                </ActiveLink>
 
-            <ActiveLink title="ingresar" className="ms-auto nav-link" href="/logins">
-              <i class="bi bi-box-arrow-in-right"></i>
-            </ActiveLink>
-            <buton title="cerrar session" className="ms-auto nav-link " onClick={logOut}>
-            <i className="bi bi-box-arrow-left"></i>
-            </buton>
+              }
+            </>
+
+
           </Nav>
         </Navbar.Collapse>
       </Container>
