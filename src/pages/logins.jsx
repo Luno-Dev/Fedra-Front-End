@@ -58,7 +58,7 @@ const logins = () => {
    <main className="w-100 d-flex position-relative justify-content-center">
 
    
-   <Form className='w-25 m-5' onSubmit={handleSubmit}>
+   <Form className='w-25-lg-w-50 m-5' onSubmit={handleSubmit}>
    <Form.Group className="mb-3">
         <Form.Label>Usuario:</Form.Label>
         <Form.Control type="text"
