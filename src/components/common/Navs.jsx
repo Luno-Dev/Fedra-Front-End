@@ -13,6 +13,13 @@ const Navs = () => {
     setToken(localStorage.getItem('token'));
 
   }, [])
+
+
+  if (token) {
+    setTimeout(() => {
+      logOut();
+    }, 14400000);
+  }
   
 
 

@@ -55,7 +55,7 @@ function Tablas() {
     <>
     
     <ModalPublicaciones/>
-    <Table striped bordered hover size="sm" responsive className='table-light'>
+    <Table striped bordered hover size="sm" responsive className='table-light '>
       <thead>
         <tr>
           <th>Id</th>
