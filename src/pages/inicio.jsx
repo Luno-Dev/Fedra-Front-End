@@ -1,7 +1,6 @@
 import Navs from "@/components/common/Navs";
 import React from "react";
 import { Col, Container, Row, Carousel } from "react-bootstrap";
-import Noticias from "../components/common/Noticias"
 
 const Inicio = () => {
   return (

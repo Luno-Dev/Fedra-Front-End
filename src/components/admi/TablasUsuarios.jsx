@@ -30,7 +30,6 @@ function TablasUsuarios() {
             icon: "success",
           });
           deleteSocio(id);
-          console.log(id);
         } else {
           swal("Operacion cancelada con exito!", {
             icon: "success",
@@ -51,7 +50,6 @@ function TablasUsuarios() {
 
   }
 
-  console.log(socios);
 
   useEffect(() => {
     recibirData();
@@ -88,7 +86,9 @@ function TablasUsuarios() {
               <th>{index.autor}</th>
               <th>{index.trabajadorcel}</th>
               <th>{index.email}</th>
-              <th>{index.estado.toString()}</th>
+              <th>{index.estado.toString() === "false"?
+                 "Inactivo" : "Activo"
+              }</th>
               <th>
                 <button className='btn btn-danger' onClick={() => eliminarSocio(index.socioid)}>Dar de Baja</button>
                 {index.estado.toString() === "false" ?

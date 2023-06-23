@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 
 const registro = () => {
 
+    
 
     const [formValues, setFormValues] = useState({
         trabajadornombre: "",
@@ -58,7 +59,7 @@ const registro = () => {
 
         if (formValues.password ) {
 
-            console.log(formValues);
+           
    const respuesta = await crearUsuario(formValues);
 
             if (respuesta?.usuario) {
@@ -131,7 +132,7 @@ const registro = () => {
                     <h2>Trabajador</h2>
                     <Form onSubmit={ guardarDatos}>
                         <Form.Group className="mb-3 d-flex flex-wrap gap-5" controlId="formBasicEmail">
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Nombre:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -141,7 +142,7 @@ const registro = () => {
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Apellido:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -151,7 +152,7 @@ const registro = () => {
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Nacionalidad:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -163,7 +164,7 @@ const registro = () => {
                                 />
                             </div>
 
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Estado Civil:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -174,7 +175,7 @@ const registro = () => {
 
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Sexo</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -185,7 +186,7 @@ const registro = () => {
 
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Fecha de Nacimiento:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -195,17 +196,18 @@ const registro = () => {
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>D.N.I</Form.Label>
                                 <Form.Control
                                     type="text"
                                     name='trabajadordocumento'
                                     onChange={handleChange}
                                     aria-describedby="DNI"
+                                    
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>CUIL:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -215,7 +217,7 @@ const registro = () => {
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Domicilio:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -225,7 +227,7 @@ const registro = () => {
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Numero de Domicilio:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -235,7 +237,7 @@ const registro = () => {
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Piso:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -245,7 +247,7 @@ const registro = () => {
 
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Numero de Departamento:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -255,7 +257,7 @@ const registro = () => {
 
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Localidad:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -265,7 +267,7 @@ const registro = () => {
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Povincia:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -275,7 +277,7 @@ const registro = () => {
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Lugar de Trabajo:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -286,7 +288,7 @@ const registro = () => {
 
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Tareas que Realiza:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -297,7 +299,7 @@ const registro = () => {
 
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Telefono Fijo:</Form.Label>
                                 <Form.Control
                                     type="telFijo"
@@ -307,7 +309,7 @@ const registro = () => {
 
 
                                 />
-                            </div>  <div className="d-flex flex-column w-25 flex-wrap">
+                            </div>  <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Celular:</Form.Label>
                                 <Form.Control
                                     type="tel"
@@ -323,7 +325,7 @@ const registro = () => {
            
                     <h2>Empleador</h2>
                         <Form.Group className="mb-3 d-flex flex-wrap gap-5" controlId="formBasicEmail">
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>CUIL:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -333,7 +335,7 @@ const registro = () => {
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Razon Social:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -343,7 +345,7 @@ const registro = () => {
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Domicilio Legal:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -353,7 +355,7 @@ const registro = () => {
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Localidad:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -363,7 +365,7 @@ const registro = () => {
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Povincia:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -373,7 +375,7 @@ const registro = () => {
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Domicilio del Lugar de Trabajo:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -383,7 +385,7 @@ const registro = () => {
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Localidad del Lugar de Trabajo:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -393,7 +395,7 @@ const registro = () => {
                                     required
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Povincia del Lugar de Trabajo:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -404,7 +406,7 @@ const registro = () => {
 
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Actividad del Empleador:</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -414,7 +416,7 @@ const registro = () => {
                                     aria-describedby="empleadoractividad"
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Email:</Form.Label>
                                 <Form.Control
                                     type="email"
@@ -424,7 +426,7 @@ const registro = () => {
                                     aria-describedby="email"
                                 />
                             </div>
-                            <div className="d-flex flex-column w-25 flex-wrap">
+                            <div className="d-flex flex-column w-25-lg-w-50 flex-wrap">
                                 <Form.Label>Contraseña:</Form.Label>
                                 <Form.Control
                                     type="password"
@@ -432,6 +434,7 @@ const registro = () => {
                                     onChange={handleChange}
                                     required
                                     aria-describedby="password"
+                                    maxLength={6}
                                 />
                             </div>
 

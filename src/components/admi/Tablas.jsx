@@ -1,11 +1,19 @@
 import { deleteNoticia, traerNoticias } from '@/helpers/fetchAdmi';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
+import { DataContext } from '../context/DataContext';
+import ModalPublicaciones from './ModalPublicaciones';
+
 
 function Tablas() {
 
   const [noticias, setNoticias] = useState([]);
 
+  const {show, setShow}= useContext(DataContext);
+
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const recibirData = async () => {
 
@@ -13,9 +21,6 @@ function Tablas() {
     setNoticias(noticias.noticias);
   }
 
-  console.log(noticias);
-
-  
 
   const eliminarpublicacion= (id)=>{
     swal({
@@ -31,7 +36,6 @@ function Tablas() {
           icon: "success",
         });
         deleteNoticia(id);
-        console.log(id);
       } else {
         swal("Operacion cancelada con exito!",{
           icon: "success",
@@ -48,6 +52,9 @@ function Tablas() {
   }, [eliminarpublicacion])
 
   return (
+    <>
+    
+    <ModalPublicaciones/>
     <Table striped bordered hover size="sm" responsive className='table-light'>
       <thead>
         <tr>
@@ -56,7 +63,7 @@ function Tablas() {
           <th>Cuerpo</th>
           <th>Autor</th>
           <th>Imagen</th>
-          <th><button className='btn btn-info text-light'>Crear Publicacion +</button></th>
+          <th><button className='btn btn-info text-light' onClick={handleShow}>Crear Publicacion +</button></th>
         </tr>
       </thead>
       <tbody>
@@ -68,10 +75,10 @@ function Tablas() {
               <th>{index.titulo}</th>
               <th>{index.descripcion}</th>
               <th>{index.autor}</th>
-              <th>{index.img}</th>
+              <th className='text-center'> <img src={index.img} alt="" width={80}/></th>
               <th>
                 <button className='btn btn-danger' onClick={()=> eliminarpublicacion(index._id)}>Eliminar</button>
-                <button className='btn btn-success'>Editar</button>
+                <button className='btn btn-success' onClick={handleShow}>Editar</button>
 
               </th>
             </tr>
@@ -80,6 +87,11 @@ function Tablas() {
      
       </tbody>
     </Table>
+    
+    
+    
+    </>
+    
   );
 }
 

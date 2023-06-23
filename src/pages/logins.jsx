@@ -1,10 +1,10 @@
 import Navs from '@/components/common/Navs';
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import { login } from "../helpers/fetchAuth";
 import swal from 'sweetalert';
 import { Helmet } from 'react-helmet';
-import { useRouter } from 'next/router';
+
 
 
 const logins = () => {
@@ -16,20 +16,22 @@ const logins = () => {
   const [message, setMessage] = useState([]);
 
 
-
   const handleSubmit = async (e) => {
 
     e.preventDefault();
     const datos = await login({nombre, email, password });
 
     if (datos?.token) {
+
       localStorage.setItem("token", JSON.stringify(datos.token));
+      localStorage.setItem("nombreUsuario", JSON.stringify(datos.usuario.nombre));
 
       swal(`Bienvenido ${datos.usuario.nombre}`, "Haz Clik para continuar!", "success").then((active)=>{
-        if(active){
+        
+       if(active){
          
          location.reload();
-        }
+        } 
       });
 
     } else {

@@ -46,6 +46,7 @@ export const deleteSocio = async (id) => {
         },
     });
     const data = await response.json();
+
     return data;
 };
 
@@ -70,6 +71,31 @@ export const traerNoticias = async () => {
         },
     });
     const data = await response.json();
+
+    return data;
+};
+
+export const createNoticia= async (noticia) => {
+    const response = await fetch(`${url}noticias`,
+        {
+            method: "POST",
+            body: JSON.stringify({
+                img: noticia.img,
+                titulo: noticia.titulo,
+                descripcion: noticia.descripcion,
+                autor: noticia.autor,
+                fecha: noticia.fecha,
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                Authorization: JSON.parse(localStorage.getItem("token")),
+            },
+        }
+        
+    );
+
+    const data = await response.json();
+    console.log(data);
 
     return data;
 };
