@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Tablas from '../components/admi/Tablas'
 import Navs from '@/components/common/Navs'
 import TablasUsuarios from '@/components/admi/TablasUsuarios'
@@ -8,6 +8,13 @@ import { Helmet } from 'react-helmet'
 
 const administracion = () => {
 
+const [usuarioOnline, setUsuarioOnline]= useState("");
+
+
+useEffect(() => {
+  
+  setUsuarioOnline(JSON.parse(localStorage.getItem('nombreUsuario')));
+}, [])
 
 
 
@@ -21,6 +28,7 @@ const administracion = () => {
       </Helmet>
       <Navs />
       <div className='m-5 g-4' >
+        <h4>Usuario conectado: {usuarioOnline}</h4>
         <h1 className='text-center mb-3'>Administrar Publicaciones</h1>
         <Tablas />
       </div>

@@ -30,7 +30,7 @@ const logins = () => {
         
        if(active){
          
-         location.reload();
+         location.replace("/administracion");
         } 
       });
 
