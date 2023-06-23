@@ -74,7 +74,7 @@ const ModalPublicaciones = () => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="danger" onClick={()=>handleClose} >
+          <Button variant="danger" onClick={handleClose} >
             cancelar
           </Button>
             {
@@ -87,7 +87,6 @@ const ModalPublicaciones = () => {
               <Spinner animation="border" />
           }
 
-          <button   onClick={() => createNoticia(publicacion)}>ok</button>
         </Modal.Footer>
       </Modal>
 

@@ -15,11 +15,22 @@ const Navs = () => {
   }, [])
 
 
+  if (token) {
+    setTimeout(() => {
+      logOut();
+    }, 14400000);
+  }
+  
+
+
   const logOut = () => {
-    localStorage.removeItem("token");
+    
+
     swal(`Gracias por Visitarnos Vuelva Pronto!`, { icon: "success"}).then((active)=>{
       if(active){
-        location.reload();
+       location.replace("/");
+       localStorage.removeItem("token");
+       localStorage.removeItem("nombreUsuario");
       }
     });
   }
