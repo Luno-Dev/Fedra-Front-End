@@ -19,7 +19,7 @@ function TablasUsuarios() {
   const eliminarSocio = (id) => {
     swal({
       title: "Esta seguro?",
-      text: "Esta accion es inreversible!",
+      text: "Esta accion es inrreversible!",
       icon: "warning",
       buttons: true,
       dangerMode: true,
@@ -58,7 +58,7 @@ function TablasUsuarios() {
 
 
   return (
-    <Table striped hover size="sm" responsive className='table-light'>
+    <Table striped hover size="sm" responsive className='table-dark'>
       <thead>
         <tr>
           <th>id</th>
@@ -66,7 +66,6 @@ function TablasUsuarios() {
           <th>Provincia</th>
           <th>Nacionalidad</th>
           <th>Documento</th>
-          <th>Empleador</th>
           <th>Celular</th>
           <th>Email</th>
           <th>Estado</th>
@@ -83,17 +82,16 @@ function TablasUsuarios() {
               <th>{index.trabajadorprovincia} </th>
               <th>{index.trabajadornacionalidad} </th>
               <th>{index.trabajadordocumento}</th>
-              <th>{index.autor}</th>
               <th>{index.trabajadorcel}</th>
               <th>{index.email}</th>
               <th>{index.estado.toString() === "false"?
                  "Inactivo" : "Activo"
               }</th>
               <th>
-                <button className='btn btn-danger' onClick={() => eliminarSocio(index.socioid)}>Dar de Baja</button>
+                <a className='btn bg-cyan text-light fw-bold' href={`/socios/${index.socioid}`}>Ver</a>
                 {index.estado.toString() === "false" ?
-                  <button className='btn btn-success' onClick={()=>cambiarEstadoSocio(index.socioid, index.estado.toString() )}>Activar</button> :
-                  <button className='btn btn-danger'  onClick={()=>cambiarEstadoSocio(index.socioid, index.estado.toString() )}>Suspender</button>
+                  <button className='btn btn-success fw-bold' onClick={()=>cambiarEstadoSocio(index.socioid, index.estado.toString() )}>Activar</button> :
+                  <button className='btn btn-danger fw-bold'  onClick={()=>cambiarEstadoSocio(index.socioid, index.estado.toString() )}>Suspender</button>
                 }
               </th>
             </tr>

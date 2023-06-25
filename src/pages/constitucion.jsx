@@ -6,12 +6,15 @@ import { Helmet } from "react-helmet";
 const Constitucion = () => {
   return (
     <>
+<div>
 
-      <Helmet>
+   <Helmet>
         <meta charSet="utf-8" />
         {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
         <title>Constitucion</title>
       </Helmet>
+</div>
+     
       <Navs />
       <Container className="my-5">
         <section className="my-5 d-flex flex-column align-items-center">

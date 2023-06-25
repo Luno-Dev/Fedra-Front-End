@@ -1,43 +1,63 @@
 import React, { useContext, useState } from 'react'
 import { Button, Form, Modal, Spinner } from 'react-bootstrap'
 import { DataContext } from '../context/DataContext';
-/* import { upload } from '@/config/firebase'; */
 import { createNoticia } from '@/helpers/fetchAdmi';
 import { upload } from '@/config/firebase';
+import swal from 'sweetalert';
 
 const ModalPublicaciones = () => {
 
-  const {show, setShow}= useContext(DataContext);
-  const [publicacion, setPublicacion]= useState({
-    titulo:"",
-    descripcion:"",
-    autor:"v",
-    fecha:"",
-    img:"",
-    estado:"",
+  const { show, setShow } = useContext(DataContext);
+  const [publicacion, setPublicacion] = useState({
+    titulo: "",
+    descripcion: "",
+    autor: "",
+    fecha: "",
+    img: "",
+    estado: "",
 
   });
-  
+
   const handleClose = () => setShow(false);
 
   const handleimg = async (e) => {
     const url = await upload(e.target.files[0]);
     publicacion.img = url;
-  }; 
+  };
 
-  const handleChange = (e) => {  
-    console.log(publicacion);
+  const handleChange = (e) => {
     const { name, value } = e.target;
-   publicacion.autor= JSON.parse(localStorage.getItem('nombreUsuario'));
+    publicacion.autor = JSON.parse(localStorage.getItem('nombreUsuario'));
     setPublicacion((prevState) => ({ ...prevState, [name]: value }));
   };
+
+
+  const crearNoticia = async (publicacion) => {
+    const result = await createNoticia(publicacion);
+
+    if (result.msg === "Se creo una nueva noticia") {
+      swal("Publicacion creada con Exito!", {
+        icon: "success",
+      });
+      setShow(false);
+    } else {
+      swal({
+        title: "Error",
+        text: "Esta noticia ya existe!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+    }
+
+  }
 
 
 
   return (
 
     <>
-    <Modal show={show} onHide={handleClose} animation={false}>
+      <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
           <Modal.Title>Crear Publicacion:</Modal.Title>
         </Modal.Header>
@@ -49,14 +69,14 @@ const ModalPublicaciones = () => {
                 name="titulo"
                 type="text"
                 placeholder="Ingrese el titulo"
-               onChange={handleChange}
+                onChange={handleChange}
                 required
               />
             </Form.Group>
-         
-              <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg"> 
-                <Form.Label>imagen:</Form.Label>
-              <input type="file" name="file"  onChange={handleimg}  />
+
+            <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
+              <Form.Label>imagen:</Form.Label>
+              <input type="file" name="file" onChange={handleimg} />
             </Form.Group>
             <Form.Label>Cuerpo:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">
@@ -77,10 +97,10 @@ const ModalPublicaciones = () => {
           <Button variant="danger" onClick={handleClose} >
             cancelar
           </Button>
-            {
+          {
             publicacion.img ? <Button
               variant="success"
-              onClick={() => createNoticia(publicacion)}
+              onClick={() => crearNoticia(publicacion)}
             >
               Crear
             </Button> :

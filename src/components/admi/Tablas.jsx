@@ -25,14 +25,14 @@ function Tablas() {
   const eliminarpublicacion= (id)=>{
     swal({
       title: "Esta seguro?",
-      text: "Esta accion es inreversible!",
+      text: "Esta accion es inrreversible!",
       icon: "warning",
       buttons: true,
       dangerMode: true,
     })
     .then((willDelete) => {
       if (willDelete) {
-        swal("Publicacion eliminado con Exito!", {
+        swal("Publicacion eliminada con Exito!", {
           icon: "success",
         });
         deleteNoticia(id);
@@ -55,15 +55,16 @@ function Tablas() {
     <>
     
     <ModalPublicaciones/>
-    <Table striped bordered hover size="sm" responsive className='table-light '>
+    <Table striped bordered hover size="sm" responsive className='table-dark '>
       <thead>
         <tr>
           <th>Id</th>
           <th>Titulo</th>
           <th>Cuerpo</th>
           <th>Autor</th>
+          <th>Fecha de Publicacion</th>
           <th>Imagen</th>
-          <th><button className='btn btn-info text-light' onClick={handleShow}>Crear Publicacion +</button></th>
+          <th><button className='btn bg-cyan text-light fw-bold max-h-100' onClick={handleShow}>Crear Publicacion +</button></th>
         </tr>
       </thead>
       <tbody>
@@ -75,10 +76,11 @@ function Tablas() {
               <th>{index.titulo}</th>
               <th>{index.descripcion}</th>
               <th>{index.autor}</th>
+              <th>{index.fecha.split("T",1)}</th>
               <th className='text-center'> <img src={index.img} alt="" width={80}/></th>
               <th>
-                <button className='btn btn-danger' onClick={()=> eliminarpublicacion(index._id)}>Eliminar</button>
-                <button className='btn btn-success' onClick={handleShow}>Editar</button>
+                <button className='btn btn-danger fw-bold' onClick={()=> eliminarpublicacion(index._id)}>Eliminar</button>
+                <button className='btn btn-success fw-bold' onClick={handleShow}>Editar</button>
 
               </th>
             </tr>

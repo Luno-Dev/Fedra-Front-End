@@ -25,7 +25,6 @@ const ModalPublicacionesdit = () => {
   }; */
 
   const handleChange = (e) => {  
-    console.log(publicacion);
     const { name, value } = e.target;
    publicacion.autor= JSON.parse(localStorage.getItem('nombreUsuario'));
     setPublicacion((prevState) => ({ ...prevState, [name]: value }));

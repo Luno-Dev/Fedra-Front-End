@@ -16,6 +16,18 @@ export const traerSocios = async () => {
     return data;
 };
 
+export const traerSocio = async (id) => {
+    const response = await fetch(`${url}socios/${id}`, {
+        method: "GET",
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "Authorization": JSON.parse(localStorage.getItem('token'))
+        },
+    });
+    const data = await response.json();
+
+    return data;
+};
 export const putSocio = async (id, estado) => {
     const response = await fetch(`${url}socios/${id}`,
         {
@@ -35,6 +47,7 @@ export const putSocio = async (id, estado) => {
     return data;
        
 };
+
 
 
 export const deleteSocio = async (id) => {
@@ -95,7 +108,6 @@ export const createNoticia= async (noticia) => {
     );
 
     const data = await response.json();
-    console.log(data);
 
     return data;
 };

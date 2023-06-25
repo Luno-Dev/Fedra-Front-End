@@ -5,11 +5,16 @@ import { Helmet } from 'react-helmet'
 const noticias = () => {
   return (
     <>
-      <Helmet>
+
+    <div>
+
+       <Helmet>
         <meta charSet="utf-8" />
         {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
         <title>Noticias</title>
       </Helmet>
+    </div>
+     
     <Navs/>
     <div>noticias</div>
     </>

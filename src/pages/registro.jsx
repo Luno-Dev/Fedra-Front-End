@@ -119,12 +119,13 @@ const registro = () => {
         
         <>
         
-        <Helmet>
+      
+            <Navs /> 
+             <Helmet>
         <meta charSet="utf-8" />
     {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
         <title>Registro de Personal</title>
       </Helmet>
-            <Navs />
             <div >
                 <h1 className='text-center m-5'>Registro de Personal</h1>
 

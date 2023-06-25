@@ -24,16 +24,16 @@ const TemasDeTrabajo = () => {
             </p>
           <article className="mt-5 d-flex justify-content-around flex-wrap">
             <Button className="bg-darkblue">
-              <i class="bi bi-file-earmark-arrow-down text-cyan">PDF</i>
+              <i className="bi bi-file-earmark-arrow-down text-cyan">PDF</i>
             </Button>
             <Button className="bg-darkblue">
-              <i class="bi bi-file-earmark-arrow-down text-cyan">PDF</i>
+              <i className="bi bi-file-earmark-arrow-down text-cyan">PDF</i>
             </Button>
             <Button className="bg-darkblue">
-              <i class="bi bi-file-earmark-arrow-down text-cyan">PDF</i>
+              <i className="bi bi-file-earmark-arrow-down text-cyan">PDF</i>
             </Button>
             <Button className="bg-darkblue">
-              <i class="bi bi-file-earmark-arrow-down text-cyan">PDF</i>
+              <i className="bi bi-file-earmark-arrow-down text-cyan">PDF</i>
             </Button>
           </article>
         </section>

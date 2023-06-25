@@ -8,33 +8,39 @@ import { Helmet } from 'react-helmet'
 
 const administracion = () => {
 
-const [usuarioOnline, setUsuarioOnline]= useState("");
+  const [usuarioOnline, setUsuarioOnline] = useState("");
 
 
-useEffect(() => {
-  
-  setUsuarioOnline(JSON.parse(localStorage.getItem('nombreUsuario')));
-}, [])
+  useEffect(() => {
+
+    setUsuarioOnline(JSON.parse(localStorage.getItem('nombreUsuario')));
+  }, [])
 
 
 
   return (
 
     <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
-        <title>Administracion</title>
-      </Helmet>
-      <Navs />
-      <div className='m-5 g-4' >
-        <h4>Usuario conectado: {usuarioOnline}</h4>
-        <h1 className='text-center mb-3'>Administrar Publicaciones</h1>
-        <Tablas />
+      <div>
+        <Helmet>
+          <meta charSet="utf-8" />
+          {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
+          <title>Administracion</title>
+        </Helmet>
       </div>
-      <div className='m-5 g-4' >
-        <h1 className='text-center mb-3'>Administrar Socios</h1>
-        <TablasUsuarios />
+
+      <Navs />
+      <div className="container">
+        <div className='my-5 g-4' >
+          <h4>Usuario conectado: {usuarioOnline}</h4>
+          <h1 className='text-center mb-3'>Administrar Publicaciones</h1>
+          <Tablas />
+        </div>
+
+        <div className='my-5 g-4' >
+          <h1 className='text-center mb-3'>Administrar Socios</h1>
+          <TablasUsuarios />
+        </div>
       </div>
     </>
   )

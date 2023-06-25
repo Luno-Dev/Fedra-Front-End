@@ -6,12 +6,16 @@ import { Helmet } from "react-helmet";
 const quienesSomos = () => {
     return (
         <>
-            <Navs></Navs>
-            <Helmet>
+            <Navs/>
+            <div>
+
+                <Helmet>
         <meta charSet="utf-8" />
         {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
         <title>Quienes Somos</title>
       </Helmet>
+            </div>
+            
             <Container>
                 <article>
                     <Row className="mt-5">
@@ -55,11 +59,11 @@ const quienesSomos = () => {
                     <Row className="mt-4">
                         <Col className="d-flex flex-column align-items-center justify-content-center">
                             <div className="d-flex">
-                                <i class="bi bi-download me-2"></i>
+                                <i className="bi bi-download me-2"></i>
                                 <p>Acta Fundacional.</p>
                             </div>
                             <div className="d-flex ">
-                                <i class="bi bi-download me-2 text-center"></i>
+                                <i className="bi bi-download me-2 text-center"></i>
                                 <p className="text-center p-0">Estatutos y Certificado de Normal Funcionamiento.</p>
                             </div>
                         </Col>

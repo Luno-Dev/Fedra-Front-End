@@ -45,11 +45,16 @@ const logins = () => {
 
   return (
    <>
-       <Helmet>
+
+   <div>
+
+     <Helmet>
         <meta charSet="utf-8" />
     {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
         <title>Ingreso Administradores</title>
       </Helmet>
+   </div>
+      
 
 <Navs/> 
 
