@@ -1,19 +1,65 @@
-import { deleteNoticia, traerNoticias } from '@/helpers/fetchAdmi';
+import { deleteNoticia, editNoticia, traerNoticias } from '@/helpers/fetchAdmi';
 import { useContext, useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import { DataContext } from '../context/DataContext';
 import ModalPublicaciones from './ModalPublicaciones';
+import { Button, Form, Modal, Spinner } from 'react-bootstrap';
+import { upload } from '@/config/firebase';
+
 
 
 function Tablas() {
 
   const [noticias, setNoticias] = useState([]);
 
-  const {show, setShow}= useContext(DataContext);
+  const {show, setShow, edit , setEdit,setEditPublicaciones, editPublicaciones}= useContext(DataContext);
+  const [publicacion, setPublicacion] = useState({
+    titulo:"",
+    descripcion:""
+  });
 
 
-  const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleEdit = (datos) => {
+    setEdit(true)
+  setPublicacion(datos)
+  
+  };
+  const handleClose = () => setEdit(false);
+
+  const handleimg = async (e) => {
+    const url = await upload(e.target.files[0]);
+    publicacion.img = url;
+  };
+
+
+  const crearNoticia = async (publicacion) => {
+    const result = await editNoticia(publicacion);
+
+    if (result.msg == "Noticia actualizada correctamente") {
+      swal("Publicacion editada con Exito!", {
+        icon: "success",
+      });
+      setEdit(false);
+    } else {
+      swal({
+        title: "Error",
+        text: "Esta noticia ya existe!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+    }
+
+  }
+
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    publicacion.autor = JSON.parse(localStorage.getItem('nombreUsuario'));
+    setPublicacion((prevState) => ({ ...prevState, [name]: value }));
+  };
+
 
   const recibirData = async () => {
 
@@ -71,7 +117,8 @@ function Tablas() {
         {
           noticias.map(index => (
 
-            <tr key={index._id}>
+
+   <tr key={index._id}>
               <th>{index._id}</th>
               <th>{index.titulo}</th>
               <th>{index.descripcion}</th>
@@ -80,7 +127,7 @@ function Tablas() {
               <th className='text-center'> <img src={index.img} alt="" width={80}/></th>
               <th className='d-flex flex-wrap flex-column p-2'>
                 <button className='btn btn-danger fw-bold m-2' onClick={()=> eliminarpublicacion(index._id)}>Eliminar</button>
-                <button className='btn btn-success fw-bold m-2' onClick={handleShow}>Editar</button>
+                <button className='btn btn-success fw-bold m-2' onClick={()=>handleEdit(index) } >Editar</button>
 
               </th>
             </tr>
@@ -90,7 +137,62 @@ function Tablas() {
       </tbody>
     </Table>
     
-    
+    <Modal show={edit} onHide={handleClose} animation={false} >
+        <Modal.Header className='bg-dark' >
+          <Modal.Title>Editar Publicacion</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className='bg-dark'>
+          <Form>
+            <Form.Group className="mb-3" controlId="formBasicText">
+              <Form.Label>Titulo:</Form.Label>
+              <Form.Control
+                name="titulo"
+                type="text"
+                placeholder="Ingrese el titulo"
+                onChange={handleChange}
+                value={publicacion.titulo}
+
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
+              <Form.Label>imagen:</Form.Label>
+              <input type="file" name="file" onChange={handleimg} />
+            </Form.Group>
+            <Form.Label>Cuerpo:</Form.Label>
+            <Form.Group className="mb-3 m-3" controlId="formBasicText">
+              <textarea
+                name="descripcion"
+                cols="55"
+                className="form-control textarea"
+                id="descripcion"
+                rows="4"
+                placeholder="Ingrese la descripcion"
+                onChange={handleChange}
+                value={publicacion.descripcion}
+                required
+              ></textarea>
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer className='bg-dark'>
+          <Button variant="danger" className='fw-bold' onClick={handleClose} >
+            cancelar
+          </Button>
+          {
+            publicacion.img ? <Button
+              variant="success"
+              className='fw-bold'
+              onClick={() => crearNoticia(publicacion)}
+            >
+              Crear
+            </Button> :
+              <Spinner animation="border" />
+          }
+
+        </Modal.Footer>
+      </Modal>
     
     </>
     
