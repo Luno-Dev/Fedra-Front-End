@@ -33,10 +33,13 @@ const Navs = () => {
     <Navbar variant="dark" expand="lg" className="rounded-bottom bg-darkblue">
       <Container>
         <Navbar.Brand className="text-cyan d-flex align-items-center gap-2" href="/">
-          <Image src="/FEDRAlogo.png" width={50} height={50} alt="Logo de FEDRA"/>
-            <span className="d-none d-lg-block fw-light fs-6">
+          <Image src="/FEDRAlogo.png" width={55} height={55} alt="Logo de FEDRA"/>
+           <div>
+            <span className="text-cyan fw-semibold">FEDRA</span>
+            <span className="d-none d-lg-block fw-light fs-7">
             Federación de Entidades de Discotecas <br></br> de la República Argentina
             </span>
+           </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

@@ -26,7 +26,7 @@ const quienesSomos = () => {
                     <Row className="">
                         <Col>
                             <CardGroup className="justify-content-center aling-items-center m-3">
-                                <Card className="m-2 text-center h-25">
+                                <Card className="m-2 text-center aboutUS--Card">
                                     <Card.Body>
                                         <Card.Title>Asamblea</Card.Title>
                                         <hr />
@@ -35,7 +35,7 @@ const quienesSomos = () => {
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
-                                <Card className="m-2 text-center h-25">
+                                <Card className="m-2 text-center aboutUS--Card">
                                     <Card.Body>
                                         <Card.Title>Comisión Directiva</Card.Title>
                                         <hr />
@@ -44,7 +44,7 @@ const quienesSomos = () => {
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
-                                <Card className="m-2 text-center h-25">
+                                <Card className="m-2 text-center aboutUS--Card">
                                     <Card.Body>
                                         <Card.Title>Mesa Chica</Card.Title>
                                         <hr />

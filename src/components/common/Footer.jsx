@@ -58,7 +58,7 @@ const Footer = () => {
                 <a
                   href="https://wa.me/+5493816339323"
                   target="_blank"
-                  className="d-flex text-decoration-none"
+                  className="d-flex text-decoration-none mt-1"
                 >
                   <i className="bi bi bi-whatsapp text-cyan me-2"></i>
                   <p>+5493816339323</p>
@@ -71,11 +71,11 @@ const Footer = () => {
                   <p>+543812326414</p>
                 </a>
                 <a
-                  href="mailto:fedraArgentina@gmail.com"
+                  href="mailto:fedraargentina@gmail.com"
                   className="d-flex text-decoration-none"
                 >
                   <i className="bi bi-envelope-at text-cyan me-2"></i>
-                  <p>fedraArgentina@gmail.com</p>
+                  <p>fedraargentina@gmail.com</p>
                 </a>
               </Col>
             </Row>
