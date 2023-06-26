@@ -35,6 +35,11 @@ textarea {
     top: 20px;
 }
 
+.activeLink{
+    color: #00ABF0;
+    font-weight: 600;
+
+}
 
 /* estilos seccion noticias */
 .Contenedor-noticias{

@@ -4,8 +4,6 @@ import ActiveLink from "./ActiveLink";
 import swal from "sweetalert";
 
 const Navs = () => {
-
-
   const [token, setToken] = useState('');
 
   useEffect(() => {
@@ -14,19 +12,14 @@ const Navs = () => {
 
   }, [])
 
-
   if (token) {
     setTimeout(() => {
       logOut();
     }, 14400000);
   }
   
-
-
   const logOut = () => {
-    
-
-    swal(`Gracias por Visitarnos Vuelva Pronto!`, { icon: "success"}).then((active)=>{
+    swal(`Gracias por visitarnos, ¡vuelve pronto!`, { icon: "success"}).then((active)=>{
       if(active){
        location.replace("/");
        localStorage.removeItem("token");
@@ -34,7 +27,6 @@ const Navs = () => {
       }
     });
   }
-
 
   return (
     <Navbar variant="dark" expand="lg" className="rounded-bottom bg-darkblue">
@@ -66,7 +58,6 @@ const Navs = () => {
             <ActiveLink className="ms-auto nav-link" href="/registro">
               Registro Personal
             </ActiveLink>
-
             <>
               {token ?
                 <>
@@ -80,7 +71,6 @@ const Navs = () => {
                 <ActiveLink title="ingresar" className="ms-auto nav-link" href="/logins">
                   <i className="bi bi-box-arrow-in-right"></i>
                 </ActiveLink>
-
               }
             </>
             </Nav>
