@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import ActiveLink from "./ActiveLink";
 import swal from "sweetalert";
+import Image from 'next/image'
 
 const Navs = () => {
-
-
   const [token, setToken] = useState('');
 
   useEffect(() => {
@@ -14,19 +13,14 @@ const Navs = () => {
 
   }, [])
 
-
   if (token) {
     setTimeout(() => {
       logOut();
     }, 14400000);
   }
   
-
-
   const logOut = () => {
-    
-
-    swal(`Gracias por Visitarnos Vuelva Pronto!`, { icon: "success"}).then((active)=>{
+    swal(`Gracias por visitarnos, ¡vuelve pronto!`, { icon: "success"}).then((active)=>{
       if(active){
        location.replace("/");
        localStorage.removeItem("token");
@@ -35,12 +29,17 @@ const Navs = () => {
     });
   }
 
-
   return (
     <Navbar variant="dark" expand="lg" className="rounded-bottom bg-darkblue">
       <Container>
-        <Navbar.Brand className="text-cyan" href="/">
-          FEDRA
+        <Navbar.Brand className="text-cyan d-flex align-items-center gap-2" href="/">
+          <Image src="/FEDRAlogo.png" width={55} height={55} alt="Logo de FEDRA"/>
+           <div>
+            <span className="text-cyan fw-semibold">FEDRA</span>
+            <span className="d-none d-lg-block fw-light fs-7">
+            Federación de Entidades de Discotecas <br></br> de la República Argentina
+            </span>
+           </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -66,7 +65,6 @@ const Navs = () => {
             <ActiveLink className="ms-auto nav-link" href="/registro">
               Registro Personal
             </ActiveLink>
-
             <>
               {token ?
                 <>
@@ -80,7 +78,6 @@ const Navs = () => {
                 <ActiveLink title="ingresar" className="ms-auto nav-link" href="/logins">
                   <i className="bi bi-box-arrow-in-right"></i>
                 </ActiveLink>
-
               }
             </>
             </Nav>
