@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import ActiveLink from "./ActiveLink";
 import swal from "sweetalert";
+import Image from 'next/image'
 
 const Navs = () => {
   const [token, setToken] = useState('');
@@ -31,8 +32,11 @@ const Navs = () => {
   return (
     <Navbar variant="dark" expand="lg" className="rounded-bottom bg-darkblue">
       <Container>
-        <Navbar.Brand className="text-cyan" href="/">
-          FEDRA
+        <Navbar.Brand className="text-cyan d-flex align-items-center gap-2" href="/">
+          <Image src="/FEDRAlogo.png" width={50} height={50} alt="Logo de FEDRA"/>
+            <span className="d-none d-lg-block fw-light fs-6">
+            Federación de Entidades de Discotecas <br></br> de la República Argentina
+            </span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
