@@ -57,11 +57,11 @@ const ModalPublicaciones = () => {
   return (
 
     <>
-      <Modal show={show} onHide={handleClose} animation={false}>
-        <Modal.Header closeButton>
-          <Modal.Title>Crear Publicacion:</Modal.Title>
+      <Modal show={show} onHide={handleClose} animation={false} >
+        <Modal.Header className='bg-dark' >
+          <Modal.Title>Crear Publicacion</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className='bg-dark'>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Titulo:</Form.Label>
@@ -93,13 +93,14 @@ const ModalPublicaciones = () => {
             </Form.Group>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={handleClose} >
+        <Modal.Footer className='bg-dark'>
+          <Button variant="danger" className='fw-bold' onClick={handleClose} >
             cancelar
           </Button>
           {
             publicacion.img ? <Button
               variant="success"
+              className='fw-bold'
               onClick={() => crearNoticia(publicacion)}
             >
               Crear

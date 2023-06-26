@@ -33,7 +33,7 @@ const administracion = () => {
       <div className="container">
         <div className='my-5 g-4' >
           <h4>Usuario conectado: {usuarioOnline}</h4>
-          <h1 className='text-center mb-3'>Administrar Publicaciones</h1>
+          <h1 className='text-center mb-3'>Administrar Noticias</h1>
           <Tablas />
         </div>
 

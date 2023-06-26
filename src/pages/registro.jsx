@@ -204,7 +204,7 @@ const registro = () => {
                                     name='trabajadordocumento'
                                     onChange={handleChange}
                                     aria-describedby="DNI"
-                                    
+                                    maxLength={8}
                                     required
                                 />
                             </div>
@@ -215,6 +215,7 @@ const registro = () => {
                                     name='trabajadorcuil'
                                     onChange={handleChange}
                                     aria-describedby="cuil"
+                                    maxLength={12}
                                     required
                                 />
                             </div>

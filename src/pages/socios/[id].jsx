@@ -4,6 +4,9 @@ import React from 'react'
 import { Table } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import dynamic from "next/dynamic";
+import { useDownloadExcel } from 'react-export-table-to-excel';
+import { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
 
 const token = () => {
   const isServer = typeof window === 'undefined';
@@ -15,7 +18,22 @@ const token = () => {
   return data;
 }
 
+
 export const socios = (props) => {
+
+
+
+  const tableRef= useRef(null);
+const generatePDF = useReactToPrint({
+  content: ()=> tableRef.current,
+  documentTitle:`Datos socio - ${props.trabajadornombre}`
+
+})
+  const {onDownload} = useDownloadExcel({
+    currentTableRef: tableRef.current,
+    filename:"Datos Usuario",
+    sheet:"Datos Usuario",
+  });
 
   return (
     <>
@@ -25,10 +43,11 @@ export const socios = (props) => {
         <title>{props.trabajadornombre}</title>
       </Helmet>
       <Navs />
+           
 
-
-      <div className="container w-50 w-lg-100 my-3">
-        <Table hover size="sm" responsive className='table-dark '>
+      <div className="container w-50 w-lg-100 my-3" >
+      
+        <Table hover size="sm" responsive className='table-dark'  ref={tableRef}>
           <thead>
             <tr>
               <th className='text-cyan text-center'>Datos</th>
@@ -170,7 +189,9 @@ export const socios = (props) => {
 
           </tbody>
         </Table>
-      </div>
+  <button className='btn btn-success' onClick={onDownload}>Exportar a Excel <i class="bi bi-file-earmark-spreadsheet"></i></button>
+  <button className="btn btn-danger" onClick={generatePDF}>Exportar A PDF <i class="bi bi-filetype-pdf"></i></button>
+      </div>    
     </>
 
   )
