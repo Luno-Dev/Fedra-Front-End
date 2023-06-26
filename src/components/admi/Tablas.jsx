@@ -64,7 +64,7 @@ function Tablas() {
           <th>Autor</th>
           <th>Fecha de Publicacion</th>
           <th>Imagen</th>
-          <th><button className='btn bg-cyan text-light fw-bold max-h-100' onClick={handleShow}>Crear Publicacion +</button></th>
+          <th className='p-3 d-flex justify-content-center'><button className='btn bg-cyan text-light fw-bold' onClick={handleShow}>Crear Publicacion</button></th>
         </tr>
       </thead>
       <tbody>
@@ -78,9 +78,9 @@ function Tablas() {
               <th>{index.autor}</th>
               <th>{index.fecha.split("T",1)}</th>
               <th className='text-center'> <img src={index.img} alt="" width={80}/></th>
-              <th>
-                <button className='btn btn-danger fw-bold' onClick={()=> eliminarpublicacion(index._id)}>Eliminar</button>
-                <button className='btn btn-success fw-bold' onClick={handleShow}>Editar</button>
+              <th className='d-flex flex-wrap flex-column p-2'>
+                <button className='btn btn-danger fw-bold m-2' onClick={()=> eliminarpublicacion(index._id)}>Eliminar</button>
+                <button className='btn btn-success fw-bold m-2' onClick={handleShow}>Editar</button>
 
               </th>
             </tr>

@@ -2,6 +2,10 @@
     color: rgb(200, 200, 200);
 }
 
+textarea {
+   resize: none;
+}
+
 .bg-darkblue {
     background-color: #081B29;
 }
@@ -88,6 +92,14 @@ height: 100%;
 }
 .noticias-fecha{
     color: #0781b0;
+}
+
+.modal-bg{
+    background-color: #272222;
+}
+
+.btn-admi-table-publi{
+    max-width: 50%;
 }
 
 /* estilos seccion noticias */
