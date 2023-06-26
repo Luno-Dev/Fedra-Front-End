@@ -484,7 +484,7 @@ const registro = () => {
               </Row>
             </Form.Group>
             <div className="d-flex justify-content-end">
-              <button className="btn bg-cyan">Registrarse</button>
+              <button type="submit" className="btn bg-cyan">Registrarse</button>
             </div>
           </Form>
         </div>

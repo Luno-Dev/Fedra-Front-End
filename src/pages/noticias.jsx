@@ -16,7 +16,7 @@ const noticias = () => {
 
       <Navs />
       <Container>
-        <h1 className="text-center text-cyan my-5">Noticias</h1>
+        <h1 className="text-center text-cyan my-5">NOTICIAS</h1>
         <div className="not-cont">
           <div className="noticias-card">
             <div className="card-img-noticia">

@@ -52,6 +52,10 @@ textarea {
     max-height: 250px;
 }
 
+.form--ingreso{
+    width: 40%;
+}
+
 
 /* estilos seccion noticias */
 
@@ -133,15 +137,18 @@ textarea {
     .aboutUS--Card{
         max-height: 190px;
     }
+
 }
-@media all and (max-width:767px) {
+@media all and (max-width:768px) {
     .m-footer {
         margin: 25px 0px;
     }
-
     .imgBanner {
         object-fit: cover;
         height: 200px;
+    }
+    .form--ingreso{
+        width: 100%;
     }
 }
 
