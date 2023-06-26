@@ -4,11 +4,9 @@ import Link from "next/link";
 
 const ActiveLink = ({children, href}) => {
     const router = useRouter()
+    const active = router.asPath === href
 
-    const style = {
-        color: router.asPath === href? "#00ABF0" : "",
-        "fontWeight": router.asPath === href? "600" : ""
-    }
+    const style = active? "ms-auto nav-link activeLink" : "ms-auto nav-link"
 
     const handleClick = (e) => {
         e.preventDefault()
@@ -16,7 +14,7 @@ const ActiveLink = ({children, href}) => {
     }
 
     return (
-        <Link className="ms-auto nav-link" href={href} onClick={handleClick} style={style}>
+        <Link className={style} href={href} onClick={handleClick}>
             {children}
         </Link>
     );
