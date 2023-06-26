@@ -28,6 +28,19 @@ export const traerSocio = async (id) => {
 
     return data;
 };
+
+export const traerNoticia = async (id) => {
+    const response = await fetch(`${url}noticias/${id}`, {
+        method: "GET",
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "Authorization": JSON.parse(localStorage.getItem('token'))
+        },
+    });
+    const data = await response.json();
+    return data.noticia;
+};
+
 export const putSocio = async (id, estado) => {
     const response = await fetch(`${url}socios/${id}`,
         {
@@ -111,3 +124,25 @@ export const createNoticia= async (noticia) => {
 
     return data;
 };
+
+export const editNoticia = async (noticia) => {
+    const response = await fetch(`${url}noticias/${noticia._id}`,
+        {
+            method: "PUT",
+            body: JSON.stringify({
+                img: noticia.img,
+                titulo: noticia.titulo,
+                descripcion: noticia.descripcion,
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                Authorization: JSON.parse(localStorage.getItem("token")),
+            },
+        }
+    );
+
+    const data = await response.json();
+    return data;
+
+};
+      
