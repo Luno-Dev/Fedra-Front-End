@@ -1,12 +1,35 @@
-import Navs from "@/components/common/Navs";
-import React from "react";
-import { Container } from "react-bootstrap";
-import { Helmet } from "react-helmet";
+import Navs from '@/components/common/Navs'
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { traerNoticias } from '@/helpers/fetchAdmi';
+import { useContext, useEffect, useState } from 'react';
+import DataContext from '../components/context/DataContext';
 
 const noticias = () => {
+  const [noticias, setNoticias] = useState([]);
+
+
+
+
+
+
+  const recibirData = async () => {
+
+    const noticias = await traerNoticias();
+    setNoticias(noticias.noticias);
+
+  }
+  useEffect(() => {
+    recibirData();
+
+
+  }, [])
+
   return (
     <>
+
       <div>
+
         <Helmet>
           <meta charSet="utf-8" />
           <title>Noticias</title>
@@ -14,133 +37,40 @@ const noticias = () => {
       </div>
 
       <Navs />
-      <Container>
-        <h1 className="text-center text-cyan my-5">NOTICIAS</h1>
+      <div className='Contenedor-noticias'>
+        <h1 className='text-center'>Noticias</h1>
         <div className="not-cont">
-          <div className="noticias-card">
-            <div className="card-img-noticia">
-              <img
-                src="https://images.pexels.com/photos/4003171/pexels-photo-4003171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="img"
-              />
-            </div>
-            <div className="card-body-noticia">
-              <h3 className="noticias-titulo">paisajes lindos</h3>
-              <p className="noticias-descripcion">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Incidunt rem tenetur et voluptates possimus. Quam alias, amet
-                fugiat temporibus possimus quia. Quod, velit fugiat facere
-                obcaecati similique excepturi hic illum.
-              </p>
 
-              <p className="noticias-autor">Roberto Sosa</p>
-              <p className="noticias-fecha">10/12/24</p>
-            </div>
-          </div>
-          <div className="noticias-card">
-            <div className="card-img-noticia">
-              <img
-                src="https://images.pexels.com/photos/4003171/pexels-photo-4003171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="img"
-              />
-            </div>
-            <div className="card-body-noticia">
-              <h3 className="noticias-titulo">paisajes lindos</h3>
-              <p className="noticias-descripcion">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Incidunt rem tenetur et voluptates possimus. Quam alias, amet
-                fugiat temporibus possimus quia. Quod, velit fugiat facere
-                obcaecati similique excepturi hic illum.
-              </p>
 
-              <p className="noticias-autor">Roberto Sosa</p>
-              <p className="noticias-fecha">10/12/24</p>
-            </div>
-          </div>
-          <div className="noticias-card">
-            <div className="card-img-noticia">
-              <img
-                src="https://images.pexels.com/photos/4003171/pexels-photo-4003171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="img"
-              />
-            </div>
-            <div className="card-body-noticia">
-              <h3 className="noticias-titulo">paisajes lindos</h3>
-              <p className="noticias-descripcion">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Incidunt rem tenetur et voluptates possimus. Quam alias, amet
-                fugiat temporibus possimus quia. Quod, velit fugiat facere
-                obcaecati similique excepturi hic illum.
-              </p>
+          {noticias.map(index => (
+            <div key={index._id} className="noticias-card ">
 
-              <p className="noticias-autor">Roberto Sosa</p>
-              <p className="noticias-fecha">10/12/24</p>
-            </div>
-          </div>
-          <div className="noticias-card">
-            <div className="card-img-noticia">
-              <img
-                src="https://images.pexels.com/photos/4003171/pexels-photo-4003171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="img"
-              />
-            </div>
-            <div className="card-body-noticia">
-              <h3 className="noticias-titulo">paisajes lindos</h3>
-              <p className="noticias-descripcion">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Incidunt rem tenetur et voluptates possimus. Quam alias, amet
-                fugiat temporibus possimus quia. Quod, velit fugiat facere
-                obcaecati similique excepturi hic illum.
-              </p>
+              {index.img < 1 ?
+                <div className="card-img-noticia">
+                  <img src={index.img} alt="img" /></div> : <span></span>}
 
-              <p className="noticias-autor">Roberto Sosa</p>
-              <p className="noticias-fecha">10/12/24</p>
-            </div>
-          </div>
-          <div className="noticias-card">
-            <div className="card-img-noticia">
-              <img
-                src="https://images.pexels.com/photos/4003171/pexels-photo-4003171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="img"
-              />
-            </div>
-            <div className="card-body-noticia">
-              <h3 className="noticias-titulo">paisajes lindos</h3>
-              <p className="noticias-descripcion">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Incidunt rem tenetur et voluptates possimus. Quam alias, amet
-                fugiat temporibus possimus quia. Quod, velit fugiat facere
-                obcaecati similique excepturi hic illum.
-              </p>
+              <div className="card-body-noticia">
+                <h3 className='noticias-titulo mt-5'>{index.titulo}</h3>
+                <p className='noticias-descripcion'>{index.descripcion}</p>
 
-              <p className="noticias-autor">Roberto Sosa</p>
-              <p className="noticias-fecha">10/12/24</p>
-            </div>
-          </div>
-          <div className="noticias-card">
-            <div className="card-img-noticia">
-              <img
-                src="https://images.pexels.com/photos/3671143/pexels-photo-3671143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="img"
-              />
-            </div>
-            <div className="card-body-noticia">
-              <h3 className="noticias-titulo">paisajes lindos</h3>
-              <p className="noticias-descripcion">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Incidunt rem tenetur et voluptates possimus. Quam alias, amet
-                fugiat temporibus possimus quia. Quod, velit fugiat facere
-                obcaecati similique excepturi hic illum.
-              </p>
+                <p className='noticias-autor'>{index.autor}</p>
+                <p className='noticias-fecha'>{index.fecha.split("T", 1)}</p>
 
-              <p className="noticias-autor">Roberto Sosa</p>
-              <p className="noticias-fecha">10/12/24</p>
+              </div>
             </div>
-          </div>
+          ))}
+
+
+
+
+
         </div>
-      </Container>
-    </>
-  );
-};
 
-export default noticias;
+      </div>
+
+    </>
+
+  )
+}
+
+export default noticias
