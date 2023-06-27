@@ -12,7 +12,7 @@
 }
 
 .card {
-    height: 150px;
+    height: 12em;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 5%;
     margin-top: 5px;
@@ -109,6 +109,13 @@
     .capacita2 {
         border-left: none;
     }
+}
+
+
+
+.noticias{
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 @media all and (min-width: 500px) and (max-width: 1200px) {
