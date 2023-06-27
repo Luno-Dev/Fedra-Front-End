@@ -77,6 +77,7 @@ const logins = () => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="ingrese su contraseña..."
             />
+            <a href="/logins" className="text-cyan">Ingreso para Administradores</a>
           </Form.Group>
 
           {message.length > 0 &&
