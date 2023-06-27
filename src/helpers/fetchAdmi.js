@@ -90,7 +90,7 @@ export const deleteNoticia = async (id) => {
 };
 
 export const traerNoticias = async () => {
-    const response = await fetch(`${url}noticias`, {
+    const response = await fetch(`${url}noticias?limite=0`, {
         method: "GET",
         headers: {
             "Content-type": "application/json; charset=UTF-8",

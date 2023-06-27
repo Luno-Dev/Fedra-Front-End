@@ -13,6 +13,7 @@ function Tablas() {
   const [noticias, setNoticias] = useState([]);
 
   const {show, setShow, edit , setEdit,setEditPublicaciones, editPublicaciones}= useContext(DataContext);
+  
   const [publicacion, setPublicacion] = useState({
     titulo:"",
     descripcion:""
@@ -22,7 +23,7 @@ function Tablas() {
   const handleShow = () => setShow(true);
   const handleEdit = (datos) => {
     setEdit(true)
-  setPublicacion(datos)
+    setPublicacion(datos)
   
   };
   const handleClose = () => setEdit(false);
@@ -94,7 +95,6 @@ function Tablas() {
 
   useEffect(() => {
     recibirData();
-
   }, [eliminarpublicacion])
 
   return (
@@ -103,14 +103,14 @@ function Tablas() {
     <ModalPublicaciones/>
     <Table striped bordered hover size="sm" responsive className='table-dark '>
       <thead>
-        <tr>
+        <tr className='text-center'>
           <th>Id</th>
           <th>Titulo</th>
           <th>Cuerpo</th>
           <th>Autor</th>
           <th>Fecha de Publicacion</th>
           <th>Imagen</th>
-          <th className='p-3 d-flex justify-content-center'><button className='btn bg-cyan text-light fw-bold' onClick={handleShow}>Crear Publicacion</button></th>
+          <th className='p-2 d-flex justify-content-center '><button className='btn bg-cyan text-light fw-bold' onClick={handleShow}>Crear Publicacion</button></th>
         </tr>
       </thead>
       <tbody>
@@ -127,7 +127,7 @@ function Tablas() {
               <th className='text-center'> <img src={index.img} alt="" width={80}/></th>
               <th className='d-flex flex-wrap flex-column p-2'>
                 <button className='btn btn-danger fw-bold m-2' onClick={()=> eliminarpublicacion(index._id)}>Eliminar</button>
-                <button className='btn btn-success fw-bold m-2' onClick={()=>handleEdit(index) } >Editar</button>
+                <button className='btn btn-success fw-bold m-2' onClick={()=> handleEdit(index) } >Editar</button>
 
               </th>
             </tr>

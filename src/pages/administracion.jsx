@@ -1,48 +1,35 @@
-import React, { useEffect, useState } from 'react'
-import Tablas from '../components/admi/Tablas'
-import Navs from '@/components/common/Navs'
-import TablasUsuarios from '@/components/admi/TablasUsuarios'
-import { Helmet } from 'react-helmet'
 
+import Admi from '@/components/admi/Admi';
+import Socio from '@/components/admi/Socio';
+import Navs from '@/components/common/Navs';
+import React, { useEffect, useState } from 'react'
 
 
 const administracion = () => {
 
-  const [usuarioOnline, setUsuarioOnline] = useState("");
 
+    const [role, setRole]= useState("");
 
-  useEffect(() => {
+console.log(role);
+    useEffect(() => {
 
-    setUsuarioOnline(JSON.parse(localStorage.getItem('nombreUsuario')));
-  }, [])
-
-
-
+        setRole(JSON.parse(localStorage.getItem("role")))  
+        
+    }, [])
+    
   return (
+<>
+<Navs/>
+{
+    role == "ADMIN_ROLE" ?   
+    <Admi/>
+  :
 
-    <>
-      <div>
-        <Helmet>
-          <meta charSet="utf-8" />
-          {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
-          <title>Administracion</title>
-        </Helmet>
-      </div>
+<Socio/>
+}
 
-      <Navs />
-      <div className="container">
-        <div className='my-5 g-4' >
-          <h4>Usuario conectado: {usuarioOnline}</h4>
-          <h1 className='text-center mb-3'>Administrar Noticias</h1>
-          <Tablas />
-        </div>
-
-        <div className='my-5 g-4' >
-          <h1 className='text-center mb-3'>Administrar Socios</h1>
-          <TablasUsuarios />
-        </div>
-      </div>
-    </>
+</>
+    
   )
 }
 

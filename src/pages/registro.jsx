@@ -111,7 +111,6 @@ const registro = () => {
       <Navs />
       <Helmet>
         <meta charSet="utf-8" />
-        {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
         <title>Registro de Personal</title>
       </Helmet>
       <Container>
@@ -477,7 +476,7 @@ const registro = () => {
                       onChange={handleChange}
                       required
                       aria-describedby="password"
-                      maxLength={6}
+                      minLength={6}
                     />
                   </div>
                 </Col>

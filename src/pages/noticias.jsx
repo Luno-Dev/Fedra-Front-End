@@ -9,7 +9,6 @@ const noticias = () => {
       <div>
         <Helmet>
           <meta charSet="utf-8" />
-          {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
           <title>Noticias</title>
         </Helmet>
       </div>

@@ -75,7 +75,7 @@ const Footer = () => {
                   className="d-flex text-decoration-none"
                 >
                   <i className="bi bi-envelope-at text-cyan me-2"></i>
-                  <p>fedraargentina@gmail.com</p>
+                  <p>fedraargentina@gmx.com</p>
                 </a>
               </Col>
             </Row>

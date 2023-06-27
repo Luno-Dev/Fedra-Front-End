@@ -24,6 +24,7 @@ const Navs = () => {
       if(active){
        location.replace("/");
        localStorage.removeItem("token");
+       localStorage.removeItem("role");
        localStorage.removeItem("nombreUsuario");
       }
     });

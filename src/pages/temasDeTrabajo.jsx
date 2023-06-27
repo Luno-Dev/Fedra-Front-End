@@ -9,7 +9,6 @@ const TemasDeTrabajo = () => {
       <Navs></Navs>
       <Helmet>
         <meta charSet="utf-8" />
-        {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
         <title>Temas de Trabajo</title>
       </Helmet>
       <Container className="my-5">

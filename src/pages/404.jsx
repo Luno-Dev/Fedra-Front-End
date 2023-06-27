@@ -9,7 +9,6 @@ const error = () => {
 <div>
   <Helmet>
         <meta charSet="utf-8" />
-        {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
         <title>Error 404 - Pagina no Encontrada</title>
       </Helmet>
 </div>
