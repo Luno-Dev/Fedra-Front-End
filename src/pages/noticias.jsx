@@ -47,7 +47,7 @@ const noticias = () => {
         <div key={index._id}  className="noticias-card">
         <div className="card-img-noticia">
           { index.img.length > 1 ?
-            <img src={index.img} alt="img" />: <span> </span> }
+            <img src={index.img} alt={index.titulo} />: <span> </span> }
             </div>
           <div className="card-body-noticia">
             <h3 className='noticias-titulo'>{index.titulo}</h3>
