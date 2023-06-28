@@ -1,29 +1,29 @@
 import Navs from "@/components/common/Navs";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import { login } from "../helpers/fetchAuth";
+import { loginSocios } from "../helpers/fetchAuth";
 import swal from "sweetalert";
 import { Helmet } from "react-helmet";
 import { Container } from "react-bootstrap";
 
 const logins = () => {
-  const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const datos = await login({ nombre, email, password });
+    const datos = await loginSocios({  email, password });
 
     if (datos?.token) {
+      console.log(datos);
       localStorage.setItem("token", JSON.stringify(datos.token));
-      localStorage.setItem("nombreUsuario", JSON.stringify(datos.usuario.nombre));
-      localStorage.setItem("role", JSON.stringify(datos.usuario.role));
+      localStorage.setItem("nombreUsuario", JSON.stringify(datos.socio.trabajadornombre));
+      localStorage.setItem("role", JSON.stringify(datos.socio.role));
 
 
       swal(
-        `Bienvenido ${datos.usuario.nombre}`,
+        `Bienvenido ${datos.socio.trabajadornombre}!`,
         "Haz Clik para continuar!",
         "success"
       ).then((active) => {
@@ -45,7 +45,7 @@ const logins = () => {
       <div>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Ingreso Administradores</title>
+          <title>Ingreso Socios</title>
         </Helmet>
       </div>
 
@@ -53,20 +53,9 @@ const logins = () => {
       <Container>
 
       
-      <h1 className="text-center text-cyan mt-5">Ingreso de Administradores</h1>
+      <h1 className="text-center text-cyan mt-5">Ingreso de Socios</h1>
       <section className="d-flex justify-content-center">
         <Form className="my-5 form--ingreso" onSubmit={handleSubmit}>
-          <Form.Group className="mb-3">
-            <Form.Label>Usuario:</Form.Label>
-            <Form.Control
-              type="text"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
-              autoFocus={true}
-              required
-              placeholder="usuario..."
-            />
-          </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Correo:</Form.Label>
             <Form.Control
@@ -88,7 +77,7 @@ const logins = () => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="ingrese su contraseña..."
             />
-            <a href="/loginSocios" className="text-cyan">Ingreso para Socios</a>
+            <a href="/logins" className="text-cyan">Ingreso para Administradores</a>
           </Form.Group>
 
           {message.length > 0 &&

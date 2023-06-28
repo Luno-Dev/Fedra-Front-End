@@ -10,7 +10,6 @@ const Constitucion = () => {
 
    <Helmet>
         <meta charSet="utf-8" />
-        {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
         <title>Constitucion</title>
       </Helmet>
 </div>

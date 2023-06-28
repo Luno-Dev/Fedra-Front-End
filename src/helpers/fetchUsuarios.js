@@ -12,7 +12,7 @@ export const crearUsuario = async (datos) => {
   });
 
   const data = await resp.json();
-
+console.log(data);
   return data;
   
 };

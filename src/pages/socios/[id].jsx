@@ -39,7 +39,6 @@ const generatePDF = useReactToPrint({
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        {/*     <link rel="shortcut icon" href={favicon} type="image/x-icon" /> */}
         <title>{props.trabajadornombre}</title>
       </Helmet>
       <Navs />
@@ -49,7 +48,7 @@ const generatePDF = useReactToPrint({
       
         <Table hover size="sm" responsive className='table-dark'  ref={tableRef}>
           <thead>
-            <tr>
+            <tr className='text-cyan'>
               <th className='text-cyan text-center'>Datos</th>
               <th className='text-cyan text-center'>Informacion Socio</th>
             </tr>

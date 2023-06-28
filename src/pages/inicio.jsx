@@ -1,9 +1,27 @@
 import Navs from "@/components/common/Navs";
-import React from "react";
-import YouTube from 'react-youtube';
+import { getNoticias } from "@/helpers/fetchNoticias";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Carousel } from "react-bootstrap";
 
 const Inicio = () => {
+
+
+  const [noticias, setNoticias] = useState([]);
+
+  const traerData = async () => {
+
+    let data = await getNoticias();
+    setNoticias(data.noticias);
+
+
+  }
+  console.log(noticias);
+
+  useEffect(() => {
+    traerData()
+    console.log(noticias);
+  }, [])
+
   return (
     <>
       <Navs />
@@ -52,69 +70,46 @@ const Inicio = () => {
               </Carousel>
             </Col>
             {/* NOTICIAS */}
+
             <Col className="noticias col-xl-6 col-md-12 col-12">
-              <div className="row m-3 text-center">
+
+              {noticias.map(index => (
+
+
+                <Col className="noticias-Card ">
+                  <div className="card">
+                    <div className="row">
+
+                      <div className="col-xl-4 col-sm-12">
+                        <img className="imgCard fw-bold" src={index.img} alt={index.titulo} />
+
+                      </div>
+                      <div className="col-xl-8">
+                        <div className="card-body">
+                          <h5 className="card-title">{index.titulo}</h5>
+                          <div className="container-descripcion">
+                            <p className="card-text">{index.descripcion}</p>
+                          </div>
+
+                          <p className="card-text">
+                            <small className="card-body-secundary fw-bold">Publicada: {index.fecha.split("T", 1)}</small>
+                            <br />
+                            <small className="card-body-secundary fw-bold">Autor: {index.autor}</small>
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </Col>
+
+
+              ))
+
+              } <div className="row m-3 text-center">
                 <h1 className="text-cyan">ULTIMAS NOTICIAS</h1>
               </div>
-
-              <Col className="noticias-Card">
-                <div className="card">
-                  <div className="row">
-                    <div className="col-xl-4 col-sm-12">
-                      <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt="" />
-                    </div>
-                    <div className="col-xl-8">
-                      <div className="card-body">
-                        <h5 className="card-title">Hola</h5>
-                        <p className="card-text">hola, como estas</p>
-                        <p className="card-text">
-                          <small className="card-body-secundary">hora 5</small>
-                        </p>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                {/* ------- */}
-                <div className="card">
-                  <div className="row ">
-                    <div className="col-xl-4 col-md-12 col-sm-12">
-                      <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt="" />
-                    </div>
-                    <div className="col-xl-8">
-                      <div className="card-body">
-                        <h5 className="card-title">Hola</h5>
-                        <p className="card-text">hola, como estas</p>
-                        <p className="card-text">
-                          <small className="card-body-secundary">hora 5</small>
-                        </p>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                {/* -------- */}
-                <div className="card">
-                  <div className="row">
-                    <div className="col-xl-4 col-md-12 col-sm-12">
-                      <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt="" />
-                    </div>
-                    <div className="col-xl-8">
-                      <div className="card-body">
-                        <h5 className="card-title">Hola</h5>
-                        <p className="card-text">hola, como estas</p>
-                        <p className="card-text">
-                          <small className="card-body-secundary">hora 5</small>
-                        </p>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </Col>
-
             </Col>
-
             {/* FIN NOTICIAS */}
           </Row>
         </article>

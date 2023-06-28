@@ -24,6 +24,7 @@ const Navs = () => {
       if(active){
        location.replace("/");
        localStorage.removeItem("token");
+       localStorage.removeItem("role");
        localStorage.removeItem("nombreUsuario");
       }
     });
@@ -75,7 +76,7 @@ const Navs = () => {
                     <i className="bi bi-box-arrow-left"></i>
                   </a> </>
                 :
-                <ActiveLink title="ingresar" className="ms-auto nav-link" href="/logins">
+                <ActiveLink title="ingresar" className="ms-auto nav-link" href="/loginSocios">
                   <i className="bi bi-box-arrow-in-right"></i>
                 </ActiveLink>
               }

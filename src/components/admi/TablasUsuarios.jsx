@@ -4,8 +4,6 @@ import Table from 'react-bootstrap/Table';
 
 function TablasUsuarios() {
 
-
-
   const [socios, setSocios] = useState([]);
 
 
