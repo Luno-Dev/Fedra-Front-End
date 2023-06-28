@@ -15,11 +15,9 @@ const traerData = async ()=>{
 
 
 }
-    console.log(noticias);
 
   useEffect( () => {
     traerData()
-    console.log(noticias);
   }, [])
   
   return (

@@ -10,7 +10,6 @@ const administracion = () => {
 
     const [role, setRole]= useState("");
 
-console.log(role);
     useEffect(() => {
 
         setRole(JSON.parse(localStorage.getItem("role")))  

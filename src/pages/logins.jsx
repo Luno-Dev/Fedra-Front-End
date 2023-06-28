@@ -102,7 +102,7 @@ const logins = () => {
               </div>
             ))}
           <div className="d-flex justify-content-end">
-            <button type="submit" className="btn bg-cyan">
+            <button type="submit" className="btn bg-cyan text-light fw-bold">
               Ingresar
             </button>
           </div>
