@@ -16,11 +16,6 @@ const Inicio = () => {
 
 
   }
-<<<<<<< HEAD
-
-  console.log(noticias);
-=======
->>>>>>> 22ea0a3b624e6e482e17d2b9575d5e2786173314
 
   useEffect(() => {
     traerData()
@@ -38,11 +33,12 @@ const Inicio = () => {
                   <img
                     className="imgCarousel d-block w-100"
                     src="https://i.ibb.co/gFVtkvQ/ina-face.jpg"
-                    alt="First slide"
+                    alt="Fedra congreso internacional del ocio nocturno"
                   />
                   <Carousel.Caption className="Carousel-Caption">
-                    <h3 className="text-cyan">First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <span className="text-cyan">8° Congreso Internacional de Ocio Nocturno - International Nightlife Association (INA)</span>
+                    <p>Luego de participar en la Expobar 2022, organizada por Asobares de Colombia,
+                      participamos en este Congreso en Tenerife, España.</p>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -53,21 +49,23 @@ const Inicio = () => {
                   />
 
                   <Carousel.Caption className="Carousel-Caption">
-                    <h3 className="text-cyan">Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <span className="text-cyan">Casa Rosada - Reunión con el Secretario de Presidencia por Seguridad en las Discotecas</span>
+                    <p>Invitados por Presidencia de Argentina, asistimos a una reunión para tratar el tema
+                      seguridad y violencia de género en Buenos Aires.</p>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                   <img
                     className="imgCarousel d-block w-100"
                     src="https://i.ibb.co/x2GgM41/FEDRA-asamblea-CABA-2021.jpg"
-                    alt="Third slide"
+                    alt="FEDRA reunida en Casa Rosada"
                   />
 
                   <Carousel.Caption className="Carousel-Caption">
-                    <h3 className="text-cyan">Third slide label</h3>
+                    <span className="text-cyan">Asamblea General - Federación de Entidades de Discotecas de la República Argentina</span>
                     <p>
-                      Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                      Celebramos asambleas en las que se aprobaron los ejercicios vencidos y se proclamó la
+                      única lista presentada ante la Junta Electoral.
                     </p>
                   </Carousel.Caption>
                 </Carousel.Item>
@@ -131,9 +129,11 @@ const Inicio = () => {
             </Col>
             <Col className="p-0 col-xl-6 col-12">
               <img
-                src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80"
-                alt=""
+                src="/constitucion.png"
+                alt="constitucion Fedra"
+                width={100}
                 className="imgInicio"
+                height={100}
               />
             </Col>
           </Row>
@@ -142,9 +142,11 @@ const Inicio = () => {
           <Row className="d-xl-flex d-md-block d-sm-block justify-content-center align-items-center">
             <Col className="p-0 col-xl-6 col-12">
               <img
-                src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80"
-                alt=""
+                src="/mision.png"
+                alt="mision fedra"
                 className="imgInicio2"
+                width={100}
+                height={100}
               />
             </Col>
             <Col className="p-5 col-xl-6 col-12">
@@ -188,7 +190,16 @@ const Inicio = () => {
                 Suscribimos un convenio con la Universidad Tecnologica Nacional y la asociación de Bartenders de Argentina, creando una carrera universitaria para capacitar a nuestro personal en diferentes funciones.
               </p>
             </Col>
+            <Col className="p-5 col-xl-6 col-12">
+              <h1 className="text-cyan">CONSULTORA</h1>
+              <br />
+              <p>
 
+                FEDRA puede asesorar en cuestiones sobre las que posee un conocimiento especializado y
+                ayudar a las empresas a mejorar su desempeño. Ofrecemos contactos en todos los
+                ámbitos institucionales; privados, públicos o mixtos.
+              </p>
+            </Col>
           </Row>
         </article>
         <article>
@@ -201,12 +212,7 @@ const Inicio = () => {
         </article>
       </Container >
     </>
-<<<<<<< HEAD
   )
 };
-=======
-  );
-            }          
->>>>>>> 22ea0a3b624e6e482e17d2b9575d5e2786173314
 
 export default Inicio;
