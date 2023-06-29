@@ -17,8 +17,6 @@ const Inicio = () => {
 
   }
 
-
-
   useEffect(() => {
     traerData()
   }, [])
