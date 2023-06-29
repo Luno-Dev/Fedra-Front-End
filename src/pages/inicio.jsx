@@ -15,12 +15,15 @@ const Inicio = () => {
     setNoticias(data.noticias);
 
 
+<<<<<<< HEAD
   }
   console.log(noticias);
+=======
+}
+>>>>>>> 7ab7fa88e1b0df5a61799df7032130dc90f4b9ba
 
   useEffect(() => {
     traerData()
-    console.log(noticias);
   }, [])
 
   return (
