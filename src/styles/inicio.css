@@ -30,6 +30,7 @@
     width: 100%;
     border-top-left-radius: 10%;
     border-bottom-right-radius: 10%;
+    object-fit: cover;
 }
 
 .imgInicio2 {
@@ -37,6 +38,7 @@
     width: 100%;
     border-top-left-radius: 10%;
     border-bottom-right-radius: 10%;
+    object-fit: cover;
 }
 
 .agregados {
@@ -113,7 +115,7 @@
 
 
 
-.noticias{
+.noticias {
     display: flex;
     flex-direction: column-reverse;
 }

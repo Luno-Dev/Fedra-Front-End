@@ -17,6 +17,8 @@ const Inicio = () => {
 
   }
 
+  console.log(noticias);
+
   useEffect(() => {
     traerData()
   }, [])
@@ -33,7 +35,7 @@ const Inicio = () => {
                   <img
                     className="imgCarousel d-block w-100"
                     src="https://i.ibb.co/gFVtkvQ/ina-face.jpg"
-                    alt="Fedra congreso internacional del ocio nocturno"
+                    alt="First slide"
                   />
                   <Carousel.Caption className="Carousel-Caption">
                     <span className="text-cyan">8° Congreso Internacional de Ocio Nocturno - International Nightlife Association (INA)</span>
@@ -190,16 +192,7 @@ const Inicio = () => {
                 Suscribimos un convenio con la Universidad Tecnologica Nacional y la asociación de Bartenders de Argentina, creando una carrera universitaria para capacitar a nuestro personal en diferentes funciones.
               </p>
             </Col>
-            <Col className="p-5 col-xl-6 col-12">
-              <h1 className="text-cyan">CONSULTORA</h1>
-              <br />
-              <p>
 
-                FEDRA puede asesorar en cuestiones sobre las que posee un conocimiento especializado y
-                ayudar a las empresas a mejorar su desempeño. Ofrecemos contactos en todos los
-                ámbitos institucionales; privados, públicos o mixtos.
-              </p>
-            </Col>
           </Row>
         </article>
         <article>
