@@ -16,8 +16,11 @@ const Inicio = () => {
 
 
   }
+<<<<<<< HEAD
 
   console.log(noticias);
+=======
+>>>>>>> 22ea0a3b624e6e482e17d2b9575d5e2786173314
 
   useEffect(() => {
     traerData()
@@ -198,7 +201,12 @@ const Inicio = () => {
         </article>
       </Container >
     </>
+<<<<<<< HEAD
   )
 };
+=======
+  );
+            }          
+>>>>>>> 22ea0a3b624e6e482e17d2b9575d5e2786173314
 
 export default Inicio;
