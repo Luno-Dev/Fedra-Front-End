@@ -1,11 +1,8 @@
 import Navs from "@/components/common/Navs";
 
 import React from "react";
-<<<<<<< HEAD
 import { Col, Container, Row, Form, Button } from "react-bootstrap";
-=======
-import { Col, Container, Row, Form, } from "react-bootstrap";
->>>>>>> main
+
 
 
 const Contacto = () => {
