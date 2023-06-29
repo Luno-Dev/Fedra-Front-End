@@ -33,7 +33,6 @@ const Contacto = () => {
                                 <p>+5493816339323</p>
                             </div>
                         </Col>
-<<<<<<< HEAD
 
                     </Row>
                 </div>
@@ -63,23 +62,6 @@ const Contacto = () => {
                             </Form>
                         </Col>
                     </Row>
-=======
-                        <Col lg="6" className="Mapa mt-5">
-                            <Form>
-                                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                                    <Form.Label>Email address</Form.Label>
-                                    <Form.Control type="email" placeholder="name@example.com" />
-                                </Form.Group>
-                                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                    <Form.Label>Example textarea</Form.Label>
-                                    <Form.Control as="textarea" rows={3} />
-                                </Form.Group>
-                            </Form>
-                        </Col>
-                    </Row>
-                </div>
-                <div>
->>>>>>> main
 
                 </div>
 
