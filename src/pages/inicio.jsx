@@ -212,7 +212,7 @@ const Inicio = () => {
         </article>
       </Container >
     </>
-  );
-}
+  )
+};
 
 export default Inicio;

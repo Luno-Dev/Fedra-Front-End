@@ -1,7 +1,11 @@
 import Navs from "@/components/common/Navs";
 
 import React from "react";
+<<<<<<< HEAD
+import { Col, Container, Row, Form, Button } from "react-bootstrap";
+=======
 import { Col, Container, Row, Form, } from "react-bootstrap";
+>>>>>>> main
 
 
 const Contacto = () => {
@@ -32,7 +36,13 @@ const Contacto = () => {
                                 <p>+5493816339323</p>
                             </div>
                         </Col>
-                        <Col lg="6" className="Mapa mt-5">
+<<<<<<< HEAD
+
+                    </Row>
+                </div>
+                <div>
+                    <Row className="d-flex justify-content-center align-items-center">
+                        <Col lg="6" className="Mapa mt-5 mb-5">
                             <Form>
                                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                     <Form.Label>Nombre</Form.Label>
@@ -48,13 +58,31 @@ const Contacto = () => {
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                     <Form.Label>Mensaje</Form.Label>
-                                    <Form.Control as="textarea" rows={3} placeholder="Escriba aquí su mensaje..." />
+                                    <Form.Control as="textarea" rows={5} placeholder="Escriba aquí su mensaje..." />
+                                </Form.Group>
+                                <Button className="" variant="primary" type="submit">
+                                    Enviar
+                                </Button>
+                            </Form>
+                        </Col>
+                    </Row>
+=======
+                        <Col lg="6" className="Mapa mt-5">
+                            <Form>
+                                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                    <Form.Label>Email address</Form.Label>
+                                    <Form.Control type="email" placeholder="name@example.com" />
+                                </Form.Group>
+                                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                    <Form.Label>Example textarea</Form.Label>
+                                    <Form.Control as="textarea" rows={3} />
                                 </Form.Group>
                             </Form>
                         </Col>
                     </Row>
                 </div>
                 <div>
+>>>>>>> main
 
                 </div>
 
