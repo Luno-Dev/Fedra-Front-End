@@ -8,8 +8,13 @@ const Map = () => {
     };
 
     const defaultCenter = {
+<<<<<<< HEAD
         lat: 51.505,
         lng: -0.09
+=======
+        lat: -26.831087612702838,
+        lng: -65.19722157564975,
+>>>>>>> main
     };
 
     return (
@@ -25,5 +30,8 @@ const Map = () => {
     );
 }
 
+<<<<<<< HEAD
 export default App;
+=======
+>>>>>>> main
 
