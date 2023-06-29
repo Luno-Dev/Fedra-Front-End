@@ -2,29 +2,33 @@ import Navs from "@/components/common/Navs";
 import { getNoticias } from "@/helpers/fetchNoticias";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Carousel } from "react-bootstrap";
+import VideoYoutube from "../components/common/video";
 
 const Inicio = () => {
 
 
-const [noticias, setNoticias]= useState([]);
+  const [noticias, setNoticias] = useState([]);
 
-const traerData = async ()=>{
+  const traerData = async () => {
 
-  let data = await getNoticias();
+    let data = await getNoticias();
     setNoticias(data.noticias);
 
 
+<<<<<<< HEAD
+  }
+  console.log(noticias);
+=======
 }
-    console.log(noticias);
+>>>>>>> 7ab7fa88e1b0df5a61799df7032130dc90f4b9ba
 
-  useEffect( () => {
+  useEffect(() => {
     traerData()
-    console.log(noticias);
   }, [])
-  
+
   return (
     <>
-     <Navs/>
+      <Navs />
       <Container className="my-5">
         <article className="article-1">
           <Row className="d-xl-flex d-md-block d-sm-block justify-content-center align-items-center">
@@ -72,44 +76,44 @@ const traerData = async ()=>{
             {/* NOTICIAS */}
 
             <Col className="noticias col-xl-6 col-md-12 col-12">
-             
-{     noticias.map(index => (
+
+              {noticias.map(index => (
 
 
-              <Col className="noticias-Card ">
-                <div className="card">  
-                <div className="row">
-              
+                <Col className="noticias-Card ">
+                  <div className="card">
+                    <div className="row">
+
                       <div className="col-xl-4 col-sm-12">
-                      <img className="imgCard fw-bold" src={index.img} alt={index.titulo}  /> 
-             
-                    </div>   
-                    <div className="col-xl-8">
-                      <div className="card-body">
-                        <h5 className="card-title">{index.titulo}</h5>
-                        <div className="container-descripcion">
-                          <p className="card-text">{index.descripcion}</p>
-                        </div>
-                        
-                        <p className="card-text">
-                          <small className="card-body-secundary fw-bold">Publicada: {index.fecha.split("T",1)}</small>
-                          <br />
-                          <small className="card-body-secundary fw-bold">Autor: {index.autor}</small>
-                        </p>
+                        <img className="imgCard fw-bold" src={index.img} alt={index.titulo} />
+
                       </div>
+                      <div className="col-xl-8">
+                        <div className="card-body">
+                          <h5 className="card-title">{index.titulo}</h5>
+                          <div className="container-descripcion">
+                            <p className="card-text">{index.descripcion}</p>
+                          </div>
+
+                          <p className="card-text">
+                            <small className="card-body-secundary fw-bold">Publicada: {index.fecha.split("T", 1)}</small>
+                            <br />
+                            <small className="card-body-secundary fw-bold">Autor: {index.autor}</small>
+                          </p>
+                        </div>
+                      </div>
+
                     </div>
-
                   </div>
-                </div>
-              </Col>
+                </Col>
 
 
-))
+              ))
 
-} <div className="row m-3 text-center">
+              } <div className="row m-3 text-center">
                 <h1 className="text-cyan">ULTIMAS NOTICIAS</h1>
               </div>
-    </Col>
+            </Col>
             {/* FIN NOTICIAS */}
           </Row>
         </article>
@@ -186,6 +190,14 @@ const traerData = async ()=>{
             </Col>
 
           </Row>
+        </article>
+        <article>
+          <div className="text-center">
+            <VideoYoutube />
+          </div>
+
+
+
         </article>
       </Container >
     </>

@@ -18,14 +18,14 @@ const Navs = () => {
       logOut();
     }, 14400000);
   }
-  
+
   const logOut = () => {
-    swal(`Gracias por visitarnos, ¡vuelve pronto!`, { icon: "success"}).then((active)=>{
-      if(active){
-       location.replace("/");
-       localStorage.removeItem("token");
-       localStorage.removeItem("role");
-       localStorage.removeItem("nombreUsuario");
+    swal(`Gracias por visitarnos, ¡vuelve pronto!`, { icon: "success" }).then((active) => {
+      if (active) {
+        location.replace("/");
+        localStorage.removeItem("token");
+        localStorage.removeItem("role");
+        localStorage.removeItem("nombreUsuario");
       }
     });
   }
@@ -34,13 +34,13 @@ const Navs = () => {
     <Navbar variant="dark" expand="lg" className="rounded-bottom bg-darkblue">
       <Container>
         <Navbar.Brand className="text-cyan d-flex align-items-center gap-2" href="/">
-          <Image src="/FEDRAlogo.png" width={55} height={55} alt="Logo de FEDRA"/>
-           <div>
+          <Image src="/FEDRAlogo.png" width={55} height={55} alt="Logo de FEDRA" />
+          <div>
             <span className="text-cyan fw-semibold">FEDRA</span>
             <span className="d-none d-lg-block fw-light fs-7">
-            Federación de Entidades de Discotecas <br></br> de la República Argentina
+              Federación de Entidades de Discotecas <br></br> de la República Argentina
             </span>
-           </div>
+          </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -81,7 +81,7 @@ const Navs = () => {
                 </ActiveLink>
               }
             </>
-            </Nav>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
