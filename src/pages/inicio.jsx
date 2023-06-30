@@ -35,7 +35,7 @@ const Inicio = () => {
                   <img
                     className="imgCarousel d-block w-100"
                     src="https://i.ibb.co/gFVtkvQ/ina-face.jpg"
-                    alt="First slide"
+                    alt="Fedra congreso internacional del ocio nocturno"
                   />
                   <Carousel.Caption className="Carousel-Caption">
                     <span className="text-cyan">8° Congreso Internacional de Ocio Nocturno - International Nightlife Association (INA)</span>
@@ -202,14 +202,25 @@ const Inicio = () => {
               </p>
             </Col>
           </Row>
+          <Col className="p-5 col-xl-12 col-12 text-center">
+            <h1 className="text-cyan">CONSULTORA</h1>
+            <br />
+            <p>
+
+              FEDRA puede asesorar en cuestiones sobre las que posee un conocimiento especializado y
+              ayudar a las empresas a mejorar su desempeño. Ofrecemos contactos en todos los
+              ámbitos institucionales; privados, públicos o mixtos.
+            </p>
+          </Col>
         </article>
         <article>
-          <div className="text-center">
-            <VideoYoutube />
-          </div>
-
-
-
+          <Row className="text-center p-4">
+            <Col>
+              <VideoYoutube
+                width={50}
+              />
+            </Col>
+          </Row>
         </article>
       </Container >
     </>
