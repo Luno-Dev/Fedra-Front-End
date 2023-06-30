@@ -3,6 +3,8 @@ import Navs from "@/components/common/Navs";
 import React from "react";
 import { Col, Container, Row, Form, Button } from "react-bootstrap";
 
+
+
 const Contacto = () => {
     return (
         <>
@@ -27,7 +29,7 @@ const Contacto = () => {
                                 <p>+543812326414</p>
                             </div>
                             <div className="d-flex">
-                                <i class="bi bi-whatsapp me-3 text-cyan"></i>
+                                <i className="bi bi-whatsapp me-3 text-cyan"></i>
                                 <p>+5493816339323</p>
                             </div>
                         </Col>

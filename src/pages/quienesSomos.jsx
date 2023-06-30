@@ -18,10 +18,10 @@ const quienesSomos = () => {
                 <article>
                     <Row className="mt-5">
                         <Col>
-                            <h1 className="text-cyan text-center">ÓRGANOS DEL GOBIERNO</h1>
+                            <h1 className="text-cyan text-center">ÓRGANOS DE GOBIERNO</h1>
                         </Col>
                     </Row>
-                    <Row className="">
+                    <Row>
                         <Col>
                             <CardGroup className="justify-content-center aling-items-center m-3">
                                 <Card className="m-2 text-center aboutUS--Card">
