@@ -75,14 +75,14 @@ const Footer = () => {
                   className="d-flex text-decoration-none"
                 >
                   <i className="bi bi-envelope-at text-cyan me-2"></i>
-                  <p>fedraargentina@gmx.com</p>
+                  <p>fedraargentina@gmail.com</p>
                 </a>
               </Col>
             </Row>
           </Container>
         </div>
         <div className="d-flex justify-content-center">
-          <h6 className="text-cyan">© Desarrollado por Luno, Osmán Franco, Luciano Rivera, Nicolas Morales, Azubel Gabriel - 2023</h6>
+          <h6 className="text-cyan text-center">© Desarrollado Osmán Franco, Rivera Luciano, Morales Nicolas y Azubel Gabriel - 2023</h6>
         </div>
       </footer>
     </>

@@ -176,7 +176,7 @@ const Inicio = () => {
 
           </Row>
         </section >
-        <article className="agregados">
+        <section className="agregados">
           <Row className="d-xl-flex d-md-block d-sm-block mt-3 text-center">
             <Col className="p-5 col-xl-6 col-12 capacita1">
               <h1 className="text-cyan">REGISTRÁ TU PERSONAL</h1>
@@ -203,16 +203,10 @@ const Inicio = () => {
               ámbitos institucionales; privados, públicos o mixtos.
             </p>
           </Col>
-        </article>
-        <article>
-          <Row className="text-center p-4">
-            <Col>
-              <VideoYoutube
-                width={50}
-              />
-            </Col>
-          </Row>
-        </article>
+        </section>
+        <section className="text-center w-100 p-4">
+          <VideoYoutube/>
+        </section>
       </Container >
     </>
   )
