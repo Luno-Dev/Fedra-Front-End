@@ -192,15 +192,6 @@ const Inicio = () => {
                 Suscribimos un convenio con la Universidad Tecnologica Nacional y la asociación de Bartenders de Argentina, creando una carrera universitaria para capacitar a nuestro personal en diferentes funciones.
               </p>
             </Col>
-            <Col className="p-5 col-xl-6 col-12">
-              <h1 className="text-cyan">CONSULTORA</h1>
-              <br />
-              <p>
-                FEDRA puede asesorar en cuestiones sobre las que posee un conocimiento especializado y
-                ayudar a las empresas a mejorar su desempeño. Ofrecemos contactos en todos los
-                ámbitos institucionales; privados, públicos o mixtos.
-              </p>
-            </Col>
           </Row>
           <Col className="p-5 col-xl-12 col-12 text-center">
             <h1 className="text-cyan">CONSULTORA</h1>
