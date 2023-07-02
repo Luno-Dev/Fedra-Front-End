@@ -17,7 +17,6 @@ const Inicio = () => {
 
   }
 
-  console.log(noticias);
 
   useEffect(() => {
     traerData()
