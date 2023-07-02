@@ -12,7 +12,6 @@ const noticias = () => {
 
 
 
-
   const recibirData = async () => {
 
     const noticias = await traerNoticias();
@@ -45,7 +44,7 @@ const noticias = () => {
           {noticias.map(index => (
             <div key={index._id} className="noticias-card ">
 
-              {index.img < 1 ?
+              {index.img  ?
                 <div className="card-img-noticia">
                   <img src={index.img} alt="img" /></div> : <span></span>}
 

@@ -15,7 +15,7 @@ textarea {
 }
 
 .text-cyan {
-    color: #00ABF0;
+    color: #00ABF0 !important;
 }
 
 .pantalla {

@@ -84,7 +84,7 @@ const Inicio = () => {
                     <div className="row">
 
                       <div className="col-xl-4 col-sm-12">
-                        <img className="imgCard fw-bold" src={index.img} alt={index.titulo} />
+                        <img className="imgCard fw-bold" src={index.img[1]} alt={index.titulo} />
 
                       </div>
                       <div className="col-xl-8">
