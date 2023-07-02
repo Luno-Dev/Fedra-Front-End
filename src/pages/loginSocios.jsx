@@ -5,6 +5,7 @@ import { loginSocios } from "../helpers/fetchAuth";
 import swal from "sweetalert";
 import { Helmet } from "react-helmet";
 import { Container } from "react-bootstrap";
+import { Cookies } from "react-cookie";
 
 const logins = () => {
   const [email, setEmail] = useState("");
@@ -16,9 +17,12 @@ const logins = () => {
     const datos = await loginSocios({  email, password });
 
     if (datos?.token) {
+      
+      const cookies = new Cookies();
       localStorage.setItem("token", JSON.stringify(datos.token));
       localStorage.setItem("nombreUsuario", JSON.stringify(datos.socio.trabajadornombre));
       localStorage.setItem("role", JSON.stringify(datos.socio.role));
+      cookies.set("token", `${datos.token}`, { path: "/", maxAge: 3850 });
 
 
       swal(

@@ -3,29 +3,47 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import ActiveLink from "./ActiveLink";
 import swal from "sweetalert";
 import Image from 'next/image'
+import { useRouter } from "next/router";
+import Cookies from "universal-cookie";
 
 const Navs = () => {
-  const [token, setToken] = useState('');
+  const [token, setToken] = useState(false);
+
+
+  const history = useRouter();
 
   useEffect(() => {
 
-    setToken(localStorage.getItem('token'));
+    const handleCookieChange = () => {
+      const cookie = new Cookies();
+      
+      if (cookie.get("token")) {
+        setToken(true)
+      }
+    };
 
-  }, [])
+    handleCookieChange();
 
-  if (token) {
-    setTimeout(() => {
-      logOut();
-    }, 14400000);
-  }
+    const interval = setInterval(handleCookieChange, 1000);
+
+    // Limpiar el intervalo al desmontar el componente
+    return () => {
+      clearInterval(interval);
+    };
+
+  }, [history])
+
 
   const logOut = () => {
     swal(`Gracias por visitarnos, ¡vuelve pronto!`, { icon: "success" }).then((active) => {
       if (active) {
+      const cookie = new Cookies();
         location.replace("/");
         localStorage.removeItem("token");
         localStorage.removeItem("role");
         localStorage.removeItem("nombreUsuario");
+        cookie.remove("token");
+        setToken(false);
       }
     });
   }
