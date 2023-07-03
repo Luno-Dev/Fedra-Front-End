@@ -12,10 +12,13 @@
 }
 
 .card {
-    height: 12em;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 5%;
     margin-top: 5px;
+}
+
+.texto-card {
+    height: 150px;
 }
 
 .imgCard {

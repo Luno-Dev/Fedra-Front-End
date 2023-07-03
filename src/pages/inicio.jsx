@@ -87,11 +87,11 @@ const Inicio = () => {
                         <img className="imgCard fw-bold" src={index.img[0]} alt={index.titulo} />
 
                       </div>
-                      <div className="col-xl-8 h-25 overflow-y-scroll">
+                      <div className="col-xl-8 texto-card overflow-y-scroll">
                         <div className="card-body">
                           <h5 className="card-title">{index.titulo}</h5>
-                          <div className="container-descripcio h-25 ">
-                            <p className="card-text">{index.descripcion}</p>
+                          <div className="container-descripcio ">
+                            <p className="card-text" minlength="30">{index.descripcion}</p>
                           </div>
 
                           <p className="card-text">
