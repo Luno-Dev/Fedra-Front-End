@@ -29,7 +29,7 @@ const Inicio = () => {
         <article className="article-1">
           <Row className="d-xl-flex d-md-block d-sm-block justify-content-center align-items-center">
             <Col className="p-3 col-xl-6 col-12">
-              <Carousel>
+              <Carousel data-bs-ride="carousel">
                 <Carousel.Item>
                   <img
                     className="imgCarousel d-block w-100"
@@ -79,7 +79,7 @@ const Inicio = () => {
               {noticias.map(index => (
 
 
-                <Col className="noticias-Card h-25">
+                <Col className="noticias-Card h-25" key={index._id}>
                   <div className="card">
                     <div className="row">
 
