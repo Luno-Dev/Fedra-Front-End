@@ -45,9 +45,9 @@ const generatePDF = useReactToPrint({
       <Navs />
            
 
-      <div className="container w-50 w-lg-100 my-3" >
+      <div className="container my-3" >
       
-        <Table hover size="sm" responsive className='table-dark'  ref={tableRef}>
+        <Table hover size="sm" responsive className='table-dark'   ref={tableRef}>
           <thead className='text-cyan'>
             <tr className='text-cyan '>
               <th className='text-cyan text-center'>Datos</th>
@@ -188,8 +188,12 @@ const generatePDF = useReactToPrint({
 
           </tbody>
         </Table>
-  <button className='btn btn-success' onClick={onDownload}>Exportar a Excel <i className="bi bi-file-earmark-spreadsheet"></i></button>
-  <button className="btn btn-danger" onClick={generatePDF}>Exportar A PDF <i className="bi bi-filetype-pdf"></i></button>
+
+        <div className="container d-flex justify-content-center gap-3 ">
+          <button className='btn btn-success fw-bold' onClick={onDownload}>Exportar a Excel <i className="bi bi-file-earmark-spreadsheet"></i></button>
+  <button className="btn btn-danger fw-bold" onClick={generatePDF}>Exportar A PDF <i className="bi bi-filetype-pdf"></i></button>
+        </div>
+  
       </div>    
     </>
 
