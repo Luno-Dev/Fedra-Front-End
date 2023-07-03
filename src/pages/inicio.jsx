@@ -79,18 +79,18 @@ const Inicio = () => {
               {noticias.map(index => (
 
 
-                <Col className="noticias-Card ">
+                <Col className="noticias-Card h-25">
                   <div className="card">
                     <div className="row">
 
-                      <div className="col-xl-4 col-sm-12">
-                        <img className="imgCard fw-bold" src={index.img[1]} alt={index.titulo} />
+                      <div className="col-xl-4 col-sm-12 ">
+                        <img className="imgCard fw-bold" src={index.img[0]} alt={index.titulo} />
 
                       </div>
-                      <div className="col-xl-8">
+                      <div className="col-xl-8 h-25 overflow-y-scroll">
                         <div className="card-body">
                           <h5 className="card-title">{index.titulo}</h5>
-                          <div className="container-descripcion">
+                          <div className="container-descripcio h-25 ">
                             <p className="card-text">{index.descripcion}</p>
                           </div>
 

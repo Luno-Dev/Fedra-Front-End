@@ -128,6 +128,14 @@ textarea {
     max-width: 50%;
 }
 
+.container-descripcion p{
+    max-height: 100%;
+}
+
+iframe{
+    max-width: 100% !important;
+}
+
 
 /* estilos seccion noticias */
 /* media queries */
