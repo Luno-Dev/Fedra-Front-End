@@ -20,24 +20,23 @@ const ModalPublicaciones = () => {
   });
 
   const handleClose = () => setShow(false);
-const setearImagenes = async (file,index)=>{
-   const url = await upload(file);   
-publicacion.img[index]=url
-}
+  const setearImagenes = async (file, index) => {
+    const url = await upload(file);
+    publicacion.img[index] = url
+  }
   const handleimg = async (e) => {
-    let long =e.target.files.length
-for (let index = 0; index< long ; index++) {
- setearImagenes(e.target.files[index], index);
+    let long = e.target.files.length
+    for (let index = 0; index < long; index++) {
+      setearImagenes(e.target.files[index], index);
 
-    
-    }}
+
+    }
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     publicacion.autor = JSON.parse(localStorage.getItem('nombreUsuario'));
     setPublicacion((prevState) => ({ ...prevState, [name]: value }));
-    console.log(publicacion);
- 
   };
 
 
@@ -85,7 +84,7 @@ for (let index = 0; index< long ; index++) {
 
             <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
               <Form.Label>imagen:</Form.Label>
-              <input type="file" multiple onChange={handleimg}  />
+              <input type="file" multiple onChange={handleimg} />
             </Form.Group>
             <Form.Label>Cuerpo:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">

@@ -91,15 +91,16 @@ const Inicio = () => {
                         <div className="card-body">
                           <h5 className="card-title">{index.titulo}</h5>
                           <div className="container-descripcio ">
-                            <p className="card-text" minlength="30">{index.descripcion}</p>
+                            <p className="card-text" minLength="30">{index.descripcion}</p>
                           </div>
 
                           <p className="card-text">
                             <small className="card-body-secundary fw-bold">Publicada: {index.fecha.split("T", 1)}</small>
                             <br />
                             <small className="card-body-secundary fw-bold">Autor: {index.autor}</small>
-                            <a href={`/noticias/${index._id}`}>acceder</a>
+
                           </p>
+                          <a href={`/noticias/${index._id}`} className="fw-bold btn btn-danger">Mirar</a>
                         </div>
                       </div>
 
@@ -193,7 +194,7 @@ const Inicio = () => {
               </p>
             </Col>
           </Row>
-          <Col className="p-5 col-xl-12 col-12 text-center">
+          <Col className="p-5 col-xl-12 col-12 text-center consultora">
             <h1 className="text-cyan">CONSULTORA</h1>
             <br />
             <p>

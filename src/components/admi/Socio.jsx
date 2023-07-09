@@ -5,15 +5,12 @@ import Cookies from "universal-cookie";
 
 const Socio = () => {
 
-
-
   const [usuarioOnline, setUsuarioOnline] = useState("");
 
   const history = useRouter();
 
   useEffect(() => {
 
-    
     setUsuarioOnline(JSON.parse(localStorage.getItem('nombreUsuario')));
     const handleCookieChange = () => {
       const cookie = new Cookies();

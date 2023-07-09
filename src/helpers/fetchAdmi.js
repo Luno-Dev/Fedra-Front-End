@@ -57,7 +57,7 @@ export const putSocio = async (id, estado) => {
     const data = await response.json();
 
     return data;
-       
+
 };
 
 
@@ -100,7 +100,7 @@ export const traerNoticias = async () => {
     return data;
 };
 
-export const createNoticia= async (noticia) => {
+export const createNoticia = async (noticia) => {
     const response = await fetch(`${url}noticias`,
         {
             method: "POST",
@@ -116,7 +116,7 @@ export const createNoticia= async (noticia) => {
                 Authorization: JSON.parse(localStorage.getItem("token")),
             },
         }
-        
+
     );
 
     const data = await response.json();
@@ -144,4 +144,3 @@ export const editNoticia = async (noticia) => {
     return data;
 
 };
-      

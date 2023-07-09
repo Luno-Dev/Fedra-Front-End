@@ -16,7 +16,7 @@ const Navs = () => {
 
     const handleCookieChange = () => {
       const cookie = new Cookies();
-      
+
       if (cookie.get("token")) {
         setToken(true)
       }
@@ -37,7 +37,7 @@ const Navs = () => {
   const logOut = () => {
     swal(`Gracias por visitarnos, ¡vuelve pronto!`, { icon: "success" }).then((active) => {
       if (active) {
-      const cookie = new Cookies();
+        const cookie = new Cookies();
         location.replace("/");
         localStorage.removeItem("token");
         localStorage.removeItem("role");

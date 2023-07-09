@@ -2,8 +2,8 @@
 
 const url = "https://fedra-back-nicolasmoralesdev.vercel.app/api/auth/loginAdmin";
 
-export const usuarios = {usuario:""};
-export const socios = {usuario:""};
+export const usuarios = { usuario: "" };
+export const socios = { usuario: "" };
 
 
 
@@ -16,7 +16,7 @@ export const login = async (datos) => {
     },
   });
   const data = await response.json();
-  usuarios.usuario=data.usuario;
+  usuarios.usuario = data.usuario;
 
   return data;
 };
@@ -30,6 +30,6 @@ export const loginSocios = async (datos) => {
     },
   });
   const data = await response.json();
-  socios.socio=data.socio;
+  socios.socio = data.socio;
   return data;
 };

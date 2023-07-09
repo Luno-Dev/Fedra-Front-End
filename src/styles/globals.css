@@ -109,15 +109,16 @@ textarea {
     font-size: 1.1rem;
 }
 .noticias-titulo{
-    text-transform: uppercase;
+    font-size: 1.1rem;
     color: #00ABF0;
+    max-height: 23%;
 }
 .noticias-autor{
-    color: #0488bc;
     font-size: 1.1rem;
 }
-.noticias-fecha{
-    color: #0781b0;
+
+.cards-body{
+   justify-self: end;
 }
 
 .modal-bg{

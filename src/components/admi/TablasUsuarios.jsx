@@ -82,14 +82,14 @@ function TablasUsuarios() {
               <th>{index.trabajadordocumento}</th>
               <th>{index.trabajadorcel}</th>
               <th>{index.email}</th>
-              <th>{index.estado.toString() === "false"?
-                 "Inactivo" : "Activo"
+              <th>{index.estado.toString() === "false" ?
+                "Inactivo" : "Activo"
               }</th>
               <th className='d-flex flex-wrap flex-column p-2'>
                 <a className='btn bg-cyan text-light fw-bold m-2' href={`/socios/${index.socioid}`}>Ver</a>
                 {index.estado.toString() === "false" ?
-                  <button className='btn btn-success fw-bold m-2' onClick={()=>cambiarEstadoSocio(index.socioid, index.estado.toString() )}>Activar</button> :
-                  <button className='btn btn-danger fw-bold m-2'  onClick={()=>cambiarEstadoSocio(index.socioid, index.estado.toString() )}>Suspender</button>
+                  <button className='btn btn-success fw-bold m-2' onClick={() => cambiarEstadoSocio(index.socioid, index.estado.toString())}>Activar</button> :
+                  <button className='btn btn-danger fw-bold m-2' onClick={() => cambiarEstadoSocio(index.socioid, index.estado.toString())}>Suspender</button>
                 }
               </th>
             </tr>

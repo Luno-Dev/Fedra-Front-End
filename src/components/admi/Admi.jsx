@@ -3,8 +3,6 @@ import { Helmet } from 'react-helmet'
 import TablasUsuarios from './TablasUsuarios';
 import Tablas from './Tablas';
 
-
-
 const Admi = () => {
 
   const [usuarioOnline, setUsuarioOnline] = useState("");
@@ -13,6 +11,8 @@ const Admi = () => {
   useEffect(() => {
 
     setUsuarioOnline(JSON.parse(localStorage.getItem('nombreUsuario')));
+
+
   }, [])
 
 
@@ -31,7 +31,7 @@ const Admi = () => {
         <div className='my-5 g-4' >
           <h4>Usuario conectado: {usuarioOnline}</h4>
           <h1 className='text-center mb-3'>Administrar Noticias</h1>
-          <Tablas/>
+          <Tablas />
         </div>
 
         <div className='my-5 g-4' >

@@ -57,6 +57,10 @@
     border: 1px solid white;
 }
 
+.consultora:hover{
+    border: 1px solid white;
+}
+
 .capacita2 {
     border-left: 1px solid white;
 }

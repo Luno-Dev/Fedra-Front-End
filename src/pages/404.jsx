@@ -8,24 +8,24 @@ const error = () => {
   return (
     <>
 
-<div>
-  <Helmet>
-        <meta charSet="utf-8" />
-        <title>Error 404 - Pagina no Encontrada</title>
-      </Helmet>
-</div>
+      <div>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Error 404 - Pagina no Encontrada</title>
+        </Helmet>
+      </div>
 
 
       <Navs />
       <Container>
         <div className="p-5 d-flex flex-column justify-content-center align-items-center gap-3">
           <div className="image--error position-relative">
-          <Image
-          src="/error404.png"
-          fill
-          priority={true}
-          alt="Image de error 404"
-          ></Image>
+            <Image
+              src="/error404.png"
+              fill
+              priority={true}
+              alt="Image de error 404"
+            ></Image>
           </div>
           <h1 className="text-center display-3 text-light ">
             Pagina no encontrada

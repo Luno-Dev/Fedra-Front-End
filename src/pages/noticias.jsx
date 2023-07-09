@@ -2,13 +2,10 @@ import Navs from '@/components/common/Navs'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { traerNoticias } from '@/helpers/fetchAdmi';
-import { useContext, useEffect, useState } from 'react';
-import DataContext from '../components/context/DataContext';
+import { useEffect, useState } from 'react';
 
 const noticias = () => {
   const [noticias, setNoticias] = useState([]);
-
-
 
   const recibirData = async () => {
 
@@ -42,24 +39,22 @@ const noticias = () => {
           {noticias.map(index => (
             <div key={index._id} className="noticias-card ">
 
-              {index.img  ?
+              {index.img ?
                 <div className="card-img-noticia">
-                  <img src={index.img} alt="img" /></div> : <span></span>}
-
-              <div className="card-body-noticia">
-                <h3 className='noticias-titulo mt-5'>{index.titulo}</h3>
-                <p className='noticias-descripcion container-descripcio '>{index.descripcion}</p>
-<a href={`/noticias/${index._id}`}>acceder</a>
-                <p className='noticias-autor'>{index.autor}</p>
-                <p className='noticias-fecha'>{index.fecha.split("T", 1)}</p>
+                  <img src={index.img} alt="img" /></div> : <></>}
+              <div className="card-body-noticia d-flex flex-column">
+                <div className='mt-3 noticias-titulo'>
+                  <h4>{index.titulo}</h4>
+                </div>
+                <div className='cards-body'>
+                  <p className='noticias-autor'>Autor {index.autor}</p>
+                  <p className='noticias-fecha'>Publicado el {index.fecha.split("T", 1)}</p>
+                  <a className='btn btn-danger fw-bold' href={`/noticias/${index._id}`}>Mirar</a>
+                </div>
 
               </div>
             </div>
           ))}
-
-
-
-
 
         </div>
 

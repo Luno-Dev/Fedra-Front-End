@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 
 
 const Constitucion = () => {
-  
+
   return (
     <>
       <div>
