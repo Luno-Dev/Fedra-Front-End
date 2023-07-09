@@ -28,7 +28,7 @@ function Tablas() {
   const handleClose = () => setEdit(false);
 
   const handleimg = async (e) => {
-    const url = await upload(e.target.files[0]);
+    const url = await upload(e.target.files);
     publicacion.img = url;
   };
 

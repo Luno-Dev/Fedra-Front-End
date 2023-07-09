@@ -10,8 +10,6 @@ const noticias = () => {
 
 
 
-
-
   const recibirData = async () => {
 
     const noticias = await traerNoticias();
@@ -50,8 +48,8 @@ const noticias = () => {
 
               <div className="card-body-noticia">
                 <h3 className='noticias-titulo mt-5'>{index.titulo}</h3>
-                <p className='noticias-descripcion'>{index.descripcion}</p>
-
+                <p className='noticias-descripcion container-descripcio '>{index.descripcion}</p>
+<a href={`/noticias/${index._id}`}>acceder</a>
                 <p className='noticias-autor'>{index.autor}</p>
                 <p className='noticias-fecha'>{index.fecha.split("T", 1)}</p>
 

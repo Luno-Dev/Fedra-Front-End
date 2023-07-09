@@ -36,6 +36,7 @@ for (let index = 0; index< long ; index++) {
     const { name, value } = e.target;
     publicacion.autor = JSON.parse(localStorage.getItem('nombreUsuario'));
     setPublicacion((prevState) => ({ ...prevState, [name]: value }));
+    console.log(publicacion);
  
   };
 

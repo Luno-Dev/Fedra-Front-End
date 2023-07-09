@@ -98,6 +98,7 @@ const Inicio = () => {
                             <small className="card-body-secundary fw-bold">Publicada: {index.fecha.split("T", 1)}</small>
                             <br />
                             <small className="card-body-secundary fw-bold">Autor: {index.autor}</small>
+                            <a href={`/noticias/${index._id}`}>acceder</a>
                           </p>
                         </div>
                       </div>
