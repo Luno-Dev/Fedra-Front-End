@@ -89,15 +89,15 @@ const Inicio = () => {
                       </div>
                       <div className="col-xl-8 texto-card overflow-y-scroll">
                         <div className="card-body">
-                          <h5 className="card-title">{index.titulo}</h5>
-                          <div className="container-descripcio ">
-                            <p className="card-text" minLength="30">{index.descripcion}</p>
-                          </div>
+                          <h5 className="card-title card-titulo">{index.titulo}</h5>
+                          {/* <div className="container-descripcio ">
+                            <p className="card-text" max-Length="3">{index.descripcion}</p>
+                          </div> */}
 
                           <p className="card-text">
-                            <small className="card-body-secundary fw-bold">Publicada: {index.fecha.split("T", 1)}</small>
+                            <small className="card-body-secundary fw-bold fst-italic">Publicada: {index.fecha.split("T", 1)}</small>
                             <br />
-                            <small className="card-body-secundary fw-bold">Autor: {index.autor}</small>
+                            <small className="card-body-secundary fw-bold fst-italic">Autor: {index.autor}</small>
 
                           </p>
                           <a href={`/noticias/${index._id}`} className="fw-bold btn btn-danger">Mirar</a>
