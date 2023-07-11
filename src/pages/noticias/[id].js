@@ -1,8 +1,7 @@
 import Navs from '@/components/common/Navs';
 import { traerNoticia, traerNoticias } from '@/helpers/fetchAdmi';
 import { getNoticias } from '@/helpers/fetchNoticias';
-import React, { useEffect, useState } from 'react'
-import { Col } from 'react-bootstrap';
+import React from 'react'
 import { Helmet } from 'react-helmet'
 
 const noticias = (props) => {
@@ -20,17 +19,14 @@ const noticias = (props) => {
       <Navs />
       <main>
 
-
         <div className='mt-5  container'>
           <h1 className='text-center'>{noticia.titulo}</h1>
-
-
 
           {
             noticia.img.length <= 1 ?
 
-              <div className='mt-3 mb-3 d-flex justify-content-center'>
-                <img src={noticia.img} height={400} width={500} />
+              <div className='mt-3 mb-3 d-flex justify-content-center imagen-detalle'>
+                <img src={noticia.img} alt={noticia.titulo} width={25}/>
               </div>
               :
               noticia.img.map(index => (
@@ -44,14 +40,14 @@ const noticias = (props) => {
         </div>
         <section className='container p-3'>
           <h2 className='text-center'>Mas Noticias</h2>
-          <div className='d-flex justify-content-center flex-wrap'>
+          <div className='d-flex  flex-wrap  justify-content-center justify-content-sm-start'>
             {
               data.map(index => (
                 <div key={index._id} className="noticias-card ">
 
                   {index.img ?
                     <div className="card-img-noticia">
-                      <img src={index.img} alt="img" className='card-imagen-detalle-noticia' /></div> : <></>}
+                      <img src={index.img} alt={data.titulo} className='card-imagen-detalle-noticia' /></div> : <></>}
                   <div className="card-body-noticia d-flex flex-column">
                     <div className='mt-3 noticias-titulo'>
                       <h4>{index.titulo}</h4>
@@ -114,6 +110,6 @@ export async function getStaticProps({ params }) {
     }
   } catch (error) {
     console.log(error);
-    
+
   }
 }

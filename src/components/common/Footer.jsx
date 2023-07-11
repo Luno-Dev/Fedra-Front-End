@@ -81,8 +81,8 @@ const Footer = () => {
             </Row>
           </Container>
         </div>
-        <div className="d-flex justify-content-center">
-          <h6 className="text-cyan">© Desarrollado por Luno, Osmán Franco, Luciano Rivera, Nicolas Morales, Azubel Gabriel - 2023</h6>
+        <div className="d-flex justify-content-center p-3">
+          <span className="text-cyan text-center">© Desarrollado por Luno, Osmán Franco, Luciano Rivera, Nicolas Morales, Azubel Gabriel - 2023</span>
         </div>
       </footer>
     </>

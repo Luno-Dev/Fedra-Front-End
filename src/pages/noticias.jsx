@@ -1,8 +1,9 @@
 import Navs from '@/components/common/Navs'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { traerNoticias } from '@/helpers/fetchAdmi';
+
 import { useEffect, useState } from 'react';
+import { traerNoticias } from '@/helpers/fetchAdmi';
 
 const noticias = () => {
   const [noticias, setNoticias] = useState([]);
