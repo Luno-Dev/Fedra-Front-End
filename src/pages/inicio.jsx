@@ -1,11 +1,32 @@
 import Navs from "@/components/common/Navs";
 import React from "react";
 import { Col, Container, Row, Carousel } from "react-bootstrap";
+import { useContext, useEffect, useState } from 'react';
+import VideoYoutube from "../components/common/video";
+import { getNoticias } from "../helpers/fetchNoticias"
 
 const Inicio = () => {
+
+
+  const [noticias, setNoticias] = useState([]);
+
+  const traerData = async () => {
+
+    let data = await getNoticias();
+    setNoticias(data.noticias);
+
+
+  }
+
+  console.log(noticias);
+
+  useEffect(() => {
+    traerData()
+  }, [])
+
   return (
     <>
-     <Navs/>
+      <Navs />
       <Container className="my-5">
         <article className="article-1">
           <Row className="d-xl-flex d-md-block d-sm-block justify-content-center align-items-center">
@@ -15,11 +36,12 @@ const Inicio = () => {
                   <img
                     className="imgCarousel d-block w-100"
                     src="https://i.ibb.co/gFVtkvQ/ina-face.jpg"
-                    alt="First slide"
+                    alt="Fedra congreso internacional del ocio nocturno"
                   />
                   <Carousel.Caption className="Carousel-Caption">
-                    <h3 className="text-cyan">First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <span className="text-cyan">8° Congreso Internacional de Ocio Nocturno - International Nightlife Association (INA)</span>
+                    <p>Luego de participar en la Expobar 2022, organizada por Asobares de Colombia,
+                      participamos en este Congreso en Tenerife, España.</p>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -30,21 +52,23 @@ const Inicio = () => {
                   />
 
                   <Carousel.Caption className="Carousel-Caption">
-                    <h3 className="text-cyan">Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <span className="text-cyan">Casa Rosada - Reunión con el Secretario de Presidencia por Seguridad en las Discotecas</span>
+                    <p>Invitados por Presidencia de Argentina, asistimos a una reunión para tratar el tema
+                      seguridad y violencia de género en Buenos Aires.</p>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                   <img
                     className="imgCarousel d-block w-100"
                     src="https://i.ibb.co/x2GgM41/FEDRA-asamblea-CABA-2021.jpg"
-                    alt="Third slide"
+                    alt="FEDRA reunida en Casa Rosada"
                   />
 
                   <Carousel.Caption className="Carousel-Caption">
-                    <h3 className="text-cyan">Third slide label</h3>
+                    <span className="text-cyan">Asamblea General - Federación de Entidades de Discotecas de la República Argentina</span>
                     <p>
-                      Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                      Celebramos asambleas en las que se aprobaron los ejercicios vencidos y se proclamó la
+                      única lista presentada ante la Junta Electoral.
                     </p>
                   </Carousel.Caption>
                 </Carousel.Item>
@@ -52,68 +76,45 @@ const Inicio = () => {
             </Col>
             {/* NOTICIAS */}
             <Col className="noticias col-xl-6 col-md-12 col-12">
-              <div className="row m-3 text-center">
+             
+{     noticias.map(index => (
+
+
+              <Col className="noticias-Card ">
+                <div className="card">  
+                <div className="row">
+              
+                      <div className="col-xl-4 col-sm-12">
+                      <img className="imgCard fw-bold" src={index.img} alt={index.titulo}  /> 
+             
+                    </div>   
+                    <div className="col-xl-8">
+                      <div className="card-body">
+                        <h5 className="card-title">{index.titulo}</h5>
+                        <div className="container-descripcion">
+                          <p className="card-text">{index.descripcion}</p>
+                        </div>
+                        
+                        <p className="card-text">
+                          <small className="card-body-secundary fw-bold">Publicada: {index.fecha.split("T",1)}</small>
+                          <br />
+                          <small className="card-body-secundary fw-bold">Autor: {index.autor}</small>
+                        </p>
+                      </div>
+                    </div>
+
+                    </div>
+                  </div>
+                </Col>
+
+          
+
+              ))
+
+              } <div className="row m-3 text-center">
                 <h1 className="text-cyan">ULTIMAS NOTICIAS</h1>
               </div>
-
-              <Col className="noticias-Card">
-                <div className="card">
-                  <div className="row">
-                    <div className="col-xl-4 col-sm-12">
-                      <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt=""  />
-                    </div>
-                    <div className="col-xl-8">
-                      <div className="card-body">
-                        <h5 className="card-title">Hola</h5>
-                        <p className="card-text">hola, como estas</p>
-                        <p className="card-text">
-                          <small className="card-body-secundary">hora 5</small>
-                        </p>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                {/* ------- */}
-                <div className="card">
-                  <div className="row ">
-                    <div className="col-xl-4 col-md-12 col-sm-12">
-                      <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt=""/>
-                    </div>
-                    <div className="col-xl-8">
-                      <div className="card-body">
-                        <h5 className="card-title">Hola</h5>
-                        <p className="card-text">hola, como estas</p>
-                        <p className="card-text">
-                          <small className="card-body-secundary">hora 5</small>
-                        </p>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                {/* -------- */}
-                <div className="card">
-                  <div className="row">
-                    <div className="col-xl-4 col-md-12 col-sm-12">
-                      <img className="imgCard" src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80" alt=""/>
-                    </div>
-                    <div className="col-xl-8">
-                      <div className="card-body">
-                        <h5 className="card-title">Hola</h5>
-                        <p className="card-text">hola, como estas</p>
-                        <p className="card-text">
-                          <small className="card-body-secundary">hora 5</small>
-                        </p>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </Col>
-
             </Col>
-
             {/* FIN NOTICIAS */}
           </Row>
         </article>
@@ -131,9 +132,11 @@ const Inicio = () => {
             </Col>
             <Col className="p-0 col-xl-6 col-12">
               <img
-                src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80"
-                alt=""
+                src="/constitucion.png"
+                alt="constitucion Fedra"
+                width={100}
                 className="imgInicio"
+                height={100}
               />
             </Col>
           </Row>
@@ -142,9 +145,11 @@ const Inicio = () => {
           <Row className="d-xl-flex d-md-block d-sm-block justify-content-center align-items-center">
             <Col className="p-0 col-xl-6 col-12">
               <img
-                src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBibGFuY28lMjBsaXNvfGVufDB8fDB8fHww&w=1000&q=80"
-                alt=""
+                src="/mision.png"
+                alt="mision fedra"
                 className="imgInicio2"
+                width={100}
+                height={100}
               />
             </Col>
             <Col className="p-5 col-xl-6 col-12">
@@ -172,7 +177,7 @@ const Inicio = () => {
 
           </Row>
         </section >
-        <article className="agregados">
+        <section className="agregados">
           <Row className="d-xl-flex d-md-block d-sm-block mt-3 text-center">
             <Col className="p-5 col-xl-6 col-12 capacita1">
               <h1 className="text-cyan">REGISTRÁ TU PERSONAL</h1>
@@ -188,12 +193,24 @@ const Inicio = () => {
                 Suscribimos un convenio con la Universidad Tecnologica Nacional y la asociación de Bartenders de Argentina, creando una carrera universitaria para capacitar a nuestro personal en diferentes funciones.
               </p>
             </Col>
-
           </Row>
-        </article>
+          <Col className="p-5 col-xl-12 col-12 text-center">
+            <h1 className="text-cyan">CONSULTORA</h1>
+            <br />
+            <p>
+
+              FEDRA puede asesorar en cuestiones sobre las que posee un conocimiento especializado y
+              ayudar a las empresas a mejorar su desempeño. Ofrecemos contactos en todos los
+              ámbitos institucionales; privados, públicos o mixtos.
+            </p>
+          </Col>
+        </section>
+        <section className="text-center w-100 p-4">
+          <VideoYoutube/>
+        </section>
       </Container >
     </>
-  );
+  )
 };
 
 export default Inicio;

@@ -8,7 +8,6 @@ export const getNoticias = async () => {
 
     let totales = await traerNoticias();
     let param = totales.total - 3;
-    console.log(param);
     const response = await fetch(`${url}noticias?limite=3&desde=${param}`, {
         method: "GET",
         headers: {
@@ -16,6 +15,5 @@ export const getNoticias = async () => {
         },
     });
     const data = await response.json();
-
     return data;
 };

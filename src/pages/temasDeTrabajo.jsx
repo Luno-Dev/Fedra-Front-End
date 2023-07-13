@@ -21,18 +21,12 @@ const TemasDeTrabajo = () => {
               Argentina SUTCAPRA y otro celebrado con el Sindicato Único de
               Trabajadores de Espectáculos Públicos SUTEP.
             </p>
-          <article className="mt-5 d-flex justify-content-around flex-wrap">
-            <Button className="bg-darkblue">
-              <i className="bi bi-file-earmark-arrow-down text-cyan">PDF</i>
+          <article className="mt-5 d-flex justify-content-around flex-wrap gap-2">
+            <Button className="bg-darkblue" download="convenio-SUTCAPRA.pdf" href="convenio-SUTCAPRA.pdf">
+              <i className="bi bi-file-earmark-arrow-down text-cyan">Convenio SUTCAPRA</i>
             </Button>
-            <Button className="bg-darkblue">
-              <i className="bi bi-file-earmark-arrow-down text-cyan">PDF</i>
-            </Button>
-            <Button className="bg-darkblue">
-              <i className="bi bi-file-earmark-arrow-down text-cyan">PDF</i>
-            </Button>
-            <Button className="bg-darkblue">
-              <i className="bi bi-file-earmark-arrow-down text-cyan">PDF</i>
+            <Button className="bg-darkblue" download="convenio-SUTEP.pdf" href="convenio-SUTEP.pdf">
+              <i className="bi bi-file-earmark-arrow-down text-cyan">Convenio SUTEP</i>
             </Button>
           </article>
         </section>
@@ -42,7 +36,8 @@ const TemasDeTrabajo = () => {
         </section>
         <section className="mb-5">
           <h2 className="text-cyan text-center mb-4">NORMATIVAS</h2>
-          <p className="text-center">Se pone a disposición un espacio abierto con las leyes, decretos y ordenanzas para nuestra actividad. Solicitarlas al mail:</p>
+          <p className="text-center">Se pone a disposición un espacio abierto con las leyes, decretos y ordenanzas para nuestra actividad. Solicitarlas al mail: 
+fedraargentina@gmx.com</p>
         </section>
       </Container>
     </>

@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import { crearUsuario } from "../helpers/fetchUsuarios";
 import { Helmet } from "react-helmet";
 import { Col, Container, Row } from "react-bootstrap";
+import swal from "sweetalert";
 
 const registro = () => {
   const [formValues, setFormValues] = useState({
@@ -54,7 +55,15 @@ const registro = () => {
     e.preventDefault();
     if (formValues.password) {
       const respuesta = await crearUsuario(formValues);
-
+      swal(
+        `Datos Recibidos con exito!`,
+        "Para completar el registro debera abonar la cuota de afiliacion a este CBU: 0110481720048102102848 e informar el pago al correo: FedraArgentina@gmx.com ",
+        "success"
+      ).then((active) => {
+        if (active) {
+          location.replace("/");
+        }
+      });
       if (respuesta?.usuario) {
         setMessage([{ ok: true, msg: respuesta.msg }]);
         setTimeout(() => {
@@ -483,7 +492,7 @@ const registro = () => {
               </Row>
             </Form.Group>
             <div className="d-flex justify-content-end">
-              <button type="submit" className="btn bg-cyan">Registrarse</button>
+              <button type="submit" className="btn bg-cyan text-light fw-bolder">Registrarse</button>
             </div>
           </Form>
         </div>

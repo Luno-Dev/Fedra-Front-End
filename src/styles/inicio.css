@@ -30,6 +30,7 @@
     width: 100%;
     border-top-left-radius: 10%;
     border-bottom-right-radius: 10%;
+    object-fit: cover;
 }
 
 .imgInicio2 {
@@ -37,6 +38,7 @@
     width: 100%;
     border-top-left-radius: 10%;
     border-bottom-right-radius: 10%;
+    object-fit: cover;
 }
 
 .agregados {
@@ -109,6 +111,13 @@
     .capacita2 {
         border-left: none;
     }
+}
+
+
+
+.noticias {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 @media all and (min-width: 500px) and (max-width: 1200px) {

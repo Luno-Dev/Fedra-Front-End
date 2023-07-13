@@ -3,26 +3,32 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 
+
+
+
 const Constitucion = () => {
+  
   return (
     <>
-<div>
+      <div>
 
-   <Helmet>
-        <meta charSet="utf-8" />
-        <title>Constitucion</title>
-      </Helmet>
-</div>
-     
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Constitucion</title>
+        </Helmet>
+      </div>
+
       <Navs />
       <Container className="my-5">
         <section className="my-5 d-flex flex-column align-items-center">
           <h1 className="text-cyan">CONSTITUCIÓN</h1>
           <img
-            src="https://images.pexels.com/photos/3182781/pexels-photo-3182781.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="imagen de prueba"
+            src="FEDRA constitución 2.jpg"
+            alt="imagen de constitucion"
             className="imgBanner w-100 rounded my-3"
           />
+          <span className="mb-2 text-center">Luego de constituir la federación nacional nos vinculamos internacionalmente
+            Argentina, Chile, México, República Dominicana y Uruguay en Buenos Aires.</span>
           <h2>Objetivos</h2>
           <p className="text-center">
             FEDRA surgió debido a la necesidad de vincular a los propietarios de

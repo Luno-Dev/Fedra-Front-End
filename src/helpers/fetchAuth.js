@@ -31,6 +31,5 @@ export const loginSocios = async (datos) => {
   });
   const data = await response.json();
   socios.socio=data.socio;
-console.log(datos);
   return data;
 };

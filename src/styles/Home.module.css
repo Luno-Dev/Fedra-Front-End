@@ -1,0 +1,16 @@
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* Proporción para un video de relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+
+    /* Estilos para dispositivos móviles */
+    .video-container {
+        padding-bottom: 30%;
+        /* Proporción personalizada para dispositivos móviles */
+    }
+}
