@@ -113,7 +113,7 @@ const Inicio = () => {
                     </div>
 
                     </div>
-                  </div>
+          
                 </Col>
 
           

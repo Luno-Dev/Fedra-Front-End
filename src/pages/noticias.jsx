@@ -34,7 +34,7 @@ const noticias = () => {
       </div>
 
       <Navs />
-      <div className='Contenedor-noticias'>
+
         <h1 className='text-center'>Noticias</h1>
         <div className="not-cont">
 
@@ -60,15 +60,7 @@ const noticias = () => {
           ))}
 
         </div>
-        ))}
-        
-       
-     
-      
-        
-      </div>
-
-    </div>
+    
     
     </>
     
