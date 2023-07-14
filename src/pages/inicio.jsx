@@ -82,7 +82,7 @@ const Inicio = () => {
 
 
                 <Col className="noticias-Card overflow-hidden" key={index._id}>
-                  <div className="card">
+                  <div className="card ">
                     <div className="row">
 
                       <div className="col-xl-4 col-sm-12 ">
@@ -98,8 +98,6 @@ const Inicio = () => {
 
                           <p className="card-text">
                             <small className="card-body-secundary fw-bold fst-italic">Publicada: {index.fecha.split("T", 1)}</small>
-                            <br />
-                            <small className="card-body-secundary fw-bold fst-italic">Autor: {index.autor}</small>
 
                           </p>
                           <a href={`/noticias/${index._id}`} className="fw-bold btn btn-danger">Mirar</a>
