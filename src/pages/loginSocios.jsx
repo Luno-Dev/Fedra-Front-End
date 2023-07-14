@@ -24,14 +24,13 @@ const logins = () => {
       localStorage.setItem("role", JSON.stringify(datos.socio.role));
       cookies.set("token", `${datos.token}`, { path: "/", maxAge: 3850 });
 
-
       swal(
         `Bienvenido ${datos.socio.trabajadornombre}!`,
         "Haz Clik para continuar!",
         "success"
       ).then((active) => {
         if (active) {
-          location.replace("/administracion");
+          location.replace(`/socio?id=${datos.socio.socioid}`);
         }
       });
     } else {

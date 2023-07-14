@@ -26,7 +26,7 @@ export const traerSocio = async (id) => {
     });
     const data = await response.json();
 
-    return data;
+    return data.socio;
 };
 
 export const traerNoticia = async (id) => {

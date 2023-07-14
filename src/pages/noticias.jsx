@@ -14,6 +14,7 @@ const noticias = () => {
     setNoticias(noticias.noticias);
 
   }
+
   useEffect(() => {
     recibirData();
 

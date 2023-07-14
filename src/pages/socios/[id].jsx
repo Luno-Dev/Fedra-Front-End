@@ -239,7 +239,6 @@ export async function getStaticProps({ params }) {
       },
     });
     const data = await response.json();
-
     return {
       props: data.socio,
     }
