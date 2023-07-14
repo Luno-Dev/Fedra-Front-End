@@ -19,14 +19,14 @@ const noticias = (props) => {
       <Navs />
       <main>
 
-        <div className='mt-5  container'>
+        <div className='mt-5 text-center container'>
           <h1 className='text-center'>{noticia.titulo}</h1>
 
           {
             noticia.img.length <= 1 ?
 
-              <div className='mt-3 mb-3 d-flex justify-content-center imagen-detalle'>
-                <img src={noticia.img} alt={noticia.titulo} width={25}/>
+              <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle'>
+                <img src={noticia.img} alt={noticia.titulo} className='imagen-n-c' />
               </div>
               :
               noticia.img.map(index => (

@@ -62,7 +62,14 @@ textarea {
 }
 
 /* estilos seccion noticias */
-
+.imagen-c{
+max-width: 600px;
+margin: auto;
+}
+.imagen-n-c{
+    max-width: 100%;
+    height: auto;
+}
 .Contenedor-noticias h1 {
     color: #00ABF0;
     margin-top: 20px;
