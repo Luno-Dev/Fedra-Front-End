@@ -1,8 +1,9 @@
 import Navs from "@/components/common/Navs";
-import { getNoticias } from "@/helpers/fetchNoticias";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Col, Container, Row, Carousel } from "react-bootstrap";
+import { useContext, useEffect, useState } from 'react';
 import VideoYoutube from "../components/common/video";
+import { getNoticias } from "../helpers/fetchNoticias"
 
 const Inicio = () => {
 
@@ -73,10 +74,9 @@ const Inicio = () => {
               </Carousel>
             </Col>
             {/* NOTICIAS */}
-
             <Col className="noticias col-xl-6 col-md-12 col-12">
-
-              {noticias.map(index => (
+             
+{     noticias.map(index => (
 
 
                 <Col className="noticias-Card h-25" key={index._id}>
@@ -101,13 +101,22 @@ const Inicio = () => {
 
                           </p>
                           <a href={`/noticias/${index._id}`} className="fw-bold btn btn-danger">Mirar</a>
+
                         </div>
+                        
+                        <p className="card-text">
+                          <small className="card-body-secundary fw-bold">Publicada: {index.fecha.split("T",1)}</small>
+                          <br />
+                          <small className="card-body-secundary fw-bold">Autor: {index.autor}</small>
+                        </p>
                       </div>
+                    </div>
 
                     </div>
                   </div>
                 </Col>
 
+          
 
               ))
 
@@ -177,7 +186,7 @@ const Inicio = () => {
 
           </Row>
         </section >
-        <article className="agregados">
+        <section className="agregados">
           <Row className="d-xl-flex d-md-block d-sm-block mt-3 text-center">
             <Col className="p-5 col-xl-6 col-12 capacita1">
               <h1 className="text-cyan">REGISTRÁ TU PERSONAL</h1>
@@ -204,16 +213,10 @@ const Inicio = () => {
               ámbitos institucionales; privados, públicos o mixtos.
             </p>
           </Col>
-        </article>
-        <article>
-          <Row className="text-center p-4">
-            <Col>
-              <VideoYoutube
-                width={50}
-              />
-            </Col>
-          </Row>
-        </article>
+        </section>
+        <section className="text-center w-100 p-4">
+          <VideoYoutube/>
+        </section>
       </Container >
     </>
   )

@@ -27,7 +27,7 @@ const Constitucion = () => {
             alt="imagen de constitucion"
             className="imgBanner w-100 rounded my-3"
           />
-          <span className="mb-2">Luego de constituir la federación nacional nos vinculamos internacionalmente
+          <span className="mb-2 text-center">Luego de constituir la federación nacional nos vinculamos internacionalmente
             Argentina, Chile, México, República Dominicana y Uruguay en Buenos Aires.</span>
           <h2>Objetivos</h2>
           <p className="text-center">

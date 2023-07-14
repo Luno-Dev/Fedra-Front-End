@@ -21,7 +21,9 @@ const Contacto = () => {
                             </div>
                             <div className="d-flex">
                                 <i className="bi bi-envelope-at me-3 text-cyan"></i>
+
                                 <p>FedraArgentina@gmx.com</p>
+
                             </div>
                             <div className="d-flex">
                                 <i className="bi bi-telephone me-3 text-cyan"></i>

@@ -8,19 +8,20 @@ import { traerNoticias } from '@/helpers/fetchAdmi';
 const noticias = () => {
   const [noticias, setNoticias] = useState([]);
 
+
   const recibirData = async () => {
 
     const noticias = await traerNoticias();
     setNoticias(noticias.noticias);
-
+    
   }
 
   useEffect(() => {
     recibirData();
-
-
+  
+    
   }, [])
-
+  
   return (
     <>
 
@@ -59,11 +60,18 @@ const noticias = () => {
           ))}
 
         </div>
-
+        ))}
+        
+       
+     
+      
+        
       </div>
 
+    </div>
+    
     </>
-
+    
   )
 }
 

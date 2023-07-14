@@ -186,7 +186,7 @@ function Tablas() {
               className='fw-bold'
               onClick={() => crearNoticia(publicacion)}
             >
-              Editar
+              Crear
             </Button> :
               <Spinner animation="border" />
           }
