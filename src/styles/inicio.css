@@ -18,6 +18,10 @@
     margin-top: 5px;
 }
 
+.texto-card {
+    height: 150px;
+}
+
 .imgCard {
     width: 100%;
     height: 150px;
@@ -51,6 +55,10 @@
 }
 
 .capacita1:hover {
+    border: 1px solid white;
+}
+
+.consultora:hover{
     border: 1px solid white;
 }
 

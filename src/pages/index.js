@@ -1,7 +1,4 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
-import { Container } from "react-bootstrap";
-import Navs from "@/components/common/Navs";
 import Inicio from "./inicio";
 
 

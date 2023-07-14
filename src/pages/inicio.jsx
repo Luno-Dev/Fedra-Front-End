@@ -18,7 +18,6 @@ const Inicio = () => {
 
   }
 
-  console.log(noticias);
 
   useEffect(() => {
     traerData()
@@ -31,7 +30,7 @@ const Inicio = () => {
         <article className="article-1">
           <Row className="d-xl-flex d-md-block d-sm-block justify-content-center align-items-center">
             <Col className="p-3 col-xl-6 col-12">
-              <Carousel>
+              <Carousel data-bs-ride="carousel">
                 <Carousel.Item>
                   <img
                     className="imgCarousel d-block w-100"
@@ -80,19 +79,29 @@ const Inicio = () => {
 {     noticias.map(index => (
 
 
-              <Col className="noticias-Card ">
-                <div className="card">  
-                <div className="row">
-              
-                      <div className="col-xl-4 col-sm-12">
-                      <img className="imgCard fw-bold" src={index.img} alt={index.titulo}  /> 
-             
-                    </div>   
-                    <div className="col-xl-8">
-                      <div className="card-body">
-                        <h5 className="card-title">{index.titulo}</h5>
-                        <div className="container-descripcion">
-                          <p className="card-text">{index.descripcion}</p>
+                <Col className="noticias-Card h-25" key={index._id}>
+                  <div className="card">
+                    <div className="row">
+
+                      <div className="col-xl-4 col-sm-12 ">
+                        <img className="imgCard fw-bold" src={index.img[0]} alt={index.titulo} />
+
+                      </div>
+                      <div className="col-xl-8 texto-card overflow-y-scroll">
+                        <div className="card-body">
+                          <h5 className="card-title card-titulo">{index.titulo}</h5>
+                          {/* <div className="container-descripcio ">
+                            <p className="card-text" max-Length="3">{index.descripcion}</p>
+                          </div> */}
+
+                          <p className="card-text">
+                            <small className="card-body-secundary fw-bold fst-italic">Publicada: {index.fecha.split("T", 1)}</small>
+                            <br />
+                            <small className="card-body-secundary fw-bold fst-italic">Autor: {index.autor}</small>
+
+                          </p>
+                          <a href={`/noticias/${index._id}`} className="fw-bold btn btn-danger">Mirar</a>
+
                         </div>
                         
                         <p className="card-text">
@@ -194,7 +203,7 @@ const Inicio = () => {
               </p>
             </Col>
           </Row>
-          <Col className="p-5 col-xl-12 col-12 text-center">
+          <Col className="p-5 col-xl-12 col-12 text-center consultora">
             <h1 className="text-cyan">CONSULTORA</h1>
             <br />
             <p>

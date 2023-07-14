@@ -26,15 +26,14 @@ export const traerSocio = async (id) => {
     });
     const data = await response.json();
 
-    return data;
+    return data.socio;
 };
 
 export const traerNoticia = async (id) => {
     const response = await fetch(`${url}noticias/${id}`, {
         method: "GET",
         headers: {
-            "Content-type": "application/json; charset=UTF-8",
-            "Authorization": JSON.parse(localStorage.getItem('token'))
+            "Content-type": "application/json; charset=UTF-8"
         },
     });
     const data = await response.json();
@@ -58,7 +57,7 @@ export const putSocio = async (id, estado) => {
     const data = await response.json();
 
     return data;
-       
+
 };
 
 
@@ -101,7 +100,7 @@ export const traerNoticias = async () => {
     return data;
 };
 
-export const createNoticia= async (noticia) => {
+export const createNoticia = async (noticia) => {
     const response = await fetch(`${url}noticias`,
         {
             method: "POST",
@@ -117,7 +116,7 @@ export const createNoticia= async (noticia) => {
                 Authorization: JSON.parse(localStorage.getItem("token")),
             },
         }
-        
+
     );
 
     const data = await response.json();
@@ -145,4 +144,3 @@ export const editNoticia = async (noticia) => {
     return data;
 
 };
-      

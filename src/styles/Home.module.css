@@ -6,6 +6,10 @@
     overflow: hidden;
 }
 
+.text-cyan {
+    color: #00ABF0 !important;
+}
+
 @media (max-width: 768px) {
 
     /* Estilos para dispositivos móviles */

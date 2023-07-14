@@ -7,8 +7,8 @@ export const DataContext = createContext();
 const DataProvider = ({children}) => {
     
   const [show, setShow] = useState(false); // Estado global
-  const [edit, setEdit] = useState(false); // Estado global
-  const [editPublicaciones, setEditPublicaciones] = useState([]); // Estado global
+  const [edit, setEdit] = useState(false); 
+  const [editPublicaciones, setEditPublicaciones] = useState([]);
 
 
   return (

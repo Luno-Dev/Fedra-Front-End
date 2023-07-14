@@ -6,21 +6,21 @@ import { Helmet } from "react-helmet";
 const TemasDeTrabajo = () => {
   return (
     <>
-      <Navs></Navs>
+      <Navs />
       <Helmet>
         <meta charSet="utf-8" />
         <title>Temas de Trabajo</title>
       </Helmet>
       <Container className="my-5">
         <section className="mb-5">
-            <h1 className="text-cyan text-center mb-4">CONVENIOS COLECTIVOS DE TRABAJO</h1>
-            <p className="text-center">
-              Tenemos dos CCT homologados ante el Ministerio de Trabajo, Empleo
-              y Seguridad Social de la Nación; uno con el Sindicato Único de
-              Trabajadores de Control de Admisión y Permanencia de la República
-              Argentina SUTCAPRA y otro celebrado con el Sindicato Único de
-              Trabajadores de Espectáculos Públicos SUTEP.
-            </p>
+          <h1 className="text-cyan text-center mb-4">CONVENIOS COLECTIVOS DE TRABAJO</h1>
+          <p className="text-center">
+            Tenemos dos CCT homologados ante el Ministerio de Trabajo, Empleo
+            y Seguridad Social de la Nación; uno con el Sindicato Único de
+            Trabajadores de Control de Admisión y Permanencia de la República
+            Argentina SUTCAPRA y otro celebrado con el Sindicato Único de
+            Trabajadores de Espectáculos Públicos SUTEP.
+          </p>
           <article className="mt-5 d-flex justify-content-around flex-wrap gap-2">
             <Button className="bg-darkblue" download="convenio-SUTCAPRA.pdf" href="convenio-SUTCAPRA.pdf">
               <i className="bi bi-file-earmark-arrow-down text-cyan">Convenio SUTCAPRA</i>
@@ -36,8 +36,8 @@ const TemasDeTrabajo = () => {
         </section>
         <section className="mb-5">
           <h2 className="text-cyan text-center mb-4">NORMATIVAS</h2>
-          <p className="text-center">Se pone a disposición un espacio abierto con las leyes, decretos y ordenanzas para nuestra actividad. Solicitarlas al mail: 
-fedraargentina@gmx.com</p>
+          <p className="text-center">Se pone a disposición un espacio abierto con las leyes, decretos y ordenanzas para nuestra actividad. Solicitarlas al mail:
+            fedraargentina@gmx.com</p>
         </section>
       </Container>
     </>

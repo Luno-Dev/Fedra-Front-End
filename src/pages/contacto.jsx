@@ -1,5 +1,4 @@
 import Navs from "@/components/common/Navs";
-
 import React from "react";
 import { Col, Container, Row, Form, Button } from "react-bootstrap";
 
@@ -8,7 +7,7 @@ import { Col, Container, Row, Form, Button } from "react-bootstrap";
 const Contacto = () => {
     return (
         <>
-            <Navs></Navs>
+            <Navs/>
             <Container>
                 <div>
                     <h1 className="text-cyan text-center mt-4">CONTÁCTANOS</h1>
@@ -22,7 +21,9 @@ const Contacto = () => {
                             </div>
                             <div className="d-flex">
                                 <i className="bi bi-envelope-at me-3 text-cyan"></i>
-                                <p>fedraargentina@gmail.com</p>
+
+                                <p>FedraArgentina@gmx.com</p>
+
                             </div>
                             <div className="d-flex">
                                 <i className="bi bi-telephone me-3 text-cyan"></i>

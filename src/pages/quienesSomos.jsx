@@ -1,19 +1,19 @@
 import Navs from "@/components/common/Navs";
 import React from "react";
-import { Col, Container, Row, Card, CardGroup, Table, thead, tr, th } from "react-bootstrap";
+import { Col, Container, Row, Card, CardGroup, Table } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 
 const quienesSomos = () => {
     return (
         <>
-            <Navs/>
+            <Navs />
             <div>
                 <Helmet>
-        <meta charSet="utf-8" />
-        <title>Quienes Somos</title>
-      </Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Quienes Somos</title>
+                </Helmet>
             </div>
-            
+
             <Container>
                 <article>
                     <Row className="mt-5">

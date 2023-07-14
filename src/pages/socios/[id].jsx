@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 import { useDownloadExcel } from 'react-export-table-to-excel';
 import { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
+import "../../styles/Home.module.css"
 
 const token = () => {
   const isServer = typeof window === 'undefined';
@@ -23,16 +24,16 @@ export const socios = (props) => {
 
 
 
-  const tableRef= useRef(null);
-const generatePDF = useReactToPrint({
-  content: ()=> tableRef.current,
-  documentTitle:`Datos socio - ${props.trabajadornombre}`
+  const tableRef = useRef(null);
+  const generatePDF = useReactToPrint({
+    content: () => tableRef.current,
+    documentTitle: `Datos socio - ${props.trabajadornombre}`
 
-})
-  const {onDownload} = useDownloadExcel({
+  })
+  const { onDownload } = useDownloadExcel({
     currentTableRef: tableRef.current,
-    filename:"Datos Usuario",
-    sheet:"Datos Usuario",
+    filename: "Datos Usuario",
+    sheet: "Datos Usuario",
   });
 
   return (
@@ -42,13 +43,13 @@ const generatePDF = useReactToPrint({
         <title>{props.trabajadornombre}</title>
       </Helmet>
       <Navs />
-           
 
-      <div className="container w-50 w-lg-100 my-3" >
-      
-        <Table hover size="sm" responsive className='table-dark'  ref={tableRef}>
-          <thead>
-            <tr className='text-cyan'>
+
+      <div className="container my-3" >
+
+        <Table hover size="sm" responsive className='table-dark' ref={tableRef}>
+          <thead className='text-cyan'>
+            <tr className='text-cyan '>
               <th className='text-cyan text-center'>Datos</th>
               <th className='text-cyan text-center'>Informacion Socio</th>
             </tr>
@@ -59,7 +60,6 @@ const generatePDF = useReactToPrint({
               <th>id</th>
               <th>{props.socioid}</th>
             </tr>
-
             <tr>
               <th>Nombre y Apellido</th>
               <th>{props.trabajadornombre}  {props.trabajadorapellido} </th>
@@ -188,15 +188,19 @@ const generatePDF = useReactToPrint({
 
           </tbody>
         </Table>
-  <button className='btn btn-success' onClick={onDownload}>Exportar a Excel <i class="bi bi-file-earmark-spreadsheet"></i></button>
-  <button className="btn btn-danger" onClick={generatePDF}>Exportar A PDF <i class="bi bi-filetype-pdf"></i></button>
-      </div>    
+
+        <div className="container d-flex justify-content-center gap-3 ">
+          <button className='btn btn-success fw-bold' onClick={onDownload}>Exportar a Excel <i className="bi bi-file-earmark-spreadsheet"></i></button>
+          <button className="btn btn-danger fw-bold" onClick={generatePDF}>Exportar A PDF <i className="bi bi-filetype-pdf"></i></button>
+        </div>
+
+      </div>
     </>
 
   )
 }
 
-export default dynamic (() => Promise.resolve(socios), {ssr: false})
+export default dynamic(() => Promise.resolve(socios), { ssr: false })
 
 
 export async function getStaticPaths() {
@@ -235,7 +239,6 @@ export async function getStaticProps({ params }) {
       },
     });
     const data = await response.json();
-
     return {
       props: data.socio,
     }

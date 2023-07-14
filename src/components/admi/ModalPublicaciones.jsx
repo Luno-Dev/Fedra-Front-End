@@ -8,22 +8,30 @@ import swal from 'sweetalert';
 const ModalPublicaciones = () => {
 
   const { show, setShow } = useContext(DataContext);
+
   const [publicacion, setPublicacion] = useState({
     titulo: "",
     descripcion: "",
     autor: "",
     fecha: "",
-    img: "",
+    img: [],
     estado: "",
 
   });
 
   const handleClose = () => setShow(false);
-
+  const setearImagenes = async (file, index) => {
+    const url = await upload(file);
+    publicacion.img[index] = url
+  }
   const handleimg = async (e) => {
-    const url = await upload(e.target.files[0]);
-    publicacion.img = url;
-  };
+    let long = e.target.files.length
+    for (let index = 0; index < long; index++) {
+      setearImagenes(e.target.files[index], index);
+
+
+    }
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -76,7 +84,7 @@ const ModalPublicaciones = () => {
 
             <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
               <Form.Label>imagen:</Form.Label>
-              <input type="file" name="file" onChange={handleimg} />
+              <input type="file" multiple onChange={handleimg} />
             </Form.Group>
             <Form.Label>Cuerpo:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">

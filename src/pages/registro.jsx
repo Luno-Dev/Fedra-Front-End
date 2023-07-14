@@ -26,6 +26,7 @@ const registro = () => {
     trabajadortareas: "",
     trabajadortel: "",
     trabajadorcel: "",
+    trabajadorsueldo: 0,
     empleadorrazonsocial: "",
     empleadordomicilio: "",
     empleadorprovincia: "",
@@ -34,6 +35,7 @@ const registro = () => {
     empleadortrabajoprovincia: "",
     empleadortrabajolocalidad: "",
     empleadoractividad: "",
+    convenio: "",
     email: "",
     password: "",
     role: "SOCIO_ROLE",
@@ -347,6 +349,18 @@ const registro = () => {
                     />
                   </div>
                 </Col>
+                <Col sm={12} md={6} lg={3} className="mb-2">
+                  <div className="d-flex flex-column">
+                    <Form.Label>Sueldo:</Form.Label>
+                    <Form.Control
+                      type="number"
+                      name="trabajadorsueldo"
+                      onChange={handleChange}
+                      aria-describedby="trabajadorsueldo"
+                      required
+                    />
+                  </div>
+                </Col>
               </Row>
             </Form.Group>
 
@@ -461,6 +475,18 @@ const registro = () => {
                       onChange={handleChange}
                       required
                       aria-describedby="empleadoractividad"
+                    />
+                  </div>
+                </Col>
+                <Col sm={12} md={6} lg={3} className="mb-2">
+                  <div className="d-flex flex-column">
+                    <Form.Label>Convenio:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="convenio"
+                      onChange={handleChange}
+                      required
+                      aria-describedby="convenio"
                     />
                   </div>
                 </Col>
