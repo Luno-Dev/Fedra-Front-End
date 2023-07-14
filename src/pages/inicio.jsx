@@ -74,20 +74,22 @@ const Inicio = () => {
               </Carousel>
             </Col>
             {/* NOTICIAS */}
-            <Col className="noticias col-xl-6 col-md-12 col-12">
-             
-{     noticias.map(index => (
+ 
+            <Col className="noticias  col-xl-6 col-md-12 col-12">
+
+              {noticias.map(index => (
 
 
-                <Col className="noticias-Card h-25" key={index._id}>
+
+                <Col className="noticias-Card overflow-hidden" key={index._id}>
                   <div className="card">
                     <div className="row">
 
                       <div className="col-xl-4 col-sm-12 ">
-                        <img className="imgCard fw-bold" src={index.img[0]} alt={index.titulo} />
+                        <img className="imgCard h-100 object-fit-cover fw-bold" src={index.img[0]} alt={index.titulo} />
 
                       </div>
-                      <div className="col-xl-8 texto-card overflow-y-scroll">
+                      <div className="col-xl-8 texto-card overflow-hidden h-auto">
                         <div className="card-body">
                           <h5 className="card-title card-titulo">{index.titulo}</h5>
                           {/* <div className="container-descripcio ">
