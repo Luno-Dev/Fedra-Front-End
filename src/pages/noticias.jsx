@@ -3,24 +3,12 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 
 import { useEffect, useState } from 'react';
-import { traerNoticias } from '@/helpers/fetchAdmi';
+import { getCategorias, traerNoticias } from '@/helpers/fetchAdmi';
+import Noticias from '@/components/Noticias';
 
-const noticias = () => {
-  const [noticias, setNoticias] = useState([]);
+const noticias = (props) => {
+  const [categorias, setCategorias] = useState(props.categorias);
 
-
-  const recibirData = async () => {
-
-    const noticias = await traerNoticias();
-    setNoticias(noticias.noticias);
-    
-  }
-
-  useEffect(() => {
-    recibirData();
-  
-    
-  }, [])
   
   return (
     <>
@@ -35,36 +23,34 @@ const noticias = () => {
 
       <Navs />
 
-        <h1 className='text-center'>Noticias</h1>
-        <div className="not-cont">
+ { categorias.length <= 1 ? <span> </span> :
+
+  categorias.map(index => (
 
 
-          {noticias.map(index => (
-            <div key={index._id} className="noticias-card ">
+    <>
+        <h2 className='text-center' key={index._id}>{index.nombre}</h2>
+    <Noticias categoria={index.nombre} /> 
+    </>
 
-              {index.img ?
-                <div className="card-img-noticia">
-                  <img src={index.img} alt="img" /></div> : <></>}
-              <div className="card-body-noticia d-flex flex-column">
-                <div className='mt-3 noticias-titulo'>
-                  <h4>{index.titulo}</h4>
-                </div>
-                <div className='cards-body'>
-                  <p className='noticias-autor'>Autor {index.autor}</p>
-                  <p className='noticias-fecha'>Publicado el {index.fecha.split("T", 1)}</p>
-                  <a className='btn btn-danger fw-bold' href={`/noticias/${index._id}`}>Mirar</a>
-                </div>
-
-              </div>
-            </div>
-          ))}
-
-        </div>
     
+  ))
+  
+}
     
     </>
     
   )
 }
-
 export default noticias
+
+
+export  const getServerSideProps = async () =>{
+  return{
+  props:{
+    categorias: await  getCategorias(),
+    titulo: "hola"
+  },
+  };
+}
+

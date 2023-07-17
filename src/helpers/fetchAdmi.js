@@ -16,6 +16,19 @@ export const traerSocios = async () => {
     return data;
 };
 
+
+export const getCategorias = async () => {
+    const response = await fetch(`${url}categorias`, {
+        method: "GET",
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        },
+    });
+    const data = await response.json();
+
+    return data.categorias;
+};
+
 export const traerSocio = async (id) => {
     const response = await fetch(`${url}socios/${id}`, {
         method: "GET",

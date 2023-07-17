@@ -159,6 +159,13 @@ iframe {
     border-bottom-right-radius: 10%;
 }
 
+
+tr{
+    max-height: 12px !important;
+font-size: 1em !important;
+overflow: hidden;
+}
+
 /* estilos seccion noticias */
 /* media queries */
 @media all and (max-width:576px) {

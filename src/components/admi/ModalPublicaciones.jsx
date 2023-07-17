@@ -1,19 +1,21 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Button, Form, Modal, Spinner } from 'react-bootstrap'
 import { DataContext } from '../context/DataContext';
-import { createNoticia } from '@/helpers/fetchAdmi';
+import { createNoticia, getCategorias } from '@/helpers/fetchAdmi';
 import { upload } from '@/config/firebase';
 import swal from 'sweetalert';
 
 const ModalPublicaciones = () => {
 
   const { show, setShow } = useContext(DataContext);
+ const [categoria, setCategorias]= useState("");  
 
-  const [publicacion, setPublicacion] = useState({
+const [publicacion, setPublicacion] = useState({
     titulo: "",
     descripcion: "",
     autor: "",
     fecha: "",
+    categoria: "",
     img: [],
     estado: "",
 
@@ -33,10 +35,21 @@ const ModalPublicaciones = () => {
     }
   }
 
+ const traerCategorias = async ()=>{
+const categ = await getCategorias()
+   setCategorias(categ.categorias)
+}
+
+  useEffect( () => {
+   
+traerCategorias()
+  }, [])
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     publicacion.autor = JSON.parse(localStorage.getItem('nombreUsuario'));
     setPublicacion((prevState) => ({ ...prevState, [name]: value }));
+    console.log(publicacion);
   };
 
 
@@ -81,7 +94,14 @@ const ModalPublicaciones = () => {
                 required
               />
             </Form.Group>
-
+            <select id="categocias" className='text-black' name='categoria' onChange={handleChange}>
+              <span >seleccione una categoria:</span>
+              <option className='text-black'>eliga una categoria...</option>
+              { categoria < 1 ? <></> : categoria.map( index => (
+                <option value={index.nombre} name="categoria" className='text-black'>{index.nombre}</option>
+              ))
+              }
+            </select>
             <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
               <Form.Label>imagen:</Form.Label>
               <input type="file" multiple onChange={handleimg} />

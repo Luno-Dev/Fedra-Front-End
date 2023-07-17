@@ -113,7 +113,7 @@ function Tablas() {
             <th className='p-2 d-flex justify-content-center '><button className='btn bg-cyan text-light fw-bold' onClick={handleShow}>Crear Publicacion</button></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           {
             noticias.map(index => (
 
@@ -121,7 +121,7 @@ function Tablas() {
               <tr key={index._id}>
                 <th>{index._id}</th>
                 <th>{index.titulo}</th>
-                <th>{index.descripcion}</th>
+                <th className='tabla' >{index.descripcion}</th>
                 <th>{index.autor}</th>
                 <th>{index.fecha.split("T", 1)}</th>
                 <th className='text-center'> <img src={index.img[0]} alt={index.titulo} width={80} /></th>
