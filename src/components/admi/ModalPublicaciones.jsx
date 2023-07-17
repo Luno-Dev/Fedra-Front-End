@@ -97,10 +97,7 @@ traerCategorias()
             <select id="categocias" className='text-black' name='categoria' onChange={handleChange}>
               <span >seleccione una categoria:</span>
               <option className='text-black'>eliga una categoria...</option>
-              { categoria < 1 ? <></> : categoria.map( index => (
-                <option value={index.nombre} name="categoria" className='text-black'>{index.nombre}</option>
-              ))
-              }
+             
             </select>
             <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
               <Form.Label>imagen:</Form.Label>
