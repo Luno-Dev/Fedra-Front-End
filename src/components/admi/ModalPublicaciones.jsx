@@ -14,25 +14,54 @@ const ModalPublicaciones = () => {
     descripcion: "",
     autor: "",
     fecha: "",
-    img: [],
+    imguno: [],
+    subtitulouno:"",
+    imgdos: [],
+    subtitulodos:"",
+    imgtres: [],
+    subtitulotres:"",
     estado: "",
 
   });
 
   const handleClose = () => setShow(false);
-  const setearImagenes = async (file, index) => {
+  const setearImagenesUno = async (file, index) => {
     const url = await upload(file);
-    publicacion.img[index] = url
+    publicacion.imguno[index] = url
   }
-  const handleimg = async (e) => {
+  const handleimguno = async (e) => {
     let long = e.target.files.length
     for (let index = 0; index < long; index++) {
-      setearImagenes(e.target.files[index], index);
+      setearImagenesUno(e.target.files[index], index);
+
+
+    }
+  }
+  const setearImagenesDos = async (file, index) => {
+    const url = await upload(file);
+    publicacion.imgdos[index] = url
+  }
+  const handleimgdos = async (e) => {
+    let long = e.target.files.length
+    for (let index = 0; index < long; index++) {
+      setearImagenesDos(e.target.files[index], index);
 
 
     }
   }
 
+  const setearImagenesTres = async (file, index) => {
+    const url = await upload(file);
+    publicacion.imgtres[index] = url
+  }
+  const handleimgtres = async (e) => {
+    let long = e.target.files.length
+    for (let index = 0; index < long; index++) {
+      setearImagenesTres(e.target.files[index], index);
+
+
+    }
+  }
   const handleChange = (e) => {
     const { name, value } = e.target;
     publicacion.autor = JSON.parse(localStorage.getItem('nombreUsuario'));
@@ -83,9 +112,20 @@ const ModalPublicaciones = () => {
             </Form.Group>
 
             <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
-              <Form.Label>imagen:</Form.Label>
-              <input type="file" multiple onChange={handleimg} />
+              <Form.Label>imagen1:</Form.Label>
+              <input type="file" multiple onChange={handleimguno} />
             </Form.Group>
+
+            <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
+              <Form.Label>imagen2:</Form.Label>
+              <input type="file" multiple onChange={handleimgdos} />
+            </Form.Group>
+
+            <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
+              <Form.Label>imagen3:</Form.Label>
+              <input type="file" multiple onChange={handleimgtres} />
+            </Form.Group>
+            
             <Form.Label>Cuerpo:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">
               <textarea
