@@ -118,6 +118,7 @@ export const createNoticia = async (noticia) => {
         {
             method: "POST",
             body: JSON.stringify({
+                categoria:noticia.categoria,
                 titulo: noticia.titulo,
                 descripcion: noticia.descripcion,
                 autor: noticia.autor,
@@ -127,6 +128,10 @@ export const createNoticia = async (noticia) => {
                 subtitulodos: noticia.subtitulodos,
                 imgtres: noticia.imgtres,
                 subtitulotres: noticia.subtitulotres,
+                imgcuatro: noticia.imgcuatro,
+                subtitulocuatro: noticia.subtitulocuatro,
+                imgcinco: noticia.imgcinco,
+                subtitulocinco: noticia.subtitulocinco,
             }),
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
@@ -139,7 +144,7 @@ export const createNoticia = async (noticia) => {
 
     const data = await response.json();
 console.log(data);
-    return data.errors;
+    return data;
 };
 
 export const editNoticia = async (noticia) => {

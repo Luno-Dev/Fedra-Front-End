@@ -481,13 +481,11 @@ const registro = () => {
                 <Col sm={12} md={6} lg={3} className="mb-2">
                   <div className="d-flex flex-column">
                     <Form.Label>Convenio:</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="convenio"
-                      onChange={handleChange}
-                      required
-                      aria-describedby="convenio"
-                    />
+                    <select id="convenio" name="convenio" onChange={handleChange} className='text-black'>
+                      <option className='text-black'>Seleccione el convenio:</option>
+                      <option value="SUTCAPRA" className='text-black'>SUTCAPRA</option>
+                      <option value="SUTEP" className='text-black'>SUTEP</option>
+                    </select>
                   </div>
                 </Col>
                 <Col sm={12} md={6} lg={3} className="mb-2">

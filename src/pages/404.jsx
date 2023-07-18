@@ -31,7 +31,7 @@ const error = () => {
             Pagina no encontrada
           </h1>
           <button
-            className="btn bg-cyan align-self-center"
+            className="btn bg-cyan align-self-center text-light fw-bold"
             onClick={() => location.replace("/")}
           >
             Volver a inicio

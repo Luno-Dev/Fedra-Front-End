@@ -130,6 +130,10 @@ a {
     max-height: 23%;
 }
 
+.titulo-noticiasrecientes{
+    font-size: 1em;
+}
+
 .noticias-autor {
     font-size: 1.1rem;
 }
@@ -160,11 +164,12 @@ iframe {
 }
 
 
-tr{
-    max-height: 12px !important;
-font-size: 1em !important;
-overflow: hidden;
+.modal-content{
+    height: 15%;
+    width: 95%;
 }
+
+
 
 /* estilos seccion noticias */
 /* media queries */

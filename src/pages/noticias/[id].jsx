@@ -1,14 +1,29 @@
 import Navs from '@/components/common/Navs';
 import { traerNoticia, traerNoticias } from '@/helpers/fetchAdmi';
 import { getNoticias } from '@/helpers/fetchNoticias';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 
 const noticias = (props) => {
 
   const { noticia, noticias } = props;
+  const [imagenes, setImagenes] = useState({
+    imguno: "",
+    imgdos: "",
+    imgtres: "",
+    imgcuatro:"",
+    imgcinco:""
+  });
+
 
   const data = noticias.noticias;
+  imagenes.imguno = noticia.imguno;
+  imagenes.imgdos = noticia.imgdos;
+  imagenes.imgtres = noticia.imgtres;
+  imagenes.imgcuatro = noticia.imgcuatro;
+  imagenes.imgcinco = noticia.imgcinco;
+
+
 
   return (
     <>
@@ -19,23 +34,38 @@ const noticias = (props) => {
       <Navs />
       <main>
 
-        <div className='mt-5 text-center container'>
+        <div className='mt-5 text-center container '>
           <h1 className='text-center'>{noticia.titulo}</h1>
-
-          {
-            noticia.img.length <= 1 ?
-
+          <div className='d-flex gap-3 flex-wrap justify-content-start'>
+            {imagenes.imguno ?
               <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle'>
-                <img src={noticia.img} alt={noticia.titulo} className='imagen-n-c' />
-              </div>
-              :
-              noticia.img.map(index => (
-                <div key={index} className='d-flex gap-2 flex-wrap '>
-                  <img src={index} width={20} />
-                </div>
-              ))
+                <img src={imagenes.imguno} alt={noticia.titulo} className='imagen-n-c' />
+              </div> : <></>
 
-          } <span className='mt-5 m-2 fst-italic'>Autor: {noticia.autor} <span className='fst-italic'> Publicado: {noticia.fecha.split("T", 1)}</span></span>
+            }
+            {imagenes.imgdos ?
+              <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle'>
+                <img src={imagenes.imgdos} alt={noticia.titulo} className='imagen-n-c' />
+              </div> : <></>
+            }
+            {imagenes.imgtres ?
+              <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle'>
+                <img src={imagenes.imgtres} alt={noticia.titulo} className='imagen-n-c' />
+              </div> : <></>
+            }
+            {imagenes.imgcuatro ?
+              <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle'>
+                <img src={imagenes.imgcuatro} alt={noticia.titulo} className='imagen-n-c' />
+              </div> : <></>
+            }
+            {imagenes.imgcinco ?
+              <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle'>
+                <img src={imagenes.imgcinco} alt={noticia.titulo} className='imagen-n-c' />
+              </div> : <></>
+            }
+          </div>
+
+          <span className='mt-5 m-2 fst-italic'> <span className='fst-italic'> Publicado: {noticia.fecha.split("T", 1)}</span></span>
           <div>{noticia.descripcion}</div>
         </div>
         <section className='container p-3'>
@@ -45,12 +75,12 @@ const noticias = (props) => {
               data.map(index => (
                 <div key={index._id} className="noticias-card ">
 
-                  {index.img ?
+                  {index.imguno ?
                     <div className="card-img-noticia">
-                      <img src={index.img} alt={data.titulo} className='card-imagen-detalle-noticia' /></div> : <></>}
+                      <img src={index.imguno} alt={data.titulo} className='card-imagen-detalle-noticia' /></div> : <></>}
                   <div className="card-body-noticia d-flex flex-column">
                     <div className='mt-3 noticias-titulo'>
-                      <h4>{index.titulo}</h4>
+                      <h4 className='titulo-noticiasrecientes'>{index.titulo}</h4>
                     </div>
                     <div className='cards-body'>
                       <p className='noticias-autor'>Autor {index.autor}</p>
@@ -89,7 +119,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false
+    fallback: true
   }
 
 
