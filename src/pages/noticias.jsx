@@ -30,7 +30,7 @@ const noticias = (props) => {
 
     <>
         <h2 className='text-center' key={index._id}>{index.nombre}</h2>
-    <Noticias categoria={index.nombre} /> 
+    <Noticias categoria={index.nombre} card={props.card}/> 
     </>
 
     
@@ -49,6 +49,7 @@ export  const getServerSideProps = async () =>{
   return{
   props:{
     categorias: await  getCategorias(),
+    card: await  traerNoticias(),
     titulo: "hola"
   },
   };

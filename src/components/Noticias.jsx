@@ -6,7 +6,7 @@ const Noticias = (props) => {
 
 const [noticias, setNoticias]= useState([]);
 const [categoria, setCategorias]= useState(props.categoria);
-const articulos = noticias.filter(datos => datos.categoria == categoria);
+const articulos = noticias.filter(datos => datos.categoria.nombre == categoria);
  
     console.log(noticias);
   const recibirData = async () => {
@@ -28,12 +28,12 @@ const articulos = noticias.filter(datos => datos.categoria == categoria);
 
 {
 noticias.filter(datos => datos.categoria == categoria)  ?
-noticias.map(index => (
+articulos.map(index => (
   <div key={index._id} className="noticias-card ">
 
-    {index.img ?
+    {index.imguno ?
       <div className="card-img-noticia">
-        <img src={index.img} alt={index.titulo} /></div> : <></>}
+        <img src={index.imguno} alt={index.titulo} /></div> : <></>}
     <div className="card-body-noticia d-flex flex-column">
       <div className='mt-3 noticias-titulo'>
         <h4>{index.titulo}</h4>
