@@ -131,7 +131,6 @@ export const createNoticia = async (noticia) => {
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
                 "Authorization": JSON.parse(localStorage.getItem("token")),
-                "Access-Control-Allow-Origin": JSON.parse(localStorage.getItem("token"))
             },
         }
 
@@ -139,7 +138,7 @@ export const createNoticia = async (noticia) => {
 
     const data = await response.json();
 console.log(data);
-    return data.errors;
+    return data;
 };
 
 export const editNoticia = async (noticia) => {
