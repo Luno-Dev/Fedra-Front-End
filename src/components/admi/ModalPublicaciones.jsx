@@ -8,43 +8,39 @@ import swal from 'sweetalert';
 const ModalPublicaciones = () => {
 
   const { show, setShow } = useContext(DataContext);
- const [categoria, setCategorias]= useState("");  
+  const [categ, setCateg] = useState("");
 
-const [publicacion, setPublicacion] = useState({
+  const [publicacion, setPublicacion] = useState({
     titulo: "",
     descripcion: "",
     autor: "",
-    fecha: "",
-    categoria: "",
-    img: [],
+    fecha: " ",
+    imguno: "",
+    subtitulouno: "",
+    imgdos: "",
+    subtitulodos: "",
+    imgtres: "",
+    subtitulotres: "",
     estado: "",
 
   });
 
   const handleClose = () => setShow(false);
-  const setearImagenes = async (file, index) => {
+  const setearImagenesUno = async (file) => {
     const url = await upload(file);
-    publicacion.img[index] = url
-  }
-  const handleimg = async (e) => {
-    let long = e.target.files.length
-    for (let index = 0; index < long; index++) {
-      setearImagenes(e.target.files[index], index);
-
-
-    }
+    publicacion.imguno = url
   }
 
- const traerCategorias = async ()=>{
-const categ = await getCategorias()
-   setCategorias(categ.categorias)
-}
+  const setearImagenesDos = async (file) => {
+    const url = await upload(file);
+    publicacion.imgdos = url
+  }
 
-  useEffect( () => {
-   
-traerCategorias()
-  }, [])
-  
+  const setearImagenesTres = async (file) => {
+    const url = await upload(file);
+    publicacion.imgtres = url
+  }
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     publicacion.autor = JSON.parse(localStorage.getItem('nombreUsuario'));
@@ -64,7 +60,7 @@ traerCategorias()
     } else {
       swal({
         title: "Error",
-        text: "Esta noticia ya existe!",
+        text: result.msg,
         icon: "warning",
         buttons: true,
         dangerMode: true,
@@ -74,11 +70,23 @@ traerCategorias()
   }
 
 
+  const traerCategorias = async () => {
+    const data = await getCategorias();
+    setCateg(data)
+    console.log(categ);
+  }
+
+  useEffect(() => {
+
+
+    traerCategorias()
+  }, [])
+
 
   return (
 
     <>
-      <Modal show={show} onHide={handleClose} animation={false} >
+      <Modal show={show} onHide={handleClose} animation={false}  >
         <Modal.Header className='bg-dark' >
           <Modal.Title>Crear Publicacion</Modal.Title>
         </Modal.Header>
@@ -94,15 +102,60 @@ traerCategorias()
                 required
               />
             </Form.Group>
-            <select id="categocias" className='text-black' name='categoria' onChange={handleChange}>
-              <span >seleccione una categoria:</span>
-              <option className='text-black'>eliga una categoria...</option>
-             
-            </select>
+
             <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
-              <Form.Label>imagen:</Form.Label>
-              <input type="file" multiple onChange={handleimg} />
+              <Form.Label>imagen1:</Form.Label>
+              <input type="file" onChange={setearImagenesUno} />
             </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicText">
+              <Form.Label>Pie:</Form.Label>
+              <Form.Control
+                name="subtitulouno"
+                type="text"
+                placeholder="Ingrese un pie de imagen"
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
+              <Form.Label>imagen2:</Form.Label>
+              <input type="file" onChange={setearImagenesDos} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicText">
+              <Form.Label>Pie2:</Form.Label>
+              <Form.Control
+                name="subtitulodos"
+                type="text"
+                placeholder="Ingrese un pie de imagen"
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
+              <Form.Label>imagen3:</Form.Label>
+              <input type="file" onChange={setearImagenesTres} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicText">
+              <Form.Label>Pie:</Form.Label>
+              <Form.Control
+                name="subtitulotres"
+                type="text"
+                placeholder="Ingrese un pie de imagen"
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <select id="categoria" name="categoria" onChange={handleChange} className='text-black'>
+              <option className='text-black'>Seleccione una categoria:</option>
+
+              {
+                categ.length > 1 ?
+                  categ.map((element) => {
+                    return <option value={element._id} key={element._id} className='text-black'>{element.nombre}</option>;
+                  }) : <></>
+              }
+            </select>
+            <br />
             <Form.Label>Cuerpo:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">
               <textarea
@@ -123,7 +176,7 @@ traerCategorias()
             cancelar
           </Button>
           {
-            publicacion.img ? <Button
+            publicacion.imguno ? <Button
               variant="success"
               className='fw-bold'
               onClick={() => crearNoticia(publicacion)}

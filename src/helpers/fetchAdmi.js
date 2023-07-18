@@ -118,23 +118,28 @@ export const createNoticia = async (noticia) => {
         {
             method: "POST",
             body: JSON.stringify({
-                img: noticia.img,
                 titulo: noticia.titulo,
                 descripcion: noticia.descripcion,
                 autor: noticia.autor,
-                fecha: noticia.fecha,
+                imguno: noticia.imguno,
+                subtitulouno: noticia.subtitulouno,
+                imgdos: noticia.imgdos,
+                subtitulodos: noticia.subtitulodos,
+                imgtres: noticia.imgtres,
+                subtitulotres: noticia.subtitulotres,
             }),
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
-                Authorization: JSON.parse(localStorage.getItem("token")),
+                "Authorization": JSON.parse(localStorage.getItem("token")),
+                "Access-Control-Allow-Origin": JSON.parse(localStorage.getItem("token"))
             },
         }
 
     );
 
     const data = await response.json();
-
-    return data;
+console.log(data);
+    return data.errors;
 };
 
 export const editNoticia = async (noticia) => {
