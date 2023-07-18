@@ -41,6 +41,7 @@ const ModalPublicaciones = () => {
     publicacion.imgtres = url
   }
 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     publicacion.autor = JSON.parse(localStorage.getItem('nombreUsuario'));
@@ -156,6 +157,7 @@ const ModalPublicaciones = () => {
               }
             </select>
             <br />
+
             <Form.Label>Cuerpo:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">
               <textarea
