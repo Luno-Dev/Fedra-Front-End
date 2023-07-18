@@ -118,15 +118,20 @@ export const createNoticia = async (noticia) => {
         {
             method: "POST",
             body: JSON.stringify({
+                categoria:noticia.categoria,
                 titulo: noticia.titulo,
                 descripcion: noticia.descripcion,
-                autor: noticia.autor
-              /*   imguno: noticia.imguno,
+                autor: noticia.autor,
+                imguno: noticia.imguno,
                 subtitulouno: noticia.subtitulouno,
                 imgdos: noticia.imgdos,
                 subtitulodos: noticia.subtitulodos,
                 imgtres: noticia.imgtres,
-                subtitulotres: noticia.subtitulotres, */
+                subtitulotres: noticia.subtitulotres,
+                imgcuatro: noticia.imgcuatro,
+                subtitulocuatro: noticia.subtitulocuatro,
+                imgcinco: noticia.imgcinco,
+                subtitulocinco: noticia.subtitulocinco,
             }),
             headers: {
                 "Content-type": "application/json; charset=UTF-8",

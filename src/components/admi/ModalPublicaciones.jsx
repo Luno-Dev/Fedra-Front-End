@@ -21,26 +21,39 @@ const ModalPublicaciones = () => {
     subtitulodos: "",
     imgtres: "",
     subtitulotres: "",
+    imgcuatro: "",
+    subtitulocuatro: "",
+    imgcinco: "",
+    subtitulocinco: "",
     estado: "",
 
   });
 
   const handleClose = () => setShow(false);
-  const setearImagenesUno = async (file) => {
-    const url = await upload(file);
+  const setearImagenesUno = async (e) => {
+    const url = await upload(e.target.files[0]);
     publicacion.imguno = url
   }
 
-  const setearImagenesDos = async (file) => {
-    const url = await upload(file);
+  const setearImagenesDos = async (e) => {
+    const url = await upload(e.target.files[0]);
     publicacion.imgdos = url
   }
 
-  const setearImagenesTres = async (file) => {
-    const url = await upload(file);
+  const setearImagenesTres = async (e) => {
+    const url = await upload(e.target.files[0]);
     publicacion.imgtres = url
   }
 
+  const setearImagenesCuatro = async (e) => {
+    const url = await upload(e.target.files[0]);
+    publicacion.imgcuatro = url
+  }
+
+  const setearImagenesCinco = async (e) => {
+    const url = await upload(e.target.files[0]);
+    publicacion.imgcinco = url
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,8 +65,8 @@ const ModalPublicaciones = () => {
 
   const crearNoticia = async (publicacion) => {
     const result = await createNoticia(publicacion);
-
-    if (result.msg === "Se creo una nueva noticia") {
+ console.log(result)
+    if (result.msg == "Se creo una nueva noticia") {
       swal("Publicacion creada con Exito!", {
         icon: "success",
       });
@@ -133,6 +146,7 @@ const ModalPublicaciones = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
+              
               <Form.Label>imagen3:</Form.Label>
               <input type="file" onChange={setearImagenesTres} />
             </Form.Group>
@@ -140,6 +154,34 @@ const ModalPublicaciones = () => {
               <Form.Label>Pie:</Form.Label>
               <Form.Control
                 name="subtitulotres"
+                type="text"
+                placeholder="Ingrese un pie de imagen"
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
+              <Form.Label>imagen4:</Form.Label>
+              <input type="file" onChange={setearImagenesCuatro} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicText">
+              <Form.Label>Pie:</Form.Label>
+              <Form.Control
+                name="subtitulocuatro"
+                type="text"
+                placeholder="Ingrese un pie de imagen"
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
+              <Form.Label>imagen5:</Form.Label>
+              <input type="file" onChange={setearImagenesCinco} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicText">
+              <Form.Label>Pie:</Form.Label>
+              <Form.Control
+                name="subtitulocinco"
                 type="text"
                 placeholder="Ingrese un pie de imagen"
                 onChange={handleChange}

@@ -36,7 +36,7 @@ articulos.map(index => (
         <img src={index.imguno} alt={index.titulo} /></div> : <></>}
     <div className="card-body-noticia d-flex flex-column">
       <div className='mt-3 noticias-titulo'>
-        <h4>{index.titulo}</h4>
+        <h4 className='titulo-noticiasrecientes'>{index.titulo}</h4>
       </div>
       <div className='cards-body'>
         <p className='noticias-autor'>Autor {index.autor}</p>
