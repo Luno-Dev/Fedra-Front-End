@@ -120,13 +120,13 @@ export const createNoticia = async (noticia) => {
             body: JSON.stringify({
                 titulo: noticia.titulo,
                 descripcion: noticia.descripcion,
-                autor: noticia.autor,
-                imguno: noticia.imguno,
+                autor: noticia.autor
+              /*   imguno: noticia.imguno,
                 subtitulouno: noticia.subtitulouno,
                 imgdos: noticia.imgdos,
                 subtitulodos: noticia.subtitulodos,
                 imgtres: noticia.imgtres,
-                subtitulotres: noticia.subtitulotres,
+                subtitulotres: noticia.subtitulotres, */
             }),
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
