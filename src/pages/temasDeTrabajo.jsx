@@ -22,10 +22,10 @@ const TemasDeTrabajo = () => {
             Trabajadores de Espectáculos Públicos SUTEP.
           </p>
           <article className="mt-5 d-flex justify-content-around flex-wrap gap-2">
-            <Button className="bg-darkblue" download="convenio-SUTCAPRA.pdf" href="convenio-SUTCAPRA.pdf">
+            <Button className="bg-darkblue" download="convenio-SUTCAPRA.pdf" href="https://drive.google.com/uc?id=1ENj27tfnhmhUDrS89bGr-MZG-_SqpFqh&export=download">
               <i className="bi bi-file-earmark-arrow-down text-cyan">Convenio SUTCAPRA</i>
             </Button>
-            <Button className="bg-darkblue" download="convenio-SUTEP.pdf" href="convenio-SUTEP.pdf">
+            <Button className="bg-darkblue" download="convenio-SUTEP.pdf" href="https://drive.google.com/uc?id=1L2rbjk83h3h8PBhSJDlT2C_uHMj4sxPb&export=download">
               <i className="bi bi-file-earmark-arrow-down text-cyan">Convenio SUTEP</i>
             </Button>
           </article>
