@@ -105,7 +105,7 @@ const Inicio = () => {
                         </div>
                         
                         <p className="card-text">
-                          <small className="card-body-secundary fw-bold">Publicada: {index.fecha.split("T",1)}</small>
+                          <small className="card-body-secundary fw-bold text-gray">Publicada: {index.fecha.split("T",1)}</small>
                           <br />
                           <small className="card-body-secundary fw-bold">Autor: {index.autor}</small>
                         </p>
