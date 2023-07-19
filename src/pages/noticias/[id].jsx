@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet'
 
 const noticias = (props) => {
 
-  const { notici, noticias } = props;
+  const { notici, dato2 } = props;
   const [imagenes, setImagenes] = useState({
     imguno: "",
     imgdos: "",
@@ -15,7 +15,7 @@ const noticias = (props) => {
     imgcinco:""
   });
 
-  const [data, setData]= useState(noticias.noticias);
+  const [data, setData]= useState(dato2.noticias);
   const [noticia, setNoticia]= useState(props.noticia);
 
 
