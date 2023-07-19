@@ -15,7 +15,7 @@ const noticias = (props) => {
     imgcinco:""
   });
 
-  const [data, setData]= useState(dato2.noticias);
+  const [data, setData]= useState(props.noticias.noticias);
   const [noticia, setNoticia]= useState(props.noticia);
 
 
