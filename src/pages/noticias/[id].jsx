@@ -6,7 +6,6 @@ import { Helmet } from 'react-helmet'
 
 const noticias = (props) => {
 
-  const { notici, dato2 } = props;
   const [imagenes, setImagenes] = useState({
     imguno: "",
     imgdos: "",
@@ -15,7 +14,7 @@ const noticias = (props) => {
     imgcinco:""
   });
 
-  const [data, setData]= useState(props.noticias.noticias);
+/*   const [data, setData]= useState(props.noticias.noticias); */
   const [noticia, setNoticia]= useState(props.noticia);
 
 
@@ -78,7 +77,7 @@ const noticias = (props) => {
           <span className='mt-5 m-2 fst-italic'> <span className='fst-italic'> Publicado: {noticia.fecha.split("T", 1)}</span></span>
           <div>{noticia.descripcion}</div>
         </div>
-        <section className='container p-3'>
+     {/*    <section className='container p-3'>
           <h2 className='text-center'>Mas Noticias</h2>
           <div className='d-flex  flex-wrap  justify-content-center justify-content-sm-start'>
              {
@@ -109,7 +108,7 @@ const noticias = (props) => {
 
           </div>
 
-        </section>
+        </section> */}
       </main>
     </>
 
