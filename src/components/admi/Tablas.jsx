@@ -118,10 +118,10 @@ function Tablas() {
             noticias.map(index => (
 
 
-              <tr key={index._id}>
+              <tr key={index._id} className='fila-noticia'>
                 <th>{index._id}</th>
                 <th>{index.titulo}</th>
-                <th className='tabla' >{index.descripcion}</th>
+                <th className='tabla-descripcion' >{index.descripcion}</th>
                 <th>{index.autor}</th>
                 <th>{index.fecha.split("T", 1)}</th>
                 <th className='text-center'> <img src={index.imguno} alt={index.titulo} width={80} /></th>

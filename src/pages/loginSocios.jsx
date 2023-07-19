@@ -20,12 +20,12 @@ const logins = () => {
 
       const cookies = new Cookies();
       localStorage.setItem("token", JSON.stringify(datos.token));
-      localStorage.setItem("nombreUsuario", JSON.stringify(datos.socio.trabajadornombre));
+      localStorage.setItem("nombreUsuario", JSON.stringify(datos.socio.empleadorrazonsocial));
       localStorage.setItem("role", JSON.stringify(datos.socio.role));
       cookies.set("token", `${datos.token}`, { path: "/", maxAge: 3850 });
 
       swal(
-        `Bienvenido ${datos.socio.trabajadornombre}!`,
+        `Bienvenido ${datos.socio.empleadorrazonsocial}!`,
         "Haz Clik para continuar!",
         "success"
       ).then((active) => {

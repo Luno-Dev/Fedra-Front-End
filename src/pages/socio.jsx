@@ -36,12 +36,12 @@ const socio = () => {
     }
     const [usuarioOnline, setUsuarioOnline] = useState("");
     const [socios, setSocios] = useState([]);
-
+    console.log(socios);
     const traerData = async () => {
         const id = verificador();
         const data = await traerSocio(id);
 
-        setSocios(data.empleado);
+        setSocios(data);
 
     }
     useEffect(() => {
@@ -68,31 +68,26 @@ const socio = () => {
                         </div>
                     </Col>
                 </Row>
-                {
-                    socios.length < 1 ?
-                        <h1>hola</h1>
-                        :
-
-                        <>
-                            <h2 className='text-center'>Empleados</h2>
-                            <Table striped hover size="sm" responsive className='table-dark' ref={tableRef} >
-                                <thead>
-                                    <tr>
-                                        <th>Nombre y Apellido</th>
-                                        <th>Provincia</th>
-                                        <th>Nacionalidad</th>
-                                        <th>Estado Civil</th>
-                                        <th>CUIL</th>
-                                        <th>Celular</th>
-                                        <th>Provincia</th>
-                                        <th>Tareas</th>
-                                        <th>Sueldo</th>
-                                        <th className='column-funciones'>opciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {
-                                        socios.map((index) => (
+                <>
+                    <h2 className='text-center'>Empleados</h2>
+                    <Table striped hover size="sm" responsive className='table-dark' ref={tableRef} >
+                        <thead>
+                            <tr>
+                                <th>Nombre y Apellido</th>
+                                <th>Provincia</th>
+                                <th>Nacionalidad</th>
+                                <th>Estado Civil</th>
+                                <th>CUIL</th>
+                                <th>Celular</th>
+                                <th>Provincia</th>
+                                <th>Tareas</th>
+                                <th>Sueldo</th>
+                                <th className='column-funciones'>opciones</th>
+                            </tr>
+                        </thead>
+                        {/*     <tbody>
+                                    { 
+                                        socios.empleados.map((index) => (
 
                                             <tr key={index.trabajadordocumento}>
                                                 <th>{index.trabajadornombre}  {index.trabajadorapellido} </th>
@@ -111,25 +106,25 @@ const socio = () => {
                                                     {/*  {index.estado.toString() === "false" ?
                   <button className='btn btn-success fw-bold m-2 column-funciones' onClick={() => cambiarEstadoSocio(index.socioid, index.estado.toString())}>Activar</button> :
                   <button className='btn btn-danger fw-bold m-2 column-funciones' onClick={() => cambiarEstadoSocio(index.socioid, index.estado.toString())}>Suspender</button>
-                } */}
+                
                                                 </th>
                                             </tr>
                                         ))
                                     }
-                                </tbody>
-                            </Table>
-                            <div className="container d-flex justify-content-center gap-3 ">
-                                <button className='btn btn-success fw-bold' onClick={onDownload}>Exportar a Excel <i className="bi bi-file-earmark-spreadsheet"></i></button>
-                                <button className="btn btn-danger fw-bold" onClick={generatePDF}>Exportar A PDF <i className="bi bi-filetype-pdf"></i></button>
-                                <button className="btn btn-success fw-bold" >Pagar <i className="bi bi-credit-card-fill"></i></button>
+                                </tbody>  */}
+                    </Table>
+                    <div className="container d-flex justify-content-center gap-3 ">
+                        <button className='btn btn-success fw-bold' onClick={onDownload}>Exportar a Excel <i className="bi bi-file-earmark-spreadsheet"></i></button>
+                        <button className="btn btn-danger fw-bold" onClick={generatePDF}>Exportar A PDF <i className="bi bi-filetype-pdf"></i></button>
+                        <button className="btn btn-success fw-bold" >Pagar <i className="bi bi-credit-card-fill"></i></button>
 
-                            </div>
+                    </div>
 
-                        </>
+                </>
 
 
 
-                }
+
 
 
 

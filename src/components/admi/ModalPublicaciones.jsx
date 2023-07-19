@@ -97,7 +97,7 @@ const ModalPublicaciones = () => {
   return (
 
     <>
-      <Modal show={show} onHide={handleClose} animation={false}  >
+      <Modal show={show} onHide={handleClose} animation={false} >
         <Modal.Header className='bg-dark' >
           <Modal.Title>Crear Publicacion</Modal.Title>
         </Modal.Header>

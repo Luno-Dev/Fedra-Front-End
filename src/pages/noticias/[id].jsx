@@ -128,7 +128,7 @@ export async function getStaticPaths() {
   const paths = data.noticias.map(({ _id }) => ({ params: { id: `${_id}` } }));
   return {
     paths,
-    fallback: false 
+    fallback: true 
   }
 
 

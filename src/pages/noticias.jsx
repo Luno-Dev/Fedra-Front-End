@@ -9,7 +9,7 @@ import Noticias from '@/components/Noticias';
 const noticias = (props) => {
   const [categorias, setCategorias] = useState(props.categorias);
 
-  
+
   return (
     <>
 
@@ -23,35 +23,35 @@ const noticias = (props) => {
 
       <Navs />
 
- { categorias.length <= 1 ? <span> </span> :
+      {categorias.length <= 1 ? <span> </span> :
 
-  categorias.map(index => (
+        categorias.map(index => (
 
 
-    <>
-        <h2 className='text-center' >{index.nombre}</h2>
-    <Noticias key={index._id} categoria={index.nombre} card={props.card}/> 
+          <>
+            <h2 className='text-center mt-3' >{index.nombre}</h2>
+            <Noticias key={index._id} categoria={index.nombre} card={props.card} />
+          </>
+
+
+        ))
+
+      }
+
     </>
 
-    
-  ))
-  
-}
-    
-    </>
-    
   )
 }
 export default noticias
 
 
-export  const getServerSideProps = async () =>{
-  return{
-  props:{
-    categorias: await  getCategorias(),
-    card: await  traerNoticias(),
-    titulo: "hola"
-  },
+export const getServerSideProps = async () => {
+  return {
+    props: {
+      categorias: await getCategorias(),
+      card: await traerNoticias(),
+      titulo: "hola"
+    },
   };
 }
 

@@ -170,6 +170,14 @@ iframe {
     width: 95%;
 }
 
+/* .fila-noticia, th{
+    max-height: 12px !important;
+} */
+
+.tabla-descripcion{
+    font-size: 0.9em;
+}
+
 
 
 /* estilos seccion noticias */

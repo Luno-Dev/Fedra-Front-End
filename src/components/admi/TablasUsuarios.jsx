@@ -91,10 +91,10 @@ const generatePDF = useReactToPrint({
           socios.map((index) => (
 
             <tr key={index.socioid}>
-              <th>{index.trabajadornombre}  {index.trabajadorapellido} </th>
-              <th>{index.trabajadorprovincia} </th>
+              <th>{index.empleadorrazonsocial} </th>
+              <th>{index.empleadorprovincia} </th>
               <th>{index.trabajadornacionalidad} </th>
-              <th>{index.trabajadordocumento}</th>
+              <th>{index.empleadorcuil}</th>
               <th>{index.trabajadorcel}</th>
               <th>{index.email}</th>
               <th>{index.estado.toString() === "false" ?
