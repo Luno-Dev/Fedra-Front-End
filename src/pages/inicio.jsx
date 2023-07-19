@@ -91,24 +91,18 @@ const Inicio = () => {
                       </div>
                       <div className="col-xl-8 texto-card overflow-hidden h-auto">
                         <div className="card-body">
-                          <h5 className="card-title card-titulo">{index.titulo}</h5>
+                          <h5 className="card-title card-titulo fw-bold">{index.titulo}</h5>
                           {/* <div className="container-descripcio ">
                             <p className="card-text" max-Length="3">{index.descripcion}</p>
                           </div> */}
 
-                          <p className="card-text">
-                            <small className="card-body-secundary fw-bold fst-italic">Publicada: {index.fecha.split("T", 1)}</small>
+                          <p >
+                     <span> <span className="fst-italic card-fecha-publicada">Publicada: {index.fecha.split("T", 1)}</span> </span>       
 
                           </p>
                           <a href={`/noticias/${index._id}`} className="fw-bold btn btn-danger">Leer</a>
 
                         </div>
-                        
-                        <p className="card-text">
-                          <small className="card-body-secundary fw-bold text-gray">Publicada: {index.fecha.split("T",1)}</small>
-                          <br />
-                          <small className="card-body-secundary fw-bold">Autor: {index.autor}</small>
-                        </p>
                       </div>
                     </div>
 

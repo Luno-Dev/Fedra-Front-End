@@ -121,7 +121,9 @@
     }
 }
 
-
+.card-fecha-publicada{
+    font-size: small;
+}
 
 .noticias {
     display: flex;
