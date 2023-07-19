@@ -29,8 +29,8 @@ const noticias = (props) => {
 
 
     <>
-        <h2 className='text-center' key={index._id}>{index.nombre}</h2>
-    <Noticias categoria={index.nombre} card={props.card}/> 
+        <h2 className='text-center' >{index.nombre}</h2>
+    <Noticias key={index._id} categoria={index.nombre} card={props.card}/> 
     </>
 
     

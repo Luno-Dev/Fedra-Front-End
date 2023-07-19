@@ -59,13 +59,11 @@ const ModalPublicaciones = () => {
     const { name, value } = e.target;
     publicacion.autor = JSON.parse(localStorage.getItem('nombreUsuario'));
     setPublicacion((prevState) => ({ ...prevState, [name]: value }));
-    console.log(publicacion);
   };
 
 
   const crearNoticia = async (publicacion) => {
     const result = await createNoticia(publicacion);
- console.log(result)
     if (result.msg == "Se creo una nueva noticia") {
       swal("Publicacion creada con Exito!", {
         icon: "success",
@@ -87,7 +85,6 @@ const ModalPublicaciones = () => {
   const traerCategorias = async () => {
     const data = await getCategorias();
     setCateg(data)
-    console.log(categ);
   }
 
   useEffect(() => {

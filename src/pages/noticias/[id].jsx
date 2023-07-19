@@ -15,8 +15,8 @@ const noticias = (props) => {
     imgcinco:""
   });
 
+  const [data, setData]= useState(noticias.noticias);
 
-  const data = noticias.noticias;
   imagenes.imguno = noticia.imguno;
   imagenes.imgdos = noticia.imgdos;
   imagenes.imgtres = noticia.imgtres;
@@ -71,7 +71,7 @@ const noticias = (props) => {
         <section className='container p-3'>
           <h2 className='text-center'>Mas Noticias</h2>
           <div className='d-flex  flex-wrap  justify-content-center justify-content-sm-start'>
-            {
+             {
               data.map(index => (
                 <div key={index._id} className="noticias-card ">
 
@@ -95,7 +95,7 @@ const noticias = (props) => {
               ))
             }
 
-
+ 
 
           </div>
 

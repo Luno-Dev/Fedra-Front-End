@@ -8,7 +8,6 @@ const [noticias, setNoticias]= useState([]);
 const [categoria, setCategorias]= useState(props.categoria);
 const articulos = noticias.filter(datos => datos.categoria.nombre == categoria);
  
-    console.log(noticias);
   const recibirData = async () => {
 
     const noticias = await traerNoticias();
