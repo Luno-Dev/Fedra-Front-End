@@ -14,7 +14,7 @@ const noticias = (props) => {
     imgcinco:""
   });
 
-/*   const [data, setData]= useState(props.noticias.noticias); */
+  const [data, setData]= useState(props.noticias.noticias);
   const [noticia, setNoticia]= useState(props.noticia);
 
 
@@ -36,7 +36,8 @@ const noticias = (props) => {
       <main>
 
         <div className='mt-5 text-center container '>
-          <h1 className='text-center'>{noticia.titulo}</h1>
+          <h1 className='text-center'>{noticia.titulo}</h1>         
+           <span className='mt-5 m-2 fst-italic'> <span className='fst-italic'> Publicado: {noticia.fecha.split("T", 1)}</span></span>
           <div className='d-flex gap-3 flex-wrap justify-content-start'>
             {imagenes.imguno ?
               <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle flex-column'>
@@ -74,10 +75,10 @@ const noticias = (props) => {
             }
           </div>
 
-          <span className='mt-5 m-2 fst-italic'> <span className='fst-italic'> Publicado: {noticia.fecha.split("T", 1)}</span></span>
+
           <div>{noticia.descripcion}</div>
         </div>
-     {/*    <section className='container p-3'>
+      <section className='container p-3'>
           <h2 className='text-center'>Mas Noticias</h2>
           <div className='d-flex  flex-wrap  justify-content-center justify-content-sm-start'>
              {
@@ -108,7 +109,7 @@ const noticias = (props) => {
 
           </div>
 
-        </section> */}
+        </section> 
       </main>
     </>
 
@@ -125,10 +126,9 @@ export async function getStaticPaths() {
   const data = await traerNoticias();
 
   const paths = data.noticias.map(({ _id }) => ({ params: { id: `${_id}` } }));
-
   return {
     paths,
-    fallback: true 
+    fallback: false 
   }
 
 
@@ -143,8 +143,8 @@ export async function getStaticProps({ params }) {
 
     return {
       props: {
-        noticia: data, noticias:
-          data2
+        noticia: data, 
+        noticias:data2
       }
     }
   } catch (error) {
