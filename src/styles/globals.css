@@ -68,8 +68,9 @@ margin: auto;
 }
 .imagen-n-c{
     max-width: 100%;
-    height: auto;
+    max-height: 70%;
 }
+
 .Contenedor-noticias h1 {
     color: #00ABF0;
     margin-top: 20px;

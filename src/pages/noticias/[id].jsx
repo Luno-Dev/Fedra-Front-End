@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet'
 
 const noticias = (props) => {
 
-  const { noticia, noticias } = props;
+  const { notici, noticias } = props;
   const [imagenes, setImagenes] = useState({
     imguno: "",
     imgdos: "",
@@ -16,6 +16,8 @@ const noticias = (props) => {
   });
 
   const [data, setData]= useState(noticias.noticias);
+  const [noticia, setNoticia]= useState(props.noticia);
+
 
   imagenes.imguno = noticia.imguno;
   imagenes.imgdos = noticia.imgdos;
@@ -38,29 +40,37 @@ const noticias = (props) => {
           <h1 className='text-center'>{noticia.titulo}</h1>
           <div className='d-flex gap-3 flex-wrap justify-content-start'>
             {imagenes.imguno ?
-              <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle'>
+              <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle flex-column'>
                 <img src={imagenes.imguno} alt={noticia.titulo} className='imagen-n-c' />
+                <span className='mt-5 m-2 '>{noticia.subtitulouno}</span>
+
               </div> : <></>
 
             }
             {imagenes.imgdos ?
-              <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle'>
+              <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle flex-column'>
                 <img src={imagenes.imgdos} alt={noticia.titulo} className='imagen-n-c' />
+                <span className='mt-5 m-2 '>{noticia.subtitulodos}</span>
+
               </div> : <></>
             }
             {imagenes.imgtres ?
-              <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle'>
+              <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle flex-column '>
                 <img src={imagenes.imgtres} alt={noticia.titulo} className='imagen-n-c' />
+                <span className='mt-5 m-2 '>{noticia.subtitulotres}</span>
               </div> : <></>
             }
             {imagenes.imgcuatro ?
-              <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle'>
+              <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle flex-column'>
                 <img src={imagenes.imgcuatro} alt={noticia.titulo} className='imagen-n-c' />
+                <span className='mt-5 m-2 '>{noticia.subtitulocuatro}</span>
               </div> : <></>
             }
             {imagenes.imgcinco ?
-              <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle'>
+              <div className='mt-3 mb-3 imagen-c d-flex justify-content-center imagen-detalle flex-column'>
                 <img src={imagenes.imgcinco} alt={noticia.titulo} className='imagen-n-c' />
+                <span className='mt-5 m-2 '>{noticia.subtitulocinco}</span>
+
               </div> : <></>
             }
           </div>
