@@ -100,7 +100,7 @@ const Inicio = () => {
                             <small className="card-body-secundary fw-bold fst-italic">Publicada: {index.fecha.split("T", 1)}</small>
 
                           </p>
-                          <a href={`/noticias/${index._id}`} className="fw-bold btn btn-danger">Mirar</a>
+                          <a href={`/noticias/${index._id}`} className="fw-bold btn btn-danger">Leer</a>
 
                         </div>
                         
