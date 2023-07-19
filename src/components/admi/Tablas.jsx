@@ -27,11 +27,6 @@ function Tablas() {
   };
   const handleClose = () => setEdit(false);
 
-  const handleimg = async (e) => {
-    const url = await upload(e.target.files);
-    publicacion.img = url;
-  };
-
 
   const crearNoticia = async (publicacion) => {
     const result = await editNoticia(publicacion);
@@ -121,7 +116,7 @@ function Tablas() {
               <tr key={index._id} className='fila-noticia'>
                 <th>{index._id}</th>
                 <th>{index.titulo}</th>
-                <th className='tabla-descripcion' >{index.descripcion}</th>
+                <th className='tabla-descripcion tex-center' >{index.descripcion ? index.descripcion : "Sin Descripcion"}</th>
                 <th>{index.autor}</th>
                 <th>{index.fecha.split("T", 1)}</th>
                 <th className='text-center'> <img src={index.imguno} alt={index.titulo} width={80} /></th>
@@ -155,11 +150,6 @@ function Tablas() {
                 required
               />
             </Form.Group>
-
-            <Form.Group className="mb-3 d-flex flex-column" controlId="formBasicImg">
-              <Form.Label>imagen:</Form.Label>
-              <input type="file" name="file" onChange={handleimg} />
-            </Form.Group>
             <Form.Label>Cuerpo:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">
               <textarea
@@ -180,16 +170,13 @@ function Tablas() {
           <Button variant="danger" className='fw-bold' onClick={handleClose} >
             cancelar
           </Button>
-          {
-            publicacion.img ? <Button
+            <Button
               variant="success"
               className='fw-bold'
               onClick={() => crearNoticia(publicacion)}
             >
-              Crear
-            </Button> :
-              <Spinner animation="border" />
-          }
+              Editar
+            </Button> 
 
         </Modal.Footer>
       </Modal>
