@@ -95,7 +95,7 @@ const noticias = (props) => {
                     <div className='cards-body'>
                       <p className='noticias-autor'>Autor {index.autor}</p>
                       <p className='noticias-fecha'>Publicado el {index.fecha.split("T", 1)}</p>
-                      <a className='btn btn-danger fw-bold' href={`/noticias/${index._id}`}>Mirar</a>
+                      <a className='btn btn-danger fw-bold' href={`/noticias/${index._id}`}>Leer</a>
                     </div>
 
                   </div>
