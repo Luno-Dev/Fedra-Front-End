@@ -1,6 +1,6 @@
 import Navs from "@/components/common/Navs";
 import React from "react";
-import { Col, Container, Row, Carousel } from "react-bootstrap";
+import { Col, Container, Row, Carousel, Placeholder, Card } from "react-bootstrap";
 import { useContext, useEffect, useState } from 'react';
 import VideoYoutube from "../components/common/video";
 import { getNoticias } from "../helpers/fetchNoticias"
@@ -74,45 +74,83 @@ const Inicio = () => {
               </Carousel>
             </Col>
             {/* NOTICIAS */}
- 
+
             <Col className="noticias  col-xl-6 col-md-12 col-12">
 
-              {noticias.map(index => (
+              {
+                noticias.length > 1 ?
+                  noticias.map(index => (
 
 
 
-                <Col className="noticias-Card overflow-hidden" key={index._id}>
-                  <div className="card ">
-                    <div className="row">
+                    <Col className="noticias-Card overflow-hidden" key={index._id}>
+                      <div className="card ">
+                        <div className="row">
 
-                      <div className="col-xl-4 col-sm-12 ">
-                        <img className="imgCard h-100 object-fit-cover fw-bold" src={index.imguno} alt={index.titulo} />
+                          <div className="col-xl-4 col-sm-12 ">
+                            <img className="imgCard h-100 object-fit-cover fw-bold" src={index.imguno} alt={index.titulo} />
 
-                      </div>
-                      <div className="col-xl-8 texto-card overflow-hidden h-auto">
-                        <div className="card-body">
-                          <h5 className="card-title card-titulo fw-bold">{index.titulo}</h5>
-                          {/* <div className="container-descripcio ">
+                          </div>
+                          <div className="col-xl-8 texto-card overflow-hidden h-auto">
+                            <div className="card-body">
+                              <h5 className="card-title card-titulo fw-bold">{index.titulo}</h5>
+                              {/* <div className="container-descripcio ">
                             <p className="card-text" max-Length="3">{index.descripcion}</p>
                           </div> */}
 
-                          <p >
-                     <span> <span className="fst-italic card-fecha-publicada">Publicada: {index.fecha.split("T", 1)}</span> </span>       
+                              <p >
+                                <span> <span className="fst-italic card-fecha-publicada">Publicada: {index.fecha.split("T", 1)}</span> </span>
 
-                          </p>
-                          <a href={`/noticias/${index._id}`} className="fw-bold btn btn-danger">Leer</a>
+                              </p>
+                              <a href={`/noticias/${index._id}`} className="fw-bold btn btn-danger">Leer</a>
 
+                            </div>
+                          </div>
                         </div>
+
                       </div>
-                    </div>
 
-                    </div>
-          
-                </Col>
+                    </Col>
 
-          
 
-              ))
+
+                  )) :
+
+                  <div>
+                    <Card style={{ width: '100%' }}>
+                      <Card.Body>
+                        <Placeholder as={Card.Title} animation="glow">
+                          <Placeholder xs={6} />
+                        </Placeholder>
+                        <Placeholder as={Card.Text} animation="glow">
+                          <Placeholder xs={7} /> <Placeholder xs={4} /> <Placeholder xs={4} />{' '}
+                          <Placeholder xs={6} /> <Placeholder xs={8} />
+                        </Placeholder>
+                      </Card.Body>
+                    </Card>
+                    <Card style={{ width: '100%' }}>
+                      <Card.Body>
+                        <Placeholder as={Card.Title} animation="glow">
+                          <Placeholder xs={6} />
+                        </Placeholder>
+                        <Placeholder as={Card.Text} animation="glow">
+                          <Placeholder xs={7} /> <Placeholder xs={4} /> <Placeholder xs={4} />{' '}
+                          <Placeholder xs={6} /> <Placeholder xs={8} />
+                        </Placeholder>
+                      </Card.Body>
+                    </Card>
+                    <Card style={{ width: '100%' }}>
+                      <Card.Body>
+                        <Placeholder as={Card.Title} animation="glow">
+                          <Placeholder xs={6} />
+                        </Placeholder>
+                        <Placeholder as={Card.Text} animation="glow">
+                          <Placeholder xs={7} /> <Placeholder xs={4} /> <Placeholder xs={4} />{' '}
+                          <Placeholder xs={6} /> <Placeholder xs={8} />
+                        </Placeholder>
+                      </Card.Body>
+                    </Card>
+                  </div>
 
               } <div className="row m-3 text-center">
                 <h1 className="text-cyan">ULTIMAS NOTICIAS</h1>
@@ -209,7 +247,9 @@ const Inicio = () => {
           </Col>
         </section>
         <section className="text-center w-100 p-4">
-          <VideoYoutube/>
+          <h2 className="text-center">Organization  Night Life International </h2>
+          <br /> <a title="visitar" href="https://www.nightlifeinternational.org/" className="btn btn-danger fw-bold  text-light mt-2 mb-3">www.nightlifeinternational.org</a>
+          <VideoYoutube />
         </section>
       </Container >
     </>

@@ -76,7 +76,7 @@ const noticias = (props) => {
           </div>
 
 
-          <div>{noticia.descripcion}</div>
+          <p className='text-capitalize'>{noticia.descripcion}</p>
         </div>
       <section className='container p-3'>
           <h2 className='text-center'>Mas Noticias</h2>
@@ -89,7 +89,7 @@ const noticias = (props) => {
                     <div className="card-img-noticia">
                       <img src={index.imguno} alt={data.titulo} className='card-imagen-detalle-noticia' /></div> : <></>}
                   <div className="card-body-noticia d-flex flex-column">
-                    <div className='mt-3 noticias-titulo'>
+                    <div className='m-3 noticias-titulo'>
                       <h4 className='titulo-noticiasrecientes'>{index.titulo}</h4>
                     </div>
                     <div className='cards-body'>
