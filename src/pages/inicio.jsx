@@ -1,9 +1,10 @@
 import Navs from "@/components/common/Navs";
 import React from "react";
 import { Col, Container, Row, Carousel, Placeholder, Card } from "react-bootstrap";
-import { useContext, useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import VideoYoutube from "../components/common/video";
 import { getNoticias } from "../helpers/fetchNoticias"
+import Image from "next/image";
 
 const Inicio = () => {
 
@@ -248,7 +249,7 @@ const Inicio = () => {
         </section>
         <section className="text-center w-100 p-4">
           <h2 className="text-center">Organization  Night Life International </h2>
-          <br /> <a title="visitar" href="https://www.nightlifeinternational.org/" className="btn btn-danger fw-bold  text-light mt-2 mb-3">www.nightlifeinternational.org</a>
+          <br /> <a title="visitar" href="https://www.nightlifeinternational.org/" className="btn btn-danger  text-light mt-2 mb-3">www.nightlifeinternational.org</a>
           <VideoYoutube />
         </section>
       </Container >

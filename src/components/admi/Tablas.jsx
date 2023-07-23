@@ -3,9 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import { DataContext } from '../context/DataContext';
 import ModalPublicaciones from './ModalPublicaciones';
-import { Button, Form, Modal, Spinner } from 'react-bootstrap';
-import { upload } from '@/config/firebase';
-
+import { Button, Form, Modal } from 'react-bootstrap';
 
 
 function Tablas() {

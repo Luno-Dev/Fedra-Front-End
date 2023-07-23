@@ -36,7 +36,6 @@ const socio = () => {
     }
     const [usuarioOnline, setUsuarioOnline] = useState("");
     const [socios, setSocios] = useState([]);
-console.log(socios);
     const traerData = async () => {
         const id = verificador();
         const data = await traerSocio(id);

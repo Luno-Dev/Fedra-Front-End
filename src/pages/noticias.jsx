@@ -1,8 +1,7 @@
 import Navs from '@/components/common/Navs'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { getCategorias, traerNoticias } from '@/helpers/fetchAdmi';
 import Noticias from '@/components/Noticias';
 import { Card, Placeholder } from 'react-bootstrap';

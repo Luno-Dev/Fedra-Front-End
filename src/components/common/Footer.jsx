@@ -66,6 +66,7 @@ const Footer = () => {
                 <a
                   href="tel:+543812326414"
                   className="d-flex text-decoration-none"
+                  
                 >
                   <i className="bi bi-telephone text-cyan me-2"></i>
                   <p>+543812326414</p>
