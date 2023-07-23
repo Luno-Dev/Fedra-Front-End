@@ -2,7 +2,7 @@
 import Admi from '@/components/admi/Admi';
 import Navs from '@/components/common/Navs';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Cookies from "universal-cookie";
 
 const administracion = () => {
