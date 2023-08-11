@@ -1,9 +1,11 @@
 import TablaCreateEEm from '@/components/admi/TablaCreateEEm';
+import Tablaeditemp from '@/components/admi/Tablaeditemp';
 import Navs from '@/components/common/Navs';
+import { DataContext } from '@/components/context/DataContext';
 import { deleteEmpleadoSocio, putSocio } from '@/helpers/fechSociosAdmi';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Button, Col, Row, Table } from 'react-bootstrap';
 import { Cookies } from 'react-cookie';
 import { useDownloadExcel } from 'react-export-table-to-excel';
@@ -23,13 +25,17 @@ const token = () => {
 
 export const socio = (props) => {
 
+    const {  show, setShow, edit, setEdit, setEditPublicaciones, editPublicaciones, editEm, setEditem , editEmp, setEditEmp } = useContext(DataContext);
 
     const { empleador, empleados } = props;
 
     const [usuarioOnline, setUsuarioOnline] = useState("");
     let total = 0;
 
-
+  const editarEmpleado = async (data) => {
+        setEditem(true);
+        setEditEmp(data);
+    };
 
     const tableRef = useRef(null);
     const generatePDF = useReactToPrint({
@@ -90,10 +96,7 @@ export const socio = (props) => {
     };
 
 
-    const editarEmpleado = async (data) => {
-        setImmediate(true);
-        setEditEmp(data);
-    };
+  
 
 
 
@@ -128,13 +131,13 @@ export const socio = (props) => {
     return (
 
         <>
+       
             <Helmet>
                 <meta charSet="utf-8" />{props.empleador ?
                     <title>{props.empleador.empleadorrazonsocial}</title> : ""}
             </Helmet>
-
             <Navs />
-
+{ !editEm ?
             <div className='container my-3'>
 
                 <h3 className=" text-cyan">Socio conectado: {usuarioOnline}</h3>
@@ -282,7 +285,9 @@ export const socio = (props) => {
 
 
             </div>
-
+            : <Tablaeditemp/>
+        
+        }
 
         </>
 

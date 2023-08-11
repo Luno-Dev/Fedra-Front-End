@@ -24,7 +24,7 @@ const Navs = () => {
       if (cookie.get("token")) {
         setToken(true);
 
-      } else if (cookie.get("tokensocio") && localStorage.getItem("tokensocio")) {
+      } else if (localStorage.getItem("tokenSocio")) {
         setTokenSocio(true);
         setId(JSON.parse(localStorage.getItem("id")));
       }

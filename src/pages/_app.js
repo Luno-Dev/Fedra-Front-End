@@ -9,7 +9,11 @@ import DataProvider from "@/components/context/DataContext";
 
 export default function App({ Component, pageProps }) {
   return <DataProvider>
+    
+      <Component {...pageProps} />
+   
 
-    <Component {...pageProps} />
-    </DataProvider>;
+  </DataProvider>
+
+  ;
 }

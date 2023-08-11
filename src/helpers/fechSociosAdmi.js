@@ -72,3 +72,42 @@ export const putSocio = async (id, estado) => {
 
 };
 
+export const putSocioEmp = async (estado) => {
+    console.log(estado);
+    const response = await fetch(`${url}socios/empleado/${estado.eId}`,
+        {
+            method: "PUT",
+            body: JSON.stringify({
+                trabajadorsueldo: estado.trabajadorsueldo,
+                trabajadornombre: estado.trabajadornombre,
+                trabajadorapellido: estado.trabajadorapellido,
+                trabajadornacionalidad: estado.trabajadornacionalidad,
+                trabajadorestadocivil: estado.trabajadorestadocivil,
+                trabajadorsexo: estado.trabajadorsexo,
+                trabajadornacimiento: estado.trabajadornacimiento,
+                trabajadordocumento: estado.trabajadordocumento,
+                trabajadorcuil: estado.trabajadorcuil,
+                trabajadordomicilio: estado.trabajadordomicilio,
+                trabajadornumdomicilio: estado.trabajadornumdomicilio,
+                trabajadorpiso: estado.trabajadorpiso,
+                trabajadordepto: estado.trabajadordepto,
+                trabajadorlocalidad: estado.trabajadorlocalidad,
+                trabajadorprovincia: estado.trabajadorprovincia,
+                trabajadorlugardetrabajo: estado.trabajadorlugardetrabajo,
+                trabajadortareas: estado.trabajadortareas,
+                trabajadortel: estado.trabajadortel ,
+                trabajadorcel: estado.trabajadorcel
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                Authorization: JSON.parse(localStorage.getItem("token")),
+            },
+        }
+    );
+
+    const data = await response.json();
+
+    return data.msg;
+
+};
+

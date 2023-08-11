@@ -113,10 +113,10 @@ function TablasUsuarios() {
             socios.map((index) => (
 
               <tr key={index.socioid}>
-                <th>{index.empleadorrazonsocial} </th>
-                <th>{index.empleadorprovincia} </th>
-                <th>{index.empleadorcuil}</th>
-                <th>{index.email}</th>
+                <th className='text-center'>{index.empleadorrazonsocial} </th>
+                <th className='text-center'>{index.empleadorprovincia} </th>
+                <th className='text-center'>{index.empleadorcuil}</th>
+                <th className='text-center'>{index.email}</th>
                 <th>{index.estado.toString() === "false" ?
                   "Inactivo" : "Activo"
                 }</th>

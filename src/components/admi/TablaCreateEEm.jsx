@@ -11,7 +11,6 @@ const TablaCreateEEm = () => {
   
 
   const crearEmpleado = async () => {
-    /* setCreado(!creado); */
     const response = await postEmpleados(empleado);
 
     if (response === "Empleado creado con exito!") {
