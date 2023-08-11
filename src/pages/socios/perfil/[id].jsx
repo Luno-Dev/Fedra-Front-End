@@ -106,7 +106,7 @@ export const socio = (props) => {
 
         const handleCookieChange = () => {
             const cookie = new Cookies();
-            if (!cookie.get("tokenSocio")) {
+            if (!cookie.get("tokensocio")) {
                 history.push("/loginSocios");
 
             }

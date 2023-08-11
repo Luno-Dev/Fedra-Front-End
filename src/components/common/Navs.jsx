@@ -24,7 +24,7 @@ const Navs = () => {
       if (cookie.get("token")) {
         setToken(true);
 
-      } else if (cookie.get("tokenSocio") && localStorage.getItem("tokenSocio")) {
+      } else if (cookie.get("tokensocio") && localStorage.getItem("tokensocio")) {
         setTokenSocio(true);
         setId(JSON.parse(localStorage.getItem("id")));
       }
@@ -42,8 +42,8 @@ const Navs = () => {
   }, [history])
 
   const logOut = () => {
-    swal(`Gracias por visitarnos, ¡vuelve pronto!`, { icon: "success" }).then((active) => {
-      if (active) {
+    swal(`Gracias por visitarnos, ¡vuelve pronto!`, { icon: "success" }).then((a) => {
+      if (a) {
         const cookie = new Cookies();
         cookie.remove("token");
         localStorage.removeItem("token");

@@ -38,8 +38,8 @@ export const socios = (props) => {
   return (
     <>
       <Helmet>
-        <meta charSet="utf-8" />
-        <title>{props.empleadorrazonsocial}</title>
+        <meta charSet="utf-8" />{ props.socio ?
+        <title>{props.socio.empleadorrazonsocial}</title>: ""}
       </Helmet>
       <Navs />
 

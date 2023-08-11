@@ -113,7 +113,7 @@ const registro = () => {
                       onChange={handleChange}
                       aria-describedby="razonSocial"
                       required
-                      placeholder="Estabñlecimiento S.R.L"
+                      placeholder="Establecimiento S.R.L"
                     />
                   </div>
                 </Col>
