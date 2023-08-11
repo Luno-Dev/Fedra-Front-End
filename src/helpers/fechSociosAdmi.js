@@ -73,7 +73,7 @@ export const putSocio = async (id, estado) => {
 };
 
 export const putSocioEmp = async (estado) => {
-    console.log(estado);
+    
     const response = await fetch(`${url}socios/empleado/${estado.eId}`,
         {
             method: "PUT",
