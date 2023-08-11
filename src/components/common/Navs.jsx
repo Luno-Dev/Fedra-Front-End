@@ -23,7 +23,6 @@ const Navs = () => {
 
       if (cookie.get("token")) {
         setToken(true);
-        console.log("test");
 
       } else if (cookie.get("tokenSocio") && localStorage.getItem("tokenSocio")) {
         setTokenSocio(true);

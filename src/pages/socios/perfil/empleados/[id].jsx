@@ -47,13 +47,13 @@ export const socios = (props) => {
           <Table hover size="sm" responsive className='table-dark' ref={tableRef}>
             <thead className='text-cyan'>
               <tr className='text-cyan '>
-                <th className='text-cyan text-center'>Datos del Empleador</th>
+                <th className='text-cyan text-center'>Datos del Empleado</th>
                 <th className='text-cyan text-center'>Informacion</th>
               </tr>
             </thead>
             <tbody>
 
-              <tr >
+              <tr>
                 <th>id</th>
                 <th>{props.empleado.eId}</th>
               </tr>
