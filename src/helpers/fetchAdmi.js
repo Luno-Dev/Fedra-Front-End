@@ -74,6 +74,26 @@ export const putSocio = async (id, estado) => {
 };
 
 
+export const putSocioPago = async (id, estado) => {
+    const response = await fetch(`${url}socios/${id}`,
+        {
+            method: "PUT",
+            body: JSON.stringify({
+                estadoPago: estado.estadoPago,
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                Authorization: JSON.parse(localStorage.getItem("token")),
+            },
+        }
+    );
+
+    const data = await response.json();
+
+    return data.msg;
+
+};
+
 
 export const deleteSocio = async (id) => {
     const response = await fetch(`${url}socios/${id}`, {

@@ -40,7 +40,7 @@ export const socios = (props) => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{props.trabajadornombre}</title>
+        <title>{props.empleadorrazonsocial}</title>
       </Helmet>
       <Navs />
 
@@ -50,8 +50,8 @@ export const socios = (props) => {
         <Table hover size="sm" responsive className='table-dark' ref={tableRef}>
           <thead className='text-cyan'>
             <tr className='text-cyan '>
-              <th className='text-cyan text-center'>Datos</th>
-              <th className='text-cyan text-center'>Informacion Socio</th>
+              <th className='text-cyan text-center'>Datos del Empleador</th>
+              <th className='text-cyan text-center'>Informacion</th>
             </tr>
           </thead>
           <tbody>
@@ -60,75 +60,6 @@ export const socios = (props) => {
               <th>id</th>
               <th>{props.socioid}</th>
             </tr>
-            <tr>
-              <th>Nombre y Apellido</th>
-              <th>{props.trabajadornombre}  {props.trabajadorapellido} </th>
-            </tr>
-            <tr>
-              <th>Sexo</th>
-              <th>{props.trabajadorsexo}</th>
-            </tr>
-            <tr>
-              <th>Provincia</th>
-              <th>{props.trabajadorprovincia} </th>
-            </tr>
-            <tr>
-              <th>Localidad</th>
-              <th>{props.trabajadorlocalidad}</th>
-            </tr>
-            <tr>
-              <th>Nacionalidad</th>
-              <th>{props.trabajadornacionalidad} </th>
-            </tr>
-            <tr>
-              <th>Fecha de Nacimiento</th>
-              <th>{props.trabajadornacimiento} </th>
-            </tr>
-            <tr>
-              <th>D.N.I</th>
-              <th>{props.trabajadordocumento}</th>
-            </tr>
-            <tr>
-              <th>C.U.I.L</th>
-              <th>{props.trabajadorcuil}</th>
-            </tr>
-            <tr>
-              <th>Estado Civil</th>
-              <th>{props.trabajadorestadocivil}</th>
-            </tr>
-            <tr>
-              <th>Domicilio</th>
-              <th>{props.trabajadordomicilio}</th>
-            </tr>
-            <tr>
-              <th>Numero de Domicilio</th>
-              <th>{props.trabajadornumdomicilio}</th>
-            </tr>
-
-            <tr>
-              <th>Depto</th>
-              <th>{props.trabajadordepto}</th>
-            </tr>
-
-            <tr>
-              <th>Piso</th>
-              <th>{props.trabajadorpiso}</th>
-            </tr>
-
-            <tr>
-              <th>Celular</th>
-              <th>{props.trabajadorcel}</th>
-            </tr>
-            <tr>
-              <th>Telefono</th>
-              <th>{props.trabajadortel}</th>
-            </tr>
-            <tr>
-              <th>Email</th>
-              <th>{props.email}</th>
-            </tr>
-
-            <tr><th className='text-cyan text-center'>Datos del Empleador</th></tr>
             <tr>
               <th>C.U.I.L</th>
               <th>{props.empleadorcuil}</th>
@@ -169,19 +100,6 @@ export const socios = (props) => {
               <th>Provincia del Lugar de Trabajo</th>
               <th>{props.empleadortrabajoprovincia}</th>
             </tr>
-
-
-            <tr>
-              <th>Lugar de Trabajo</th>
-              <th>{props.trabajadorlugardetrabajo}</th>
-            </tr>
-
-            <tr>
-              <th>Tareas que realiza en el Trabajo</th>
-              <th>{props.trabajadortareas}</th>
-            </tr>
-
-
             <th>
 
             </th>

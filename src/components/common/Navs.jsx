@@ -7,7 +7,11 @@ import { useRouter } from "next/router";
 import Cookies from "universal-cookie";
 
 const Navs = () => {
+
   const [token, setToken] = useState(false);
+  const [id, setId] = useState("");
+  const [tokenSocio, setTokenSocio] = useState(false);
+
 
 
   const history = useRouter();
@@ -18,7 +22,12 @@ const Navs = () => {
       const cookie = new Cookies();
 
       if (cookie.get("token")) {
-        setToken(true)
+        setToken(true);
+        console.log("test");
+
+      } else if (cookie.get("tokenSocio") && localStorage.getItem("tokenSocio")) {
+        setTokenSocio(true);
+        setId(JSON.parse(localStorage.getItem("id")));
       }
     };
 
@@ -33,17 +42,18 @@ const Navs = () => {
 
   }, [history])
 
-
   const logOut = () => {
     swal(`Gracias por visitarnos, ¡vuelve pronto!`, { icon: "success" }).then((active) => {
       if (active) {
         const cookie = new Cookies();
-        location.replace("/");
-        localStorage.removeItem("token");
-        localStorage.removeItem("role");
-        localStorage.removeItem("nombreUsuario");
         cookie.remove("token");
+        localStorage.removeItem("token");
+        localStorage.removeItem("tokenSocio");
+        localStorage.removeItem("role");
+        localStorage.removeItem("nombreUsuario");    
         setToken(false);
+        setTokenSocio(false);
+        location.replace("/");
       }
     });
   }
@@ -93,10 +103,18 @@ const Navs = () => {
                   <a title="cerrar session" className="ms-auto nav-link " onClick={logOut}>
                     <i className="bi bi-box-arrow-left"></i>
                   </a> </>
-                :
-                <a title="ingresar" className="ms-auto nav-link" href="/loginSocios">
-                  <i className="bi bi-box-arrow-in-right"></i>
-                </a>
+                : tokenSocio ?
+                  <> <ActiveLink className="ms-auto nav-link" href={`/socios/perfil/${id}`}>
+                    Mi Perfil
+                  </ActiveLink>
+                    <a title="cerrar session" className="ms-auto nav-link" onClick={logOut}>
+                      <i className="bi bi-box-arrow-left"></i>
+                    </a> </>
+                  :
+                  <a title="ingresar" className="ms-auto nav-link" href="/loginSocios">
+                    <i className="bi bi-box-arrow-in-right"></i>
+                  </a>
+
               }
             </>
           </Nav>

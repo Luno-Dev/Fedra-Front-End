@@ -97,12 +97,12 @@ function Tablas() {
       <Table striped bordered hover size="sm" responsive className='table-dark '>
         <thead>
           <tr className='text-center'>
-            <th>Id</th>
-            <th>Titulo</th>
-            <th>Cuerpo</th>
-            <th>Autor</th>
-            <th>Fecha de Publicacion</th>
-            <th>Imagen</th>
+            <th className='text-cyan'>Id</th>
+            <th className='text-cyan'>Titulo</th>
+            <th className='text-cyan'>Cuerpo</th>
+            <th className='text-cyan'>Autor</th>
+            <th className='text-cyan'>Fecha de Publicacion</th>
+            <th className='text-cyan'>Imagen</th>
             <th className='p-2 d-flex justify-content-center '><button className='btn bg-cyan text-light fw-bold' onClick={handleShow}>Crear Publicacion</button></th>
           </tr>
         </thead>
@@ -114,7 +114,7 @@ function Tablas() {
               <tr key={index._id} className='fila-noticia'>
                 <th>{index._id}</th>
                 <th>{index.titulo}</th>
-                <th className='tabla-descripcion tex-center' >{index.descripcion ? index.descripcion : "Sin Descripcion"}</th>
+                <th className='tabla-descripcion tex-center' >{index.descripcion}</th>
                 <th>{index.autor}</th>
                 <th>{index.fecha.split("T", 1)}</th>
                 <th className='text-center'> <img src={index.imguno} alt={index.titulo} width={80} /></th>

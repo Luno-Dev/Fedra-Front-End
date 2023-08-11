@@ -7,7 +7,7 @@ import { Col, Container, Row, Form, Button } from "react-bootstrap";
 const Contacto = () => {
     return (
         <>
-            <Navs/>
+            <Navs />
             <Container>
                 <div>
                     <h1 className="text-cyan text-center mt-4">CONTÁCTANOS</h1>
@@ -40,23 +40,26 @@ const Contacto = () => {
                 <div>
                     <Row className="d-flex justify-content-center align-items-center">
                         <Col lg="6" className="Mapa mt-5 mb-5">
-                            <Form>
+                            <Form action="https://formsubmit.co/fedraargentina@gmx.com" method="POST">
                                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                     <Form.Label>Nombre</Form.Label>
-                                    <Form.Control type="name" placeholder="Ingrese su nombre" />
+                                    <Form.Control type="text" name="nombre" placeholder="Ingrese su nombre" required />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                     <Form.Label>Apellido</Form.Label>
-                                    <Form.Control type="name" placeholder="Ingrese su apellido" />
+                                    <Form.Control type="text" name="apellido" placeholder="Ingrese su apellido" />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                     <Form.Label>Email</Form.Label>
-                                    <Form.Control type="email" placeholder="name@example.com" />
+                                    <Form.Control type="email" name="correo" placeholder="name@example.com" />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                     <Form.Label>Mensaje</Form.Label>
-                                    <Form.Control as="textarea" rows={5} placeholder="Escriba aquí su mensaje..." />
+                                    <Form.Control as="textarea" name="mensaje" rows={5} placeholder="Escriba aquí su mensaje..." required />
                                 </Form.Group>
+                                <input type="hidden" name="_template" value="table" />
+                                <input type="hidden" name="_replyto" />
+                                <input type="hidden" name="_next" value="https://fedra.ar" />
                                 <Button className="" variant="primary" type="submit">
                                     Enviar
                                 </Button>

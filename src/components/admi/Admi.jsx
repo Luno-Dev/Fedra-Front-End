@@ -30,14 +30,14 @@ const Admi = () => {
       <div className="container">
         <div className='my-5 g-4' >
           <h4>Usuario conectado: {usuarioOnline}</h4>
-          <h1 className='text-center mb-3'>Administrar Noticias</h1>
-          <Tablas />
+       <h1 className='text-center mb-3'>Administrar Socios</h1>
+          <TablasUsuarios />
         </div>
 
         <div className='my-5 g-4' >
-          <h1 className='text-center mb-3'>Administrar Socios</h1>
-          <TablasUsuarios />
-        </div>
+   <h1 className='text-center mb-3'>Administrar Noticias</h1>
+          <Tablas />
+        </div>          
       </div>
     </>
   )

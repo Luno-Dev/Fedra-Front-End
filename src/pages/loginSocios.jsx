@@ -19,10 +19,14 @@ const logins = () => {
     if (datos?.token) {
 
       const cookies = new Cookies();
-      localStorage.setItem("token", JSON.stringify(datos.token));
       localStorage.setItem("nombreUsuario", JSON.stringify(datos.socio.empleadorrazonsocial));
       localStorage.setItem("role", JSON.stringify(datos.socio.role));
-      cookies.set("token", `${datos.token}`, { path: "/", maxAge: 3850 });
+      localStorage.setItem("id", JSON.stringify(datos.socio.socioid));
+      localStorage.setItem("nombreUsuario", JSON.stringify(datos.socio.empleadorrazonsocial));
+      localStorage.setItem("tokenSocio", JSON.stringify(datos.socio.token));
+
+
+      cookies.set("tokensocio", `${datos.token}`, { path: "/", maxAge: 3850 });
 
       swal(
         `Bienvenido ${datos.socio.empleadorrazonsocial}!`,
@@ -30,7 +34,7 @@ const logins = () => {
         "success"
       ).then((active) => {
         if (active) {
-          location.replace(`/socio?id=${datos.socio.socioid}`);
+          location.replace(`/socios/perfil/${datos.socio.socioid}`);
         }
       });
     } else {

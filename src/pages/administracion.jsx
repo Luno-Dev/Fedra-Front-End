@@ -15,7 +15,7 @@ const administracion = () => {
     const handleCookieChange = () => {
       const cookie = new Cookies();
       if (!cookie.get("token")) {
-        history.push("/");
+        history.push("/logins");
 
       }
 
