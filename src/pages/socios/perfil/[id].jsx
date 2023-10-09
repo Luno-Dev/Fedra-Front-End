@@ -133,6 +133,7 @@ export const socio = (props) => {
             {!editEm ?
                 <div className='container my-3'>
 
+
                     <h3 className=" text-cyan">Socio conectado: {usuarioOnline}</h3>
                     <Row className="mt-4">
                         <Col className="d-flex flex-colum">
