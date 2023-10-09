@@ -2,7 +2,7 @@ import TablaCreateEEm from '@/components/admi/TablaCreateEEm';
 import Tablaeditemp from '@/components/admi/Tablaeditemp';
 import Navs from '@/components/common/Navs';
 import { DataContext } from '@/components/context/DataContext';
-import { crearDeuda, deleteEmpleadoSocio, putSocio } from '@/helpers/fechSociosAdmi';
+import { crearDeuda, deleteEmpleadoSocio, genearPago, putSocio } from '@/helpers/fechSociosAdmi';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useRef, useState } from 'react'
@@ -11,16 +11,6 @@ import { Cookies } from 'react-cookie';
 import { useDownloadExcel } from 'react-export-table-to-excel';
 import { Helmet } from 'react-helmet';
 import { useReactToPrint } from 'react-to-print';
-
-const token = () => {
-    const isServer = typeof window === 'undefined';
-    let data;
-    if (!isServer) {
-        data = JSON.parse(localStorage.getItem("token"));
-    }
-
-    return data;
-}
 
 
 export const socio = (props) => {
@@ -136,10 +126,11 @@ export const socio = (props) => {
                     <h3 className=" text-cyan">Socio conectado: {usuarioOnline}</h3>
                     <Row className="mt-4">
                         <Col className="d-flex flex-colum">
-                            <div className="d-flex">
+                            <div className="d-flex flex-column">
                                 <Button className="bg-darkblue m-2" download="FEDRA-ESTATUTOS.pdf" href="FEDRA-ESTATUTOS.pdf">
                                     <i className="bi bi-file-earmark-arrow-down text-cyan"> Estatutos y Acta Fundacional PDF</i>
-                                </Button>
+                                </Button> 
+                                <p>Enviar el comprobante generado a: fedraargentina@gmx.com</p>
                             </div>
                         </Col>
                     </Row>
@@ -211,7 +202,7 @@ export const socio = (props) => {
                                     <span> Total a  Pagar = $ {total * 1 / 100}   </span>
                                     
                                     <button className="btn bg-cyan  text-light fw-bold" onClick={() => infoPago(empleador.socioid)} >Informar Pago</button>
-                                    <a className="btn btn-success fw-bold" href='https://link.mercadopago.com.ar/fedraaportescct' target="_blank" /* onClick={() => crearDeuda(empleador.empleadorcuil, total)} */ >Pagar  <i className="bi bi-credit-card-fill"></i></a>
+                                    <a className="btn btn-success fw-bold" href='https://link.mercadopago.com.ar/fedraaportescct' target="_blank"  /* onClick={() => crearDeuda(empleador.empleadorcuil, total)} */   /*  onClick={()=> genearPago(total* 1 / 100, empleador.socioid)} */ >Pagar  <i className="bi bi-credit-card-fill"></i></a>
 
                                 </div> : <h4 className='m-2'>Su aporte a sido: {empleador.estadoPago}</h4> : <></>
                         }
@@ -302,13 +293,13 @@ export async function getStaticPaths() {
         method: "GET",
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-            "Authorization": token()
         },
 
     });
     const data = await response.json();
 
-    const paths = []/* data.socios.map(({socioid})=> ({params:{id: `${socioid}`}}))      */
+    
+    const paths = data.socios.map(({ id }) => ({ params: { id: `${id}` } }));
 
     return {
         paths,
@@ -318,15 +309,13 @@ export async function getStaticPaths() {
 
 }
 
-
-
 export async function getStaticProps({ params }) {
+
     try {
         const response = await fetch(`https://fedra-back-nicolasmoralesdev.vercel.app/api/socios/empleados/${params.id}`, {
             method: "GET",
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
-                "Authorization": token()
             },
         });
         const data = await response.json();
