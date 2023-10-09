@@ -211,7 +211,7 @@ export const socio = (props) => {
                                     <span> Total a  Pagar = $ {total * 1 / 100}   </span>
                                     
                                     <button className="btn bg-cyan  text-light fw-bold" onClick={() => infoPago(empleador.socioid)} >Informar Pago</button>
-                                    <button className="btn btn-success fw-bold" onClick={() => crearDeuda(empleador.empleadorcuil, total)} >Pagar  <i className="bi bi-credit-card-fill"></i></button>
+                                    <a className="btn btn-success fw-bold" href='https://link.mercadopago.com.ar/fedraaportescct' target="_blank" /* onClick={() => crearDeuda(empleador.empleadorcuil, total)} */ >Pagar  <i className="bi bi-credit-card-fill"></i></a>
 
                                 </div> : <h4 className='m-2'>Su aporte a sido: {empleador.estadoPago}</h4> : <></>
                         }
