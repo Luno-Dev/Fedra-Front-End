@@ -88,7 +88,6 @@ const registro = () => {
             <h2 className="text-cyan">Empleador</h2>
             <Form.Group
               className="mb-3 d-flex flex-wrap gap-5"
-              controlId="formBasicEmail"
             >
               <Row>
                 <Col sm={12} md={6} lg={3} className="mb-2">
