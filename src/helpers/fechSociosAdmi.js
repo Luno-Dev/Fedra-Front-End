@@ -52,7 +52,6 @@ export const postEmpleados = async (empleado) => {
         },
     });
     const data = await response.json();
-    console.log(data);
     return data.msg; 
 
 
@@ -118,6 +117,20 @@ export const putSocioEmp = async (estado) => {
     return data.msg;
 
 };
+
+export const getEmp = async (id)=>{
+
+  const response = await fetch(`https://fedra-back-nicolasmoralesdev.vercel.app/api/socios/empleados/${id}`, {
+    method: "GET",
+    headers: {
+        "Content-type": "application/json; charset=UTF-8",
+    },
+});
+const data = await response.json();
+
+return data;
+
+}
 
 export const genearPago = async (monto, id)=>{
 

@@ -32,7 +32,6 @@ const TablaCreateEEm = () => {
         const { name, value } = e.target;
         setEmpleado((prevState) => ({ ...prevState, [name]: value }));
 
-        console.log(empleado);
       };
     
   return (
@@ -268,6 +267,7 @@ const TablaCreateEEm = () => {
                 </Col>
                 <Col sm={12} md={6} lg={3} className="mb-2">
                   <div className="d-flex flex-column">
+                    
                     <Form.Label>Sueldo:</Form.Label>
                     <Form.Control
                       type="number"

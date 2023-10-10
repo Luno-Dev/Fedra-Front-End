@@ -2,7 +2,7 @@ import TablaCreateEEm from '@/components/admi/TablaCreateEEm';
 import Tablaeditemp from '@/components/admi/Tablaeditemp';
 import Navs from '@/components/common/Navs';
 import { DataContext } from '@/components/context/DataContext';
-import { crearDeuda, deleteEmpleadoSocio, genearPago, putSocio } from '@/helpers/fechSociosAdmi';
+import { crearDeuda, deleteEmpleadoSocio, genearPago, getEmp, putSocio } from '@/helpers/fechSociosAdmi';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useRef, useState } from 'react'
@@ -18,6 +18,7 @@ export const socio = (props) => {
     const { show, setShow, edit, setEdit, setEditPublicaciones, editPublicaciones, editEm, setEditem, editEmp, setEditEmp } = useContext(DataContext);
 
     const { empleador, empleados } = props;
+    const [emp, setEmp]= useState([]);
 
     const [usuarioOnline, setUsuarioOnline] = useState("");
     let total = 0;
@@ -88,7 +89,19 @@ export const socio = (props) => {
 
     const history = useRouter();
 
-    useEffect(() => {
+    const traerEmpleados = async ()=>{
+
+        if (props.empleador) {
+               const datos = await getEmp(props.empleador.socioid);
+        setEmp(datos.empleados);
+        }
+        
+    }
+
+    useEffect( () =>  {
+
+     traerEmpleados();
+
         setUsuarioOnline(JSON.parse(localStorage.getItem('nombreUsuario')));
 
         const handleCookieChange = () => {
@@ -109,7 +122,7 @@ export const socio = (props) => {
             clearInterval(interval);
         };
 
-    }, [history])
+    }, [history, eliminarEmpleado, editarEmpleado])
 
     return (
 
