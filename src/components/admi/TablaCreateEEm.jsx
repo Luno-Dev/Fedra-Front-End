@@ -87,12 +87,12 @@ const TablaCreateEEm = () => {
               <th> <input type="text" onChange={handleChange} name="trabajadorcuil" className='bg-dark' id="" /></th>
             </tr>
             <tr>
-              <th>Domicilio</th>
+              <th>Calle</th>
               <th> <input type="text" onChange={handleChange} name="trabajadordomicilio" className='bg-dark' id="" /></th>
             </tr>
 
             <tr>
-              <th>Calle</th>
+              <th>N°</th>
               <th> <input type="text" onChange={handleChange} name="trabajadornumdomicilio" className='bg-dark' id="" /></th>
             </tr>
             <tr>
