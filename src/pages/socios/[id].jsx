@@ -22,6 +22,7 @@ const token = () => {
 
 export const socios = (props) => {
 
+   location.reload()  
 
   const tableRef = useRef(null);
   const generatePDF = useReactToPrint({

@@ -18,12 +18,16 @@ export const deleteEmpleadoSocio = async (id) => {
 };
 
 export const postEmpleados = async (empleado) => {
-    const response = await fetch(`${url}socios/empleado`, {
+
+
+   let sueldo = parseInt(empleado.trabajadorsueldo);
+   
+    const response = await fetch(`https://fedra-back-nicolasmoralesdev.vercel.app/api/socios/empleado`, {
         method: "POST",
         body: JSON.stringify({
 
             trabajadornombre: empleado.trabajadornombre,
-            trabajadorsueldo: empleado.trabajadorsueldo,
+            trabajadorsueldo: sueldo,
             trabajadorapellido: empleado.trabajadorapellido,
             trabajadornacionalidad: empleado.trabajadornacionalidad,
             trabajadorestadocivil: empleado.trabajadorestadocivil,
@@ -48,7 +52,8 @@ export const postEmpleados = async (empleado) => {
         },
     });
     const data = await response.json();
-    return data.msg;
+    console.log(data);
+    return data.msg; 
 
 
 };
