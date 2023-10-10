@@ -168,7 +168,7 @@ export const socio = (props) => {
                             </thead>
                             <tbody>
                                 {props.empleados ?
-                                    props.empleados.map((index) => {
+                                    emp.map((index) => {
                                         total += index.trabajadorsueldo
                                         return (
 
