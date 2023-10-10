@@ -300,7 +300,7 @@ export async function getStaticPaths() {
     const data = await response.json();
 
     
-    const paths = []/* data.socios.map(({ id }) => ({ params: { id: `${id}` } })) */;
+    const paths = [];
 
     return {
         paths,
