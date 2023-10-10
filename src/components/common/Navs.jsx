@@ -111,7 +111,7 @@ const Navs = () => {
                     </a> </>
                   :
                   <a title="ingresar" className="ms-auto nav-link" href="/loginSocios">
-                    <i className="bi bi-box-arrow-in-right"></i>
+                    Ingresar
                   </a>
 
               }
