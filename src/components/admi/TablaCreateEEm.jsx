@@ -140,6 +140,8 @@ const TablaCreateEEm = () => {
                       onChange={handleChange}
                       aria-describedby="trabajadorcuil"
                       required
+                      minLength={11}
+                      maxLength={11}
                     />
                   </div>
                 </Col>
