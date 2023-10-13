@@ -1,22 +1,12 @@
 
 import Navs from '@/components/common/Navs';
-import React, { useState } from 'react'
+import React from 'react'
 import { Table } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import dynamic from "next/dynamic";
 import { useDownloadExcel } from 'react-export-table-to-excel';
 import { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
-
-const token = () => {
-  const isServer = typeof window === 'undefined';
-  let data;
-  if (!isServer) {
-    data = JSON.parse(localStorage.getItem("token"));
-  }
-
-  return data;
-}
 
 
 export const socios = (props) => {
@@ -32,6 +22,10 @@ export const socios = (props) => {
     filename: "Datos Usuario",
     sheet: "Datos Usuario",
   });
+
+  const volver = ()=>{
+    location.replace(`/socios/perfil/${props.empleado.socio}`)
+  }
 
   return (
     <>
@@ -93,11 +87,6 @@ export const socios = (props) => {
                 <th> Domicilio</th>
                 <th>{props.empleado.trabajadordomicilio}</th>
               </tr>
-
-              <tr>
-                <th>Calle</th>
-                <th>{props.empleado.trabajadornumdomicilio}</th>
-              </tr>
               <tr>
                 <th>Piso</th>
                 <th>{props.empleado.trabajadorpiso ? props.empleado.trabajadorpiso : "---" }</th>
@@ -158,6 +147,8 @@ export const socios = (props) => {
         <div className="container d-flex justify-content-center gap-3 ">
           <button className='btn btn-success fw-bold' onClick={onDownload}>Exportar a Excel <i className="bi bi-file-earmark-spreadsheet"></i></button>
           <button className="btn btn-danger fw-bold" onClick={generatePDF}>Exportar A PDF <i className="bi bi-filetype-pdf"></i></button>
+        <button className='btn bg-cyan fw-bold text-light' onClick={()=> volver()}>Volver a Pagar</button>
+          
         </div>
 
       </div>
@@ -176,8 +167,7 @@ export async function getStaticPaths() {
   const response = await fetch(`https://fedra-back-nicolasmoralesdev.vercel.app/api/socios/empleados`, {
     method: "GET",
     headers: {
-      "Content-type": "application/json; charset=UTF-8",
-      "Authorization": token()
+      "Content-type": "application/json; charset=UTF-8"
     },
 
   });
@@ -199,8 +189,7 @@ export async function getStaticProps({ params }) {
     const response = await fetch(`https://fedra-back-nicolasmoralesdev.vercel.app/api/socios/empleado/detalle/${params.id}`, {
       method: "GET",
       headers: {
-        "Content-type": "application/json; charset=UTF-8",
-        "Authorization": token()
+        "Content-type": "application/json; charset=UTF-8"
       },
     });
     const data = await response.json();

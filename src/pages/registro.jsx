@@ -138,7 +138,7 @@ const registro = () => {
                       onChange={handleChange}
                       aria-describedby="empleadorlocalidad"
                       required
-                      placeholder="Yerbaa Buena..."
+                      placeholder="Yerba Buena..."
                     />
                   </div>
                 </Col>

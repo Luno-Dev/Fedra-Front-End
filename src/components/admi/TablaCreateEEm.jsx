@@ -147,25 +147,13 @@ const TablaCreateEEm = () => {
                 </Col>
                 <Col sm={12} md={6} lg={3} className="mb-2">
                   <div className="d-flex flex-column">
-                    <Form.Label>Calle:</Form.Label>
+                    <Form.Label>Domicilio:</Form.Label>
                     <Form.Control
                       type="text"
                       name="trabajadordomicilio"
                       onChange={handleChange}
                       required
                       aria-describedby="trabajadordomicilio"
-                    />
-                  </div>
-                </Col>
-                <Col sm={12} md={6} lg={3} className="mb-2">
-                  <div className="d-flex flex-column">
-                    <Form.Label>N°:</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="trabajadornumdomicilio"
-                      onChange={handleChange}
-                      required
-                      aria-describedby="trabajadornumdomicilio"
                     />
                   </div>
                 </Col>

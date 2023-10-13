@@ -57,7 +57,7 @@ const socio = () => {
 
             <div className='container my-3'>
 
-                <h3 className="text-center">Socio conectado: {usuarioOnline}</h3>
+                <h3 className="text-center w-25">Socio conectado: {usuarioOnline}</h3>
                 <Row className="mt-4">
                     <Col className="d-flex flex-column align-items-center justify-content-center">
                         <div className="d-flex">

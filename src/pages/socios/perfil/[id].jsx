@@ -15,6 +15,7 @@ import { useReactToPrint } from 'react-to-print';
 
 export const socio = (props) => {
 
+
     const { show, setShow, edit, setEdit, setEditPublicaciones, editPublicaciones, editEm, setEditem, editEmp, setEditEmp } = useContext(DataContext);
 
     const { empleador, empleados } = props;
@@ -244,10 +245,6 @@ export const socio = (props) => {
                                         <tr>
                                             <th>Empleador Provincia</th>
                                             <th>{props.empleador.empleadorprovincia}</th>
-                                        </tr>
-                                        <tr>
-                                            <th>Razon Social</th>
-                                            <th>{props.empleador.empleadorrazonsocial}</th>
                                         </tr>
                                         <tr>
                                             <th>Razon Social</th>

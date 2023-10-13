@@ -34,7 +34,6 @@ const Tablaeditemp = () => {
   return (
     <div className='container'>
         <h1 className="text-cyan text-center mt-5">Editar Empleado</h1>
-        <button className='btn bg-cyan fw-bold text-light' onClick={()=> setEditem(false)}>volver</button>
         <Table hover size="sm" responsive className='table-dark mt-3'>
           <thead className='text-cyan'>
             <tr >
@@ -82,13 +81,8 @@ const Tablaeditemp = () => {
               <th> <input type="text" onChange={handleChange} value={editEmp.trabajadorcuil} name="trabajadorcuil" className='bg-dark' id="" /></th>
             </tr>
             <tr>
-              <th>Calle</th>
+              <th>Domicilio</th>
               <th> <input type="text" onChange={handleChange} value={editEmp.trabajadordomicilio} name="trabajadordomicilio" className='bg-dark' id="" /></th>
-            </tr>
-
-            <tr>
-              <th>N°</th>
-              <th> <input type="text" onChange={handleChange} value={editEmp.trabajadornumdomicilio} name="trabajadornumdomicilio" className='bg-dark' id="" /></th>
             </tr>
             <tr>
               <th>Piso</th>
@@ -134,7 +128,12 @@ const Tablaeditemp = () => {
           </tbody>
           
         </Table>
+        <div className='container w-100 d-flex justify-content-center gap-3'>
         <button className='btn btn-success fw-bold w-25  mb-5' onClick={editarEmp}>Editar</button>
+        <button className='btn bg-cyan fw-bold text-light w-25 mb-5' onClick={()=> setEditem(false)}>Volver a Pagar</button>
+        </div>
+        
+
     </div>
   )
 }
