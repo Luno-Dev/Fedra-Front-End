@@ -20,10 +20,16 @@ export const socio = (props) => {
 
     const { empleador, empleados } = props;
     const [emp, setEmp]= useState([]);
+    const [fecha, setFecha]= useState();
+
 
     const [usuarioOnline, setUsuarioOnline] = useState("");
     let total = 0;
  
+    const cargarFecha = (e)=>{
+
+        setFecha(e.target.value);
+    }
 
     const editarEmpleado = async (data) => {
         setEditem(true);
@@ -213,12 +219,19 @@ export const socio = (props) => {
 
                         </Table> {empleador ?
                             empleador.convenio === "SUTCAPRA" && empleador.estadoPago === "DEBE" ?
-                                <div className='m-3 d-flex gap-3 '>
-                                    <span> Total a  Pagar = $ {total * 1 / 100}   </span>
-                                    
-                                    <button className="btn bg-cyan  text-light fw-bold" onClick={() => infoPago(empleador.socioid)} >Informar Pago</button>
+                                <div className='m-3 container gap-3 '>
+                                    <div className="row">
+                                         <div className='col-md-6 col-sm-12 mb-4'>
+                                       <div className='d-inline w-25'> Fecha que Abona:   <input type="month" name="fecha" id="" onChange={cargarFecha}/></div>
+  
+                                    </div>    
+                                    <div className='col-6 gap-3 d-flex justify-content-center align-items-center flex-wrap'>
+                                                           <button className="btn bg-cyan  text-light fw-bold" onClick={() => infoPago(empleador.socioid)} >Informar Pago</button>
                                     <a className="btn btn-success fw-bold" href='https://link.mercadopago.com.ar/fedraaportescct' target="_blank" /* onClick={() => crearDeuda(empleador.empleadorcuil, total)} */ >Pagar  <i className="bi bi-credit-card-fill"></i></a>
-
+                                 <span> Total a  Pagar = $ {total * 1 / 100}   </span>
+                                  </div> 
+                                    </div>      
+             
                                 </div> : <h4 className='m-2'>Su aporte a sido: {empleador.estadoPago}</h4> : <></>
                         }
 
