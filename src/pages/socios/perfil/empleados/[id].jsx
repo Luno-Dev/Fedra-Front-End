@@ -134,7 +134,10 @@ export const socios = (props) => {
                 <th>Celular</th>
                 <th>{props.empleado.trabajadorcel}</th>
               </tr>
-
+              <tr>
+                <th>Fecha que Abona</th>
+                <th>{props.empleado.fechaAporte}</th>
+              </tr>
               <tr>
                 <th>Sueldo</th>
                 <th>$ {props.empleado.trabajadorsueldo}</th>

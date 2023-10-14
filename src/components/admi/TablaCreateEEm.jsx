@@ -109,7 +109,7 @@ const TablaCreateEEm = () => {
                 </Col>
                 <Col sm={12} md={6} lg={3} className="mb-2">
                   <div className="d-flex flex-column">
-                    <Form.Label>Fecha de Nacimniento:</Form.Label>
+                    <Form.Label>Fecha de Naciminiento:</Form.Label>
                     <Form.Control
                       type="text"
                       name="trabajadornacimiento"
