@@ -148,7 +148,7 @@ export const socio = (props) => {
                     <Row className="mt-4">
                         <Col className="d-flex flex-colum">
                             <div className="d-flex flex-column">
-                                <Button className="bg-darkblue m-2" download="FEDRA-ESTATUTOS.pdf" href="FEDRA-ESTATUTOS.pdf">
+                                <Button className="bg-darkblue m-2" target='_blanck' href="https://drive.google.com/file/d/1P9iPFlM1CtfZNNYugWM1FzUf-HFL60vH/view?usp=sharing">
                                     <i className="bi bi-file-earmark-arrow-down text-cyan"> Estatutos y Acta Fundacional PDF</i>
                                 </Button> 
                                 <p>Enviar el comprobante generado a: fedraargentina@gmx.com</p>
