@@ -27,6 +27,7 @@ export const postEmpleados = async (empleado) => {
         body: JSON.stringify({
 
             trabajadornombre: empleado.trabajadornombre,
+            fechaAporte: estado.fechaAporte,
             trabajadorsueldo: sueldo,
             trabajadorapellido: empleado.trabajadorapellido,
             trabajadornacionalidad: empleado.trabajadornacionalidad,
@@ -85,6 +86,7 @@ export const putSocioEmp = async (estado) => {
             body: JSON.stringify({
                 trabajadorsueldo: estado.trabajadorsueldo,
                 trabajadornombre: estado.trabajadornombre,
+                fechaAporte: estado.fechaAporte,
                 trabajadorapellido: estado.trabajadorapellido,
                 trabajadornacionalidad: estado.trabajadornacionalidad,
                 trabajadorestadocivil: estado.trabajadorestadocivil,

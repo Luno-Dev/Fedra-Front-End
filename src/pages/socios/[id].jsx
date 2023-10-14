@@ -222,7 +222,10 @@ export const socios = (props) => {
                       <th>Celular</th>
                       <th>{index.trabajadorcel}</th>
                     </tr>
-
+                    <tr>
+                      <th>Fecha de Aporte</th>
+                      <th>{index.fechaAporte}</th>
+                    </tr>
                     <tr>
                       <th>Sueldo</th>
                       <th>$ {index.trabajadorsueldo}</th>

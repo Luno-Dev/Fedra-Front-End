@@ -118,6 +118,10 @@ const Tablaeditemp = () => {
               <th> <input type="text" onChange={handleChange} value={editEmp.trabajadorcel} name="trabajadorcel" className='bg-dark' id="" /></th>
             </tr>
             <tr>
+              <th>Fecha que Abona</th>
+              <th> <input type="text" onChange={handleChange} value={editEmp.fechaAporte} name="fechaAporte" className='bg-dark' id="" /></th>
+            </tr>
+            <tr>
               <th>Sueldo</th>
               <th>$ <input type="number" onChange={handleChange} value={editEmp.trabajadorsueldo} name="trabajadorsueldo" className='bg-dark' id="" /></th>
             </tr>
