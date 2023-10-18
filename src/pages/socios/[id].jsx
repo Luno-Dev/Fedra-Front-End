@@ -83,10 +83,6 @@ export const socios = (props) => {
                   <th>{props.socio.empleadorrazonsocial}</th>
                 </tr>
                 <tr>
-                  <th>Razon Social</th>
-                  <th>{props.socio.empleadorrazonsocial}</th>
-                </tr>
-                <tr>
                   <th>Actividad del Empleador</th>
                   <th>{props.socio.empleadoractividad}</th>
                 </tr>
@@ -101,6 +97,10 @@ export const socios = (props) => {
                 <tr>
                   <th>Provincia del Lugar de Trabajo</th>
                   <th>{props.socio.empleadortrabajoprovincia}</th>
+                </tr>
+                <tr>
+                  <th>Correo</th>
+                  <th>{props.socio.email}</th>
                 </tr>
                 <th>
 
@@ -158,6 +158,7 @@ export const socios = (props) => {
                       <th>Fecha de Nacimiento</th>
                       <th>{index.trabajadornacimiento}</th>
                     </tr>
+                    
                     <tr>
                       <th>DNI</th>
                       <th>{index.trabajadordocumento}</th>
