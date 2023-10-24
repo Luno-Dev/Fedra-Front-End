@@ -275,6 +275,10 @@ export const socio = (props) => {
                                             <th>Provincia del Lugar de Trabajo</th>
                                             <th>{props.empleador.empleadortrabajoprovincia}</th>
                                         </tr>
+                                        <tr>
+                                            <th>Telefono</th>
+                                            <th>{props.empleador.empleadortel}</th> 
+                                        </tr>
                                         <th>
 
                                         </th>

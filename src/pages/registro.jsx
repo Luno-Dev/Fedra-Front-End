@@ -8,6 +8,7 @@ import swal from "sweetalert";
 
 const registro = () => {
   const [formValues, setFormValues] = useState({
+    empleadortel: "",
     empleadorcuil: "",
     empleadorrazonsocial: "",
     empleadordomicilio: "",
@@ -227,6 +228,19 @@ const registro = () => {
                       required
                       aria-describedby="email"
                       placeholder="ejemplo@email.com"
+                    />
+                  </div>
+                </Col>
+                <Col sm={12} md={6} lg={3} className="mb-2">
+                  <div className="d-flex flex-column">
+                    <Form.Label>Telefono:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="empleadortel"
+                      onChange={handleChange}
+                      required
+                      aria-describedby="empleadortel"
+                      placeholder="+54 000 000 0000"
                     />
                   </div>
                 </Col>

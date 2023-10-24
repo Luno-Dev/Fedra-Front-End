@@ -102,6 +102,10 @@ export const socios = (props) => {
                   <th>Correo</th>
                   <th>{props.socio.email}</th>
                 </tr>
+                <tr>
+                  <th>Telefono</th>
+                  <th>{props.socio.empleadortel}</th>
+                </tr>
                 <th>
 
                 </th>

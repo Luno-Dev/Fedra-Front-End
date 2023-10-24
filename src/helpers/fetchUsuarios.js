@@ -6,6 +6,7 @@ export const crearUsuario = async (datos) => {
   const resp = await fetch(url, {
     method: "POST",
     body: JSON.stringify({
+      empleadortel: datos.empleadortel,
       empleadorcuil: datos.empleadorcuil,
       empleadorrazonsocial: datos.empleadorrazonsocial,
       empleadordomicilio: datos.empleadordomicilio,

@@ -1,6 +1,6 @@
 
 import Navs from '@/components/common/Navs';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import dynamic from "next/dynamic";
@@ -10,6 +10,7 @@ import { useReactToPrint } from 'react-to-print';
 
 
 export const socios = (props) => {
+
 
   const tableRef = useRef(null);
   const generatePDF = useReactToPrint({
@@ -23,7 +24,7 @@ export const socios = (props) => {
     sheet: "Datos Usuario",
   });
 
-  const volver = ()=>{
+  const volver = () => {
     location.replace(`/socios/perfil/${props.empleado.socio}`)
   }
 
@@ -89,7 +90,7 @@ export const socios = (props) => {
               </tr>
               <tr>
                 <th>Piso</th>
-                <th>{props.empleado.trabajadorpiso ? props.empleado.trabajadorpiso : "---" }</th>
+                <th>{props.empleado.trabajadorpiso ? props.empleado.trabajadorpiso : "---"}</th>
               </tr>
               <tr>
                 <th>Depto</th>
@@ -136,7 +137,7 @@ export const socios = (props) => {
               </tr>
               <tr>
                 <th>Fecha que Abona</th>
-                <th>{props.empleado.fechaAporte}</th>
+                <th>{props.fechas}</th>
               </tr>
               <tr>
                 <th>Sueldo</th>
@@ -150,8 +151,8 @@ export const socios = (props) => {
         <div className="container d-flex justify-content-center gap-3 ">
           <button className='btn btn-success fw-bold' onClick={onDownload}>Exportar a Excel <i className="bi bi-file-earmark-spreadsheet"></i></button>
           <button className="btn btn-danger fw-bold" onClick={generatePDF}>Exportar A PDF <i className="bi bi-filetype-pdf"></i></button>
-        <button className='btn bg-cyan fw-bold text-light' onClick={()=> volver()}>Volver a Pagar</button>
-          
+          <button className='btn bg-cyan fw-bold text-light' onClick={() => volver()}>Volver a Pagar</button>
+
         </div>
 
       </div>
