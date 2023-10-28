@@ -135,10 +135,12 @@ return data;
 export const genearPago = async (monto, id)=>{
 
 
+  const precio = parseInt(monto);
+
       const response = await axios.post('http://localhost:4000/create-order', {
             id: id,
             title:"Aportes",
-            unit_price: monto,
+            unit_price: precio,
             currency_id:"ARS",
             quantity:1
       })
