@@ -137,7 +137,7 @@ export const genearPago = async (monto, id)=>{
 
   const precio = parseInt(monto);
 
-      const response = await axios.post('http://localhost:4000/create-order', {
+      const response = await axios.post('https://fedra-pagos-nicolasmoralesdev.vercel.app/create-order', {
             id: id,
             title:"Aportes",
             unit_price: precio,
