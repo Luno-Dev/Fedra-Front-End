@@ -8,40 +8,59 @@ const TablaCreateEEm = () => {
 
   const [empleado, setEmpleado] = useState([{}]);
 
-  
+
 
   const crearEmpleado = async () => {
-    const response = await postEmpleados(empleado);
 
-    if (response === "Empleado creado con exito!") {
-        swal(response, {
-            icon: "success",
+    if (empleado.trabajadorsueldo) {
+
+      if (empleado.trabajadornombre) {
+
+        const response = await postEmpleados(empleado);
+
+        if (response === "Empleado creado con exito!") {
+          swal(response, { icon: "success", });
+
+
+          location.reload();
+
+        } else {
+          swal(response, { icon: "warning", });
+
+        };
+      } else {
+        swal("El Nombre NO puede estar vacio!", {
+          icon: "warning",
+  
         });
+      }
 
-        location.reload(); 
     } else {
-        swal(response, {
-            icon: "warning",
+      swal("El Sueldo NO puede estar vacio!", {
+        icon: "warning",
 
-        });
-    };
-};
+      });
+    }
 
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setEmpleado((prevState) => ({ ...prevState, [name]: value }));
 
-      };
-    
+  };
+
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEmpleado((prevState) => ({ ...prevState, [name]: value }));
+
+  };
+
   return (
     <>
-    
 
-    <div className='mt-5'>
-    <h1 className="text-center text-cyan mt-2 mb-2">Agregar Empleados</h1>
 
-    <div className="my-5">
+      <div className='mt-5'>
+        <h1 className="text-center text-cyan mt-2 mb-2">Agregar Empleados</h1>
+
+        <div className="my-5">
           <Form>
             <Form.Group
               className="mb-3 d-flex flex-wrap gap-5"
@@ -270,7 +289,7 @@ const TablaCreateEEm = () => {
 
                 <Col sm={12} md={6} lg={3} className="mb-2">
                   <div className="d-flex flex-column">
-                    
+
                     <Form.Label>Sueldo:</Form.Label>
                     <Form.Control
                       type="number"
@@ -283,12 +302,12 @@ const TablaCreateEEm = () => {
                 </Col>
               </Row>
             </Form.Group>
-       
+
           </Form>     <div className="d-flex justify-content-end">
-              <button onClick={crearEmpleado} className="btn btn-success text-light fw-bolder">Cargar</button>
-            </div>
-        </div>    
-        </div>    
+            <button onClick={crearEmpleado} className="btn btn-success text-light fw-bolder">Cargar</button>
+          </div>
+        </div>
+      </div>
     </>
 
   )
