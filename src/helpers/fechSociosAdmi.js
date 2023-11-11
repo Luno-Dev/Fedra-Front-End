@@ -51,6 +51,8 @@ export const postEmpleados = async (empleado) => {
             "empleador": JSON.parse(localStorage.getItem("id")),
         },
     });
+    console.log(data);
+    console.log(response);
     const data = await response.json();
     return data.msg; 
 
