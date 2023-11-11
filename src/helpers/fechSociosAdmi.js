@@ -22,6 +22,11 @@ export const postEmpleados = async (empleado) => {
 
    let sueldo = parseInt(empleado.trabajadorsueldo);
    
+   try {
+    
+   } catch (error) {
+    
+   }
     const response = await fetch(`https://fedra-back-nicolasmoralesdev.vercel.app/api/socios/empleado`, {
         method: "POST",
         body: JSON.stringify({
@@ -51,10 +56,17 @@ export const postEmpleados = async (empleado) => {
             "empleador": JSON.parse(localStorage.getItem("id")),
         },
     });
-    console.log(data);
-    console.log(response);
-    const data = await response.json();
-    return data.msg; 
+ 
+    const data = await response.json(); 
+
+    if (data.msg) {
+      return data.msg; 
+    } else {
+      return data.errors[0].msg; 
+      
+    }  
+    
+    
 
 
 };

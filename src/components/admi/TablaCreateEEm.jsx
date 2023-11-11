@@ -12,7 +12,8 @@ const TablaCreateEEm = () => {
 
   const crearEmpleado = async () => {
 
-    if (empleado.trabajadorsueldo) {
+    if (empleado.trabajadorcuil) {
+       if (empleado.trabajadorsueldo) {
 
       if (empleado.trabajadornombre) {
 
@@ -22,7 +23,7 @@ const TablaCreateEEm = () => {
           swal(response, { icon: "success", });
 
 
-          location.reload();
+         location.reload(); 
 
         } else {
           swal(response, { icon: "warning", });
@@ -41,6 +42,13 @@ const TablaCreateEEm = () => {
 
       });
     }
+    } else {
+      swal("El CUIL NO puede estar vacio!", {
+        icon: "warning",
+
+      });
+    }
+   
 
 
 
