@@ -219,8 +219,8 @@ export const socio = (props) => {
                             </tbody>
 
                         </Table> {empleador ?
-                          empleador.convenio === "SUTEP"  ? <></> :
-                            empleador.convenio === "SUTCAPRA" && empleador.estadoPago === "DEBE" ?
+                          empleador.convenio === "SUTCAPRA"  ? <></> :
+                            empleador.convenio === "SUTEP" && empleador.estadoPago === "DEBE" ?
                                 <div className='m-3 container gap-3 '>
                                     <div className="row">
                                        {/*   <div className='col-md-6 col-sm-12 mb-4'>
