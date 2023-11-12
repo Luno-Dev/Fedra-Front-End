@@ -29,7 +29,10 @@ export const crearUsuario = async (datos) => {
   });
 
   const data = await resp.json();
-
-  return data.msg;
-
+  if (data.msg) {
+    return data.msg; 
+  } else {
+    return data.errors[0].msg; 
+    
+  }  
 };

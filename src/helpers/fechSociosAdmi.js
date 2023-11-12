@@ -66,9 +66,6 @@ export const postEmpleados = async (empleado) => {
       
     }  
     
-    
-
-
 };
 
 

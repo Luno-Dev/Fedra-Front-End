@@ -94,6 +94,7 @@ export const socio = (props) => {
 
     };
 
+
     const history = useRouter();
 
     const traerEmpleados = async ()=>{
@@ -218,6 +219,7 @@ export const socio = (props) => {
                             </tbody>
 
                         </Table> {empleador ?
+                          empleador.convenio === "SUTEP"  ? <></> :
                             empleador.convenio === "SUTCAPRA" && empleador.estadoPago === "DEBE" ?
                                 <div className='m-3 container gap-3 '>
                                     <div className="row">
@@ -232,7 +234,7 @@ export const socio = (props) => {
                                   </div> 
                                     </div>      
              
-                                </div> : <h4 className='m-2'>Su aporte a sido: {empleador.estadoPago}</h4> : <></>
+                                </div> : <h4 className='m-2'>Su aporte a sido: {empleador.estadoPago}</h4>   : <></>
                         }
 
 
