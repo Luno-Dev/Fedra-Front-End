@@ -143,11 +143,12 @@ return data;
 
 }
 
-export const genearPago = async (monto, id)=>{
+export const genearPago = async (id, monto)=>{
 
 
-  const precio = parseInt(monto);
+  const precio = parseFloat(monto);
 
+  console.log(precio);
       const response = await axios.post('https://fedra-pagos-nicolasmoralesdev.vercel.app/create-order', {
             id: id,
             title:"Aportes",
@@ -157,7 +158,7 @@ export const genearPago = async (monto, id)=>{
       })
 
 
-     location.replace(response.data.link);  
+   location.replace(response.data.link);   
 
 
 }
