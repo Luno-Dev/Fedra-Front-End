@@ -145,7 +145,7 @@ export const socio = (props) => {
                 <div className='container my-3'>
 
 
-                    <h3 className=" text-cyan">Socio conectado: {usuarioOnline}</h3>
+                    <h2 className="text-cyan">Bienvenido {usuarioOnline}</h2>
                     <Row className="mt-4">
                         <Col className="d-flex flex-colum">
                             <div className="d-flex flex-column">
