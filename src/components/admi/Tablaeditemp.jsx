@@ -119,7 +119,7 @@ const Tablaeditemp = () => {
           </tr>
           <tr> 
             <th>Fecha que Abona</th>
-            <th> <input type="text" onChange={handleChange} value={editEmp.fechaAporte}  placeholder='00/00/2000' name="fechaAporte" className='bg-dark' id="" /></th> 
+            <th> <input type="text" onChange={handleChange} value={editEmp.fechaAporte}  placeholder='00/2000' name="fechaAporte" className='bg-dark' id="" /></th> 
           </tr>
           <tr>
             <th>Sueldo</th>
