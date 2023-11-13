@@ -229,7 +229,7 @@ export const socio = (props) => {
                                     </div>     */}
                                     <div className='col-6 gap-3 d-flex justify-content-center align-items-center flex-wrap'>
                                                            <button className="btn bg-cyan  text-light fw-bold" onClick={() => infoPago(empleador.socioid)} >Informar Pago</button>
-                                    <button className="btn btn-success fw-bold" /* href='https://link.mercadopago.com.ar/fedraaportescct' target="_blank" */  onClick={() => genearPago(empleador.empleadorcuil, total)} >Pagar  <i className="bi bi-credit-card-fill"></i></button>
+                                    <button className="btn btn-success fw-bold" /* href='https://link.mercadopago.com.ar/fedraaportescct' target="_blank" */  onClick={() => genearPago(empleador.empleadorcuil, total* 1 / 100)} >Pagar  <i className="bi bi-credit-card-fill"></i></button>
                                  <span> Total a  Pagar = $ {total * 1 / 100}   </span>
                                   </div> 
                                     </div>      
