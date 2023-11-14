@@ -22,11 +22,6 @@ export const postEmpleados = async (empleado) => {
 
    let sueldo = parseInt(empleado.trabajadorsueldo);
    
-   try {
-    
-   } catch (error) {
-    
-   }
     const response = await fetch(`https://fedra-back-nicolasmoralesdev.vercel.app/api/socios/empleado`, {
         method: "POST",
         body: JSON.stringify({
