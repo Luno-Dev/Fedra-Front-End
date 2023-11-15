@@ -136,7 +136,7 @@ export const socios = (props) => {
                 <th>{props.empleado.trabajadorcel}</th>
               </tr>
               <tr>
-                <th>Fecha que Abona</th>
+                <th>Periodo que Abona</th>
                 <th>{props.fechas}</th>
               </tr>
               <tr>
@@ -151,7 +151,7 @@ export const socios = (props) => {
         <div className="container d-flex justify-content-center gap-3 ">
           <button className='btn btn-success fw-bold' onClick={onDownload}>Exportar a Excel <i className="bi bi-file-earmark-spreadsheet"></i></button>
           <button className="btn btn-danger fw-bold" onClick={generatePDF}>Exportar A PDF <i className="bi bi-filetype-pdf"></i></button>
-          <button className='btn bg-cyan fw-bold text-light' onClick={() => volver()}>Volver a Pagar</button>
+          <button className='btn bg-cyan fw-bold text-light' onClick={() => volver()}>Ir a Pagar</button>
 
         </div>
 

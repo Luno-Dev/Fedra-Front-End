@@ -134,7 +134,7 @@ const Tablaeditemp = () => {
       </Table>
       <div className='container w-100 d-flex justify-content-center gap-3'>
         <button className='btn btn-success fw-bold w-25  mb-5' onClick={editarEmp}>Editar</button>
-        <button className='btn bg-cyan fw-bold text-light w-25 mb-5' onClick={() => setEditem(false)}>Volver a Pagar</button>
+        <button className='btn bg-cyan fw-bold text-light w-25 mb-5' onClick={() => setEditem(false)}>Ir a Pagar</button>
       </div>
 
 
