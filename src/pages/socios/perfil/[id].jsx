@@ -2,7 +2,7 @@ import TablaCreateEEm from '@/components/admi/TablaCreateEEm';
 import Tablaeditemp from '@/components/admi/Tablaeditemp';
 import Navs from '@/components/common/Navs';
 import { DataContext } from '@/components/context/DataContext';
-import { crearDeuda, deleteEmpleadoSocio, genearPago, getEmp, putSocio } from '@/helpers/fechSociosAdmi';
+import { deleteEmpleadoSocio, genearPago, getEmp, putSocio } from '@/helpers/fechSociosAdmi';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useRef, useState } from 'react'
@@ -223,21 +223,15 @@ export const socio = (props) => {
                             empleador.convenio === "SUTEP" && empleador.estadoPago === "DEBE" ?
                                 <div className='m-3 container gap-3 '>
                                     <div className="row">
-                                       {/*   <div className='col-md-6 col-sm-12 mb-4'>
-                                       <div className='d-inline w-25'> Fecha que Abona:   <input type="month" name="fecha" id="" onChange={cargarFecha}/></div>
-  
-                                    </div>     */}
                                     <div className='col-6 gap-3 d-flex justify-content-center align-items-center flex-wrap'>
                                                            <button className="btn bg-cyan  text-light fw-bold" onClick={() => infoPago(empleador.socioid)} >Informar Pago</button>
-                                    <button className="btn btn-success fw-bold" /* href='https://link.mercadopago.com.ar/fedraaportescct' target="_blank" */  onClick={() => genearPago(empleador.empleadorcuil, total* 1 / 100)} >Pagar  <i className="bi bi-credit-card-fill"></i></button>
+                                    <button className="btn btn-success fw-bold"   onClick={() => genearPago(empleador.empleadorcuil, total* 1 / 100)} >Pagar  <i className="bi bi-credit-card-fill"></i></button>
                                  <span> Total a  Pagar = $ {total * 1 / 100}   </span>
                                   </div> 
                                     </div>      
              
                                 </div> : <h4 className='m-2'>Su aporte a sido: {empleador.estadoPago}</h4>   : <></>
                         }
-
-
 
                         {props.empleador ?
                             <>
