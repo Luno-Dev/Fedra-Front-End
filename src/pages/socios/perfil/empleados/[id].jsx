@@ -1,6 +1,6 @@
 
 import Navs from '@/components/common/Navs';
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Table } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import dynamic from "next/dynamic";

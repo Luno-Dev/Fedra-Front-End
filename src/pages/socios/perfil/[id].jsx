@@ -20,16 +20,10 @@ export const socio = (props) => {
 
     const { empleador, empleados } = props;
     const [emp, setEmp]= useState([]);
-    const [fecha, setFecha]= useState();
-
 
     const [usuarioOnline, setUsuarioOnline] = useState("");
     let total = 0;
  
-    const cargarFecha = (e)=>{
-
-        setFecha(e.target.value);
-    }
 
     const editarEmpleado = async (data) => {
         setEditem(true);
