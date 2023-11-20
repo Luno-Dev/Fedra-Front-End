@@ -1,6 +1,6 @@
 import { postEmpleados } from '@/helpers/fechSociosAdmi';
 import React, { useState } from 'react'
-import { Col, Form, Row, Table } from 'react-bootstrap'
+import { Col, Form, Row } from 'react-bootstrap'
 import swal from 'sweetalert';
 
 
