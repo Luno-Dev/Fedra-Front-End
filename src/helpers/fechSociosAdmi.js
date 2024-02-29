@@ -19,8 +19,8 @@ export const deleteEmpleadoSocio = async (id) => {
 export const postEmpleados = async (empleado) => {
 
 
-   let sueldo = parseInt(empleado.trabajadorsueldo);
-   
+    let sueldo = parseInt(empleado.trabajadorsueldo);
+
     const response = await fetch(`https://fedra-back-nicolasmoralesdev.vercel.app/api/socios/empleado`, {
         method: "POST",
         body: JSON.stringify({
@@ -50,16 +50,16 @@ export const postEmpleados = async (empleado) => {
             "empleador": JSON.parse(localStorage.getItem("id")),
         },
     });
- 
-    const data = await response.json(); 
+
+    const data = await response.json();
 
     if (data.msg) {
-      return data.msg; 
+        return data.msg;
     } else {
-      return data.errors[0].msg; 
-      
-    }  
-    
+        return data.errors[0].msg;
+
+    }
+
 };
 
 
@@ -123,36 +123,73 @@ export const putSocioEmp = async (estado) => {
 
 };
 
-export const getEmp = async (id)=>{
+export const getEmp = async (id) => {
 
-  const response = await fetch(`https://fedra-back-nicolasmoralesdev.vercel.app/api/socios/empleados/${id}`, {
-    method: "GET",
-    headers: {
-        "Content-type": "application/json; charset=UTF-8",
-    },
-});
-const data = await response.json();
+    const response = await fetch(`https://fedra-back-nicolasmoralesdev.vercel.app/api/socios/empleados/${id}`, {
+        method: "GET",
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+        },
+    });
+    const data = await response.json();
 
-return data;
+    return data;
 
 }
 
-export const genearPago = async (id, monto)=>{
+export const genearPago = async (id, monto) => {
 
 
-  const precio = parseFloat(monto);
+    const precio = parseFloat(monto);
 
 
-      const response = await axios.post('https://fedra-pagos-nicolasmoralesdev.vercel.app/create-order', {
-            id: id,
-            title:"Aportes",
-            unit_price: precio,
-            currency_id:"ARS",
-            quantity:1
-      })
+    const response = await axios.post('https://fedra-pagos-nicolasmoralesdev.vercel.app/create-order', {
+        id: id,
+        title: "Aportes",
+        unit_price: precio,
+        currency_id: "ARS",
+        quantity: 1
+    })
 
 
-   location.replace(response.data.link);   
+    location.replace(response.data.link);
 
 
+}
+
+export const generarInfor = async (emp, mes, socioId, total) => {
+
+    const response = await fetch(`http://localhost:8080/api/registros/post`, {
+        method: "POST",
+        body: JSON.stringify({
+            socio: socioId,
+            mes: mes.mes,
+            total: total,
+            empleados: [
+                emp
+            ]
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+        },
+    });
+    const data = await response.json();
+
+    return data;
+}
+
+export const getRegistros = async (id) => {
+
+
+ let idSocio = id.slice(8, 33);
+
+    const response = await fetch(`http://localhost:8080/api/registros/${idSocio}`, {
+        method: "GET",
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+        },
+    });
+    const data = await response.json();
+
+    return data; 
 }

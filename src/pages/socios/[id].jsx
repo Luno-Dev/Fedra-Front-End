@@ -1,6 +1,6 @@
 
 import Navs from '@/components/common/Navs';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import dynamic from "next/dynamic";
@@ -8,6 +8,7 @@ import { useDownloadExcel } from 'react-export-table-to-excel';
 import { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
 import "../../styles/Home.module.css"
+import { getRegistros } from '@/helpers/fechSociosAdmi';
 
 const token = () => {
   const isServer = typeof window === 'undefined';
@@ -21,6 +22,23 @@ const token = () => {
 
 
 export const socios = (props) => {
+
+  const [registros, setRegistros] = useState([]);
+
+  const getRegisters = async () => {
+
+    const request = await getRegistros(location.pathname);
+    setRegistros(request.registros);
+  }
+
+  console.log(registros);
+
+  useEffect(() => {
+
+    getRegisters()
+
+  }, [])
+
 
 
   const tableRef = useRef(null);
@@ -38,14 +56,14 @@ export const socios = (props) => {
   return (
     <>
       <Helmet>
-        <meta charSet="utf-8" />{ props.socio ?
-        <title>{props.socio.empleadorrazonsocial}</title>: ""}
+        <meta charSet="utf-8" />{props.socio ?
+          <title>{props.socio.empleadorrazonsocial}</title> : ""}
       </Helmet>
       <Navs />
 
 
       <div className="container my-3" >
-      <h2 className="text-center text-cyan m-5">Datos del Empleador</h2>
+        <h2 className="text-center text-cyan m-5">Datos del Empleador</h2>
 
 
         <Table hover size="sm" responsive className='table-dark' ref={tableRef}>
@@ -120,8 +138,39 @@ export const socios = (props) => {
           <button className="btn btn-danger fw-bold" onClick={generatePDF}>Exportar A PDF <i className="bi bi-filetype-pdf"></i></button>
         </div>
 
-        <h2 className="text-center text-cyan m-5">Empleados</h2>
-        {
+        <h2 className="text-center text-cyan m-5">Registros</h2>
+
+        <Table striped bordered hover variant="dark">
+          <thead>
+            <tr>
+              <th className='text-cyan text-center'>id Registro</th>
+              <th className='text-cyan text-center'>Mes</th>
+              <th className='text-cyan text-center'>Empleados</th>
+              <th className='text-cyan text-center'>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            {registros.map(i =>
+              <>
+                <tr>
+                  <th>{i.registroid} </th>
+
+                  <th>
+                    {i.mes}
+                  </th>
+                  <th>
+                    $ { i.total}
+                  </th>
+                </tr>
+
+              </>
+            )
+            }
+
+          </tbody>
+        </Table>
+        {/*  {
           props.empleados ?
             props.empleados.map(index => (
 
@@ -246,7 +295,7 @@ export const socios = (props) => {
 
             : <></>
 
-        }
+        } */}
       </div>
     </>
 

@@ -2,11 +2,11 @@ import TablaCreateEEm from '@/components/admi/TablaCreateEEm';
 import Tablaeditemp from '@/components/admi/Tablaeditemp';
 import Navs from '@/components/common/Navs';
 import { DataContext } from '@/components/context/DataContext';
-import { deleteEmpleadoSocio, genearPago, getEmp, putSocio } from '@/helpers/fechSociosAdmi';
+import { deleteEmpleadoSocio, genearPago, generarInfor, getEmp, putSocio } from '@/helpers/fechSociosAdmi';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { Button, Col, Row, Table } from 'react-bootstrap';
+import { Button, Col, Form, Row, Table } from 'react-bootstrap';
 import { Cookies } from 'react-cookie';
 import { useDownloadExcel } from 'react-export-table-to-excel';
 import { Helmet } from 'react-helmet';
@@ -15,15 +15,26 @@ import { useReactToPrint } from 'react-to-print';
 
 export const socio = (props) => {
 
+    const [mes, setMes] = useState("");
 
-    const { show, setShow, edit, setEdit, setEditPublicaciones, editPublicaciones, editEm, setEditem, editEmp, setEditEmp } = useContext(DataContext);
+    const { editEm, setEditem, setEditEmp } = useContext(DataContext);
 
-    const { empleador, empleados } = props;
-    const [emp, setEmp]= useState([]);
+    const { empleador } = props;
+    const [emp, setEmp] = useState([]);
 
     const [usuarioOnline, setUsuarioOnline] = useState("");
     let total = 0;
- 
+
+    const generarInforme = async (emp) => {
+
+        const request = await generarInfor(emp, mes, empleador.socioid, total);
+        console.log(request);
+    }
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setMes((prevState) => ({ ...prevState, [name]: value }));
+    };
 
     const editarEmpleado = async (data) => {
         setEditem(true);
@@ -91,18 +102,18 @@ export const socio = (props) => {
 
     const history = useRouter();
 
-    const traerEmpleados = async ()=>{
+    const traerEmpleados = async () => {
 
         if (props.empleador) {
-               const datos = await getEmp(props.empleador.socioid);
-        setEmp(datos.empleados);
+            const datos = await getEmp(props.empleador.socioid);
+            setEmp(datos.empleados);
         }
-        
+
     }
 
-    useEffect( () =>  {
+    useEffect(() => {
 
-     traerEmpleados();
+        traerEmpleados();
 
         setUsuarioOnline(JSON.parse(localStorage.getItem('nombreUsuario')));
 
@@ -145,7 +156,7 @@ export const socio = (props) => {
                             <div className="d-flex flex-column">
                                 <Button className="bg-darkblue m-2" target='_blanck' href="https://drive.google.com/file/d/1P9iPFlM1CtfZNNYugWM1FzUf-HFL60vH/view?usp=sharing">
                                     <i className="bi bi-file-earmark-arrow-down text-cyan"> Estatutos y Acta Fundacional PDF</i>
-                                </Button> 
+                                </Button>
                                 <p>Enviar el comprobante generado a: fedraargentina@gmx.com</p>
                             </div>
                         </Col>
@@ -213,18 +224,35 @@ export const socio = (props) => {
                             </tbody>
 
                         </Table> {empleador ?
-                          empleador.convenio === "SUTCAPRA"  ? <span></span> :
-                            empleador.convenio === "SUTEP" && empleador.estadoPago === "DEBE" ?
-                                <div className='m-3 container gap-3 '>
-                                    <div className="row">
-                                    <div className='col-6 gap-3 d-flex justify-content-center align-items-center flex-wrap'>
-                                                           <button className="btn bg-cyan  text-light fw-bold" onClick={() => infoPago(empleador.socioid)} >Informar Pago</button>
-                                    <button className="btn btn-success fw-bold"   onClick={() => genearPago(empleador.empleadorcuil, total* 1 / 100)} >Pagar  <i className="bi bi-credit-card-fill"></i></button>
-                                 <span> Total a  Pagar = $ {total * 1 / 100}   </span>
-                                  </div> 
-                                    </div>      
-             
-                                </div> : <h4 className='m-2'>Su aporte a sido: {empleador.estadoPago}</h4>   : <></>
+                            empleador.convenio === "SUTCAPRA" ? <span></span> :
+                                empleador.convenio === "SUTEP" && empleador.estadoPago === "DEBE" ?
+                                    <div className='m-3 container gap-3 '>
+                                        <div className="row">  
+                                      <div className='col-3'>       
+                                        <Form.Label>Mes de Aporte:</Form.Label>
+                                            <Form.Control
+                                                type="text"
+                                                name="mes"
+                                                onChange={handleChange} 
+                                                aria-describedby="mes"
+                                                required
+                                            />
+                                        </div>  
+                                        <div className='col-3'>
+                                        <a className='btn bg-cyan text-light fw-bold m-2 column-funciones' href={`/socios/${empleador.socioid}`}>Ver Registros Anteriores</a>
+
+                                        </div>
+                                 
+                                            <div className='col-6 gap-3 d-flex justify-content-center align-items-center flex-wrap'>
+                                                <button className="btn bg-cyan  text-light fw-bold" onClick={() => infoPago(empleador.socioid)} >Informar Pago</button>
+                                                <button className="btn btn-success fw-bold" onClick={() => genearPago(empleador.empleadorcuil, total * 1 / 100)} >Pagar  <i className="bi bi-credit-card-fill"></i></button>
+                                                <button className="btn btn-success fw-bold" onClick={() => generarInforme(emp)}> Generar Informe</button>
+                                                <span> Total a  Pagar = $ {total * 1 / 100}   </span>
+
+                                            </div>
+                                        </div>
+
+                                    </div> : <h4 className='m-2'>Su aporte a sido: {empleador.estadoPago}</h4> : <></>
                         }
 
                         {props.empleador ?
@@ -267,7 +295,7 @@ export const socio = (props) => {
                                         </tr>
                                         <tr>
                                             <th>Telefono</th>
-                                            <th>{props.empleador.empleadortel}</th> 
+                                            <th>{props.empleador.empleadortel}</th>
                                         </tr>
                                         <th>
 
@@ -316,7 +344,7 @@ export async function getStaticPaths() {
     });
     const data = await response.json();
 
-    
+
     const paths = [];
 
     return {
