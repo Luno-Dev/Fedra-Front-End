@@ -159,7 +159,7 @@ export const genearPago = async (id, monto) => {
 
 export const generarInfor = async (emp, mes, socioId, total) => {
 
-    const response = await fetch(`http://localhost:8080/api/registros/post`, {
+    const response = await fetch(`https://fedra-back-nicolasmoralesdev.vercel.app/api/registros/post`, {
         method: "POST",
         body: JSON.stringify({
             socio: socioId,
@@ -183,7 +183,7 @@ export const getRegistros = async (id) => {
 
  let idSocio = id.slice(8, 33);
 
-    const response = await fetch(`http://localhost:8080/api/registros/${idSocio}`, {
+    const response = await fetch(`https://fedra-back-nicolasmoralesdev.vercel.app/api/registros/${idSocio}`, {
         method: "GET",
         headers: {
             "Content-type": "application/json; charset=UTF-8",

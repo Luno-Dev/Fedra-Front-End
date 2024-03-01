@@ -18,12 +18,12 @@ const TablaCreateEEm = () => {
       if (empleado.trabajadornombre) {
 
         const response = await postEmpleados(empleado);
-
+console.log(response);
         if (response === "Empleado creado con exito!") {
           swal(response, { icon: "success", });
 
 
-         location.reload(); 
+     /*     location.reload();  */
 
         } else {
           swal(response, { icon: "warning", });

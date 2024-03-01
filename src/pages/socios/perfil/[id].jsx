@@ -28,7 +28,6 @@ export const socio = (props) => {
     const generarInforme = async (emp) => {
 
         const request = await generarInfor(emp, mes, empleador.socioid, total);
-        console.log(request);
     }
 
     const handleChange = (e) => {
@@ -229,7 +228,7 @@ export const socio = (props) => {
                                     <div className='m-3 container gap-3 '>
                                         <div className="row">  
                                       <div className='col-3'>       
-                                        <Form.Label>Mes de Aporte:</Form.Label>
+                                        <Form.Label>Año y Mes de Aporte:</Form.Label>
                                             <Form.Control
                                                 type="text"
                                                 name="mes"
