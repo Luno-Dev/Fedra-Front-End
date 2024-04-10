@@ -224,7 +224,7 @@ export const socio = (props) => {
 
                         </Table> {empleador ?
                             empleador.convenio === "SUTCAPRA" ? <span></span> :
-                                empleador.convenio === "SUTEP" && empleador.estadoPago === "DEBE" ?
+                                empleador.convenio === "SUTEP" ?
                                     <div className='m-3 container gap-3 '>
                                         <div className="row">  
                                       <div className='col-3'>       
@@ -243,7 +243,7 @@ export const socio = (props) => {
                                         </div>
                                  
                                             <div className='col-6 gap-3 d-flex justify-content-center align-items-center flex-wrap'>
-                                                <button className="btn bg-cyan  text-light fw-bold" onClick={() => infoPago(empleador.socioid)} >Informar Pago</button>
+                                                {/* <button className="btn bg-cyan  text-light fw-bold" onClick={() => infoPago(empleador.socioid)} >Informar Pago</button> */}
                                                 <button className="btn btn-success fw-bold" onClick={() => genearPago(empleador.empleadorcuil, total * 1 / 100)} >Pagar  <i className="bi bi-credit-card-fill"></i></button>
                                                 <button className="btn btn-success fw-bold" onClick={() => generarInforme(emp)}> Generar Informe</button>
                                                 <span> Total a  Pagar = $ {total * 1 / 100}   </span>
@@ -251,7 +251,9 @@ export const socio = (props) => {
                                             </div>
                                         </div>
 
-                                    </div> : <h4 className='m-2'>Su aporte a sido: {empleador.estadoPago}</h4> : <></>
+                                    </div> 
+                                     : <></>
+                                     : <></>
                         }
 
                         {props.empleador ?
