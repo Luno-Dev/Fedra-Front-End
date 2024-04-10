@@ -72,11 +72,11 @@ const Footer = () => {
                   <p>+543812326414</p>
                 </a>
                 <a
-                  href="mailto:fedraargentina@gmx.com"
+                  href="mailto:ro_dipinto@hotmail.com"
                   className="d-flex text-decoration-none"
                 >
                   <i className="bi bi-envelope-at text-cyan me-2"></i>
-                  <p>fedraargentina@gmx.com</p>
+                  <p>ro_dipinto@hotmail.com</p>
                 </a>
               </Col>
             </Row>

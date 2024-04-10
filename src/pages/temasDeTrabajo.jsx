@@ -37,7 +37,7 @@ const TemasDeTrabajo = () => {
         <section className="mb-5">
           <h2 className="text-cyan text-center mb-4">NORMATIVAS</h2>
           <p className="text-center">Se pone a disposición un espacio abierto con las leyes, decretos y ordenanzas para nuestra actividad. Solicitarlas al mail:
-            fedraargentina@gmx.com</p>
+          ro_dipinto@hotmail.com</p>
         </section>
       </Container>
     </>

@@ -22,7 +22,7 @@ const Contacto = () => {
                             <div className="d-flex">
                                 <i className="bi bi-envelope-at me-3 text-cyan"></i>
 
-                                <p>FedraArgentina@gmx.com</p>
+                                <p>ro_dipinto@hotmail.com</p>
 
                             </div>
                             <div className="d-flex">
@@ -40,7 +40,7 @@ const Contacto = () => {
                 <div>
                     <Row className="d-flex justify-content-center align-items-center">
                         <Col lg="6" className="Mapa mt-5 mb-5">
-                            <Form action="https://formsubmit.co/fedraargentina@gmx.com" method="POST">
+                            <Form action="https://formsubmit.co/ro_dipinto@hotmail.com" method="POST">
                                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                     <Form.Label>Nombre</Form.Label>
                                     <Form.Control type="text" name="nombre" placeholder="Ingrese su nombre" required />
